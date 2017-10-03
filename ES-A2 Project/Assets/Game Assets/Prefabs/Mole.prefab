@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   xSpeed: 5
-  ySpeed: 3
+  ySpeed: 5
   strength: 0
 --- !u!212 &212031620339042320
 SpriteRenderer:
