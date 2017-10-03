@@ -8,26 +8,23 @@ public class Movement : MonoBehaviour {
     private bool isGrounded = false;
     private Rigidbody2D rigidbody;
 
-    public Rigidbody2D Rigidbody {
-        get {
-            return rigidbody;
-        }
-
-        set {
-            rigidbody = value;
-        }
-    }
-
     // Use this for initialization
     void Start () {
-        this.character = this.GetComponent<Character>();
-        this.rigidbody = this.GetComponent<Rigidbody2D>();
+        this.initVariables();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate() {
         this.movementController();
         
+    }
+
+    /**
+     * Metodo inicializador de variables
+     */
+    private void initVariables() {
+        this.character = this.GetComponent<Character>();
+        this.rigidbody = this.GetComponent<Rigidbody2D>();
     }
 
     /**
@@ -59,13 +56,19 @@ public class Movement : MonoBehaviour {
         this.rigidbody.velocity = new Vector2(xSpeed, this.rigidbody.velocity.y);
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
+    protected void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Terrain") {
             this.isGrounded = true;
         }
     }
 
-    void OnCollisionExit2D(Collision2D other) {
+    protected void OnCollisionStay2D(Collision2D other) {
+        if (other.gameObject.tag == "Terrain") {
+            this.isGrounded = true;
+        }
+    }
+
+    protected void OnCollisionExit2D(Collision2D other) {
         if (other.gameObject.tag == "Terrain") {
             this.isGrounded = false;
         }
