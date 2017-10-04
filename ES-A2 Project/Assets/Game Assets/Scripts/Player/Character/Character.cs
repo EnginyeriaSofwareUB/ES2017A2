@@ -50,10 +50,25 @@ public abstract class Character : MonoBehaviour {
     }
 
     // Use this for initialization
-    protected abstract void Start();
+    protected virtual void Start() {
+        
+    }
 
     // Update is called once per frame
-    protected abstract void Update();
+    protected virtual void Update() {
+    }
 
+    public void disableCharacter() {
+        Movement movement = this.GetComponent<Movement>();
+        movement.Enabled = false;
+    }
 
+    public void enableCharacter() {
+        Movement movement = this.GetComponent<Movement>();
+        movement.Enabled = true;
+    }
+
+    public bool isAlive() {
+        return this.health > 0;
+    }
 }
