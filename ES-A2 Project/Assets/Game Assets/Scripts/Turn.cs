@@ -17,15 +17,14 @@ public class Turn : MonoBehaviour {
     }
 
     void Start() {
-        this.character = this.GetComponent<Round>().getCharacter();
+        this.character = this.GetComponent<Round>().getNextCharacter();
         this.startTurn();
-        this.StartCoroutine(this.timer());
-
     }
 
     public void startTurn() {
         Debug.Log("Turn Start");
         this.character.GetComponent<Character>().enableCharacter();
+        this.StartCoroutine(this.timer());
     }
 
     public void endTurn() {
@@ -35,7 +34,7 @@ public class Turn : MonoBehaviour {
     }
 
     IEnumerator timer() {
-        while (!Input.GetKeyDown(KeyCode.Z))
+        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.GetComponent<Character>().Fire)
             yield return null;
         this.endTurn();
     }

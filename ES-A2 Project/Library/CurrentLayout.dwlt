@@ -211,7 +211,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 87
+  controlID: 66
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -230,8 +230,8 @@ MonoBehaviour:
     y: 0
     width: 536
     height: 667
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -597,9 +597,9 @@ MonoBehaviour:
     height: 646
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 96fbffff
-    m_LastClickedID: -1130
-    m_ExpandedIDs: 98fbffff00000000
+    m_SelectedIDs: e4260000
+    m_LastClickedID: 9956
+    m_ExpandedIDs: 6cfbffff00000000da260000fc26000002270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -660,19 +660,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Game Assets/Scripts/Player/Character
+    - Assets/Game Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 55
   m_LastFolders:
-  - Assets/Game Assets/Scripts/Player/Character
+  - Assets/Game Assets/Scripts
   m_LastFoldersGridSize: 55
   m_LastProjectPath: D:\GitHub\ES2017A2\ES-A2 Project
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b2260000
-    m_LastClickedID: 9906
-    m_ExpandedIDs: 00000000882600009026000098260000ae26000000ca9a3bffffff7f
+    m_SelectedIDs: b6260000
+    m_LastClickedID: 9910
+    m_ExpandedIDs: 00000000a6260000ae260000b6260000ca26000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -700,7 +700,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000882600009026000098260000ae260000
+    m_ExpandedIDs: 00000000a6260000ae260000b6260000ca260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

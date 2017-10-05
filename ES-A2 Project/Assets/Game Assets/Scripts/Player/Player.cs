@@ -25,15 +25,13 @@ public class Player : MonoBehaviour {
 		
 	}
 
-    public List<Character> getAliveCharacters() {
-        List<Character> aliveCharacters = new List<Character>();
+    public List<GameObject> getAliveCharacters() {
+        List<GameObject> aliveCharacters = new List<GameObject>();
         foreach(GameObject characterGO in this.Characters) {
-            Character character = characterGO.GetComponent<Character>();
-            if (character.isAlive()) {
-                aliveCharacters.Add(character);
+            if (characterGO.GetComponent<Character>().isAlive()) {
+                aliveCharacters.Add(characterGO);
             }
         }
         return aliveCharacters;
     }
-
 }

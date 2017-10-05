@@ -8,6 +8,7 @@ public abstract class Character : MonoBehaviour {
     [SerializeField] protected float xSpeed;
     [SerializeField] protected float ySpeed;
     [SerializeField] protected float strength;
+    [SerializeField] private bool fire = false;
 
     public int Health {
         get {
@@ -49,13 +50,26 @@ public abstract class Character : MonoBehaviour {
         }
     }
 
+    public bool Fire {
+        get {
+            return this.fire;
+        }
+
+        set {
+            this.fire = value;
+        }
+    }
+
     // Use this for initialization
     protected virtual void Start() {
-        
+        this.disableCharacter();
     }
 
     // Update is called once per frame
     protected virtual void Update() {
+        if(Input.GetButtonDown("Fire1")) {
+            this.fireProjectile();
+        }
     }
 
     public void disableCharacter() {
@@ -65,10 +79,15 @@ public abstract class Character : MonoBehaviour {
 
     public void enableCharacter() {
         Movement movement = this.GetComponent<Movement>();
+        this.Fire = false;
         movement.Enabled = true;
     }
 
     public bool isAlive() {
         return this.health > 0;
+    }
+
+    public void fireProjectile() {
+        this.Fire = true;
     }
 }

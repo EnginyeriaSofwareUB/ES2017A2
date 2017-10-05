@@ -29,7 +29,17 @@ public class Game : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        this.round = this.gameObject.AddComponent<Round>();
-	}
+        this.startRound();
+    }
 
+    void FixedUpdate() {
+        if (!this.round.Enabled) {
+            this.startRound();
+        }
+    }
+
+    private void startRound() {
+        Destroy(this.round);
+        this.round = this.gameObject.AddComponent<Round>();
+    }
 }

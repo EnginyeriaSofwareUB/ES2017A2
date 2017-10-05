@@ -8,6 +8,7 @@ public class Round : MonoBehaviour {
     private List<GameObject> player1Characters;
     private List<GameObject> player2Characters;
     private List<GameObject> characters;
+    private bool enabled = true;
 
     public List<GameObject> Characters {
         get {
@@ -19,28 +20,38 @@ public class Round : MonoBehaviour {
         }
     }
 
+    public bool Enabled {
+        get {
+            return this.enabled;
+        }
+
+        set {
+            this.enabled = value;
+        }
+    }
+
     void Start() {
-        this.player1Characters = this.GetComponent<Game>().Player1.GetComponent<Player>().Characters;
-        this.player2Characters = this.GetComponent<Game>().Player2.GetComponent<Player>().Characters;
+        this.player1Characters = this.GetComponent<Game>().Player1.GetComponent<Player>().getAliveCharacters();
+        this.player2Characters = this.GetComponent<Game>().Player2.GetComponent<Player>().getAliveCharacters();
         this.Characters = this.getCharacterList();
 
-        this.startRound();
+        this.startTurn();
     }
 
     void FixedUpdate() {
-        if (!this.turn.Enabled) {
-            Destroy(this.turn);
+        if (!this.turn.Enabled && this.Enabled) {
             this.startTurn();
         }
     }
 
-    public void startRound() {
-        Debug.Log("Round Start");
-        this.startTurn();
-    }
-
     private void startTurn() {
-        this.turn = this.gameObject.AddComponent<Turn>();
+        Debug.Log("Round Start");
+        Destroy(this.turn);
+        if (this.characters.Count > 0) {
+            this.turn = this.gameObject.AddComponent<Turn>();
+        }else {
+            this.Enabled = false;
+        }
     }
 
     private List<GameObject> getCharacterList() {
@@ -61,7 +72,7 @@ public class Round : MonoBehaviour {
         }
     }
 
-    public GameObject getCharacter() {
+    public GameObject getNextCharacter() {
         GameObject character = this.characters[0];
         this.characters.RemoveAt(0);
         return character;
