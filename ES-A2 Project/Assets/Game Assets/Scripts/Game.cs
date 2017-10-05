@@ -29,8 +29,7 @@ public class Game : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        this.round = new Round(this.Player1.GetComponent<Player>().Characters, this.Player2.GetComponent<Player>().Characters);
-        this.round.startRound();
+        this.round = this.gameObject.AddComponent<Round>();
 	}
 
 }

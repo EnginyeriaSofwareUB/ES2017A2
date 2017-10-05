@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour {
     private Character character;
     private bool isGrounded = false;
     private Rigidbody2D rigidbody;
-    private bool enabled = false;
+    [SerializeField] private bool enabled = false;
 
     public bool Enabled {
         get {
@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour {
         }
 
         set {
+            Debug.Log(value);
             enabled = value;
         }
     }

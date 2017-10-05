@@ -9,24 +9,38 @@ public class Round : MonoBehaviour {
     private List<GameObject> player2Characters;
     private List<GameObject> characters;
 
+    public List<GameObject> Characters {
+        get {
+            return characters;
+        }
+
+        set {
+            characters = value;
+        }
+    }
+
     void Start() {
         this.player1Characters = this.GetComponent<Game>().Player1.GetComponent<Player>().Characters;
         this.player2Characters = this.GetComponent<Game>().Player2.GetComponent<Player>().Characters;
-        this.characters = this.getCharacterList();
+        this.Characters = this.getCharacterList();
 
         this.startRound();
     }
 
-    public void startRound() {
-        Debug.Log("Round Start");
-        foreach (GameObject character in this.characters){
-            this.startTurn(character);
+    void FixedUpdate() {
+        if (!this.turn.Enabled) {
+            Destroy(this.turn);
+            this.startTurn();
         }
     }
 
-    private void startTurn(GameObject character) {
-        this.turn = new Turn(character);
-        this.turn.startTurn();
+    public void startRound() {
+        Debug.Log("Round Start");
+        this.startTurn();
+    }
+
+    private void startTurn() {
+        this.turn = this.gameObject.AddComponent<Turn>();
     }
 
     private List<GameObject> getCharacterList() {
@@ -45,6 +59,12 @@ public class Round : MonoBehaviour {
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+    }
+
+    public GameObject getCharacter() {
+        GameObject character = this.characters[0];
+        this.characters.RemoveAt(0);
+        return character;
     }
 
 }
