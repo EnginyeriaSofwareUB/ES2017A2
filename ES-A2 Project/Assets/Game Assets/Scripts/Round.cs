@@ -7,16 +7,16 @@ public class Round : MonoBehaviour {
     private Turn turn;
     private List<GameObject> player1Characters;
     private List<GameObject> player2Characters;
-    private List<GameObject> characters;
+    private Queue<GameObject> charactersQueue;
     private bool enabled = true;
 
-    public List<GameObject> Characters {
+    public Queue<GameObject> CharactersQueue {
         get {
-            return characters;
+            return charactersQueue;
         }
 
         set {
-            characters = value;
+            charactersQueue = value;
         }
     }
 
@@ -33,7 +33,7 @@ public class Round : MonoBehaviour {
     void Start() {
         this.player1Characters = this.GetComponent<Game>().Player1.GetComponent<Player>().getAliveCharacters();
         this.player2Characters = this.GetComponent<Game>().Player2.GetComponent<Player>().getAliveCharacters();
-        this.Characters = this.getCharacterList();
+        this.CharactersQueue = this.getCharacterQueue ();
 
         this.startTurn();
     }
@@ -47,19 +47,27 @@ public class Round : MonoBehaviour {
     private void startTurn() {
         Debug.Log("Round Start");
         Destroy(this.turn);
-        if (this.characters.Count > 0) {
+        if (this.charactersQueue.Count > 0) {
             this.turn = this.gameObject.AddComponent<Turn>();
         }else {
             this.Enabled = false;
         }
     }
 
-    private List<GameObject> getCharacterList() {
+    private Queue<GameObject> getCharacterQueue() {
         List<GameObject> list = new List<GameObject>();
         list.AddRange(this.player1Characters);
         list.AddRange(this.player2Characters);
         this.shuffle(list);
-        return list;
+        return this.addListToQueue(list);
+    }
+
+    private Queue<GameObject> addListToQueue(List<GameObject> list) {
+        Queue<GameObject> queue = new Queue<GameObject>();
+        foreach(GameObject obj in list) {
+            queue.Enqueue(obj);
+        }
+        return queue;
     }
 
     private void shuffle(List<GameObject> list) {
@@ -73,9 +81,7 @@ public class Round : MonoBehaviour {
     }
 
     public GameObject getNextCharacter() {
-        GameObject character = this.characters[0];
-        this.characters.RemoveAt(0);
+        GameObject character = this.charactersQueue.Dequeue();
         return character;
     }
-
 }
