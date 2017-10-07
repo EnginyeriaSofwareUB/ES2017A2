@@ -72,21 +72,34 @@ public abstract class Character : MonoBehaviour {
         }
     }
 
+    /**
+     * Metodo que deshabilita el personaje (p.e. el movimeinto)
+     */
     public void disableCharacter() {
         Movement movement = this.GetComponent<Movement>();
         movement.Enabled = false;
     }
 
+    /**
+     * Metodo que habilita el personaje (p.e. el movimeinto)
+     */
     public void enableCharacter() {
         Movement movement = this.GetComponent<Movement>();
         this.Fire = false;
         movement.Enabled = true;
     }
 
+    /**
+     * Comprueba si el personaje sigue vivo
+     */
     public bool isAlive() {
         return this.health > 0;
     }
 
+    /**
+     * (Por Implementar)
+     * Intanciar el proyectil
+     */
     public void fireProjectile() {
         this.Fire = true;
     }

@@ -33,13 +33,23 @@ public class Game : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (!this.round.Enabled) {
+        if (!this.round.Running) {
+            this.endRound();
             this.startRound();
         }
     }
 
+    /**
+     * Metodo que instancia una Ronda
+     */
     private void startRound() {
-        Destroy(this.round);
         this.round = this.gameObject.AddComponent<Round>();
+    }
+
+    /**
+     * Metodo que destruye la Ronda actual
+     */
+    private void endRound() {
+        Destroy(this.round);
     }
 }

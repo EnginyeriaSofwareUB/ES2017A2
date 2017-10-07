@@ -3,38 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Turn : MonoBehaviour {
-    private GameObject character;
-    private bool enabled = true;
+    private Character character;
+    private bool running = true;
 
-    public bool Enabled {
+    public bool Running {
         get {
-            return enabled;
+            return running;
         }
 
         set {
-            enabled = value;
+            running = value;
         }
     }
 
     void Start() {
-        this.character = this.GetComponent<Round>().getNextCharacter();
+        this.initVariables();
         this.startTurn();
     }
 
+    /**
+     * Metodo inicializador de variables
+     */
+    private void initVariables() {
+        this.character = this.GetComponent<Round>().getNextCharacter();
+    }
+
+    /**
+     * Metodo que inicializa el turno.
+     * Habilita el movimiento de los Personajes y inicializa la Courutina del temporizador (provisional)
+     */
     public void startTurn() {
         Debug.Log("Turn Start");
-        this.character.GetComponent<Character>().enableCharacter();
+        this.character.enableCharacter();
         this.StartCoroutine(this.timer());
     }
 
+    /**
+     * Deshabilita el movimiento del personaje y deshabilita el turno
+     */
     public void endTurn() {
         Debug.Log("Turn End");
-        this.character.GetComponent<Character>().disableCharacter();
-        this.Enabled = false;
+        this.character.disableCharacter();
+        this.Running = false;
     }
 
     IEnumerator timer() {
-        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.GetComponent<Character>().Fire)
+        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.Fire)
             yield return null;
         this.endTurn();
     }

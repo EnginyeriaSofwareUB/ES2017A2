@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Round : MonoBehaviour {
     private Turn turn;
-    private List<GameObject> player1Characters;
-    private List<GameObject> player2Characters;
-    private Queue<GameObject> charactersQueue;
-    private bool enabled = true;
+    private List<Character> player1Characters;
+    private List<Character> player2Characters;
+    private Queue<Character> charactersQueue;
+    private bool running = true;
 
-    public Queue<GameObject> CharactersQueue {
+    public Queue<Character> CharactersQueue {
         get {
             return charactersQueue;
         }
@@ -20,68 +20,91 @@ public class Round : MonoBehaviour {
         }
     }
 
-    public bool Enabled {
+    public bool Running {
         get {
-            return this.enabled;
+            return this.running;
         }
 
         set {
-            this.enabled = value;
+            this.running = value;
         }
     }
 
     void Start() {
-        this.player1Characters = this.GetComponent<Game>().Player1.GetComponent<Player>().getAliveCharacters();
-        this.player2Characters = this.GetComponent<Game>().Player2.GetComponent<Player>().getAliveCharacters();
-        this.CharactersQueue = this.getCharacterQueue ();
+        this.initVariables();
+        Debug.Log("Round Start");
 
         this.startTurn();
     }
 
     void FixedUpdate() {
-        if (!this.turn.Enabled && this.Enabled) {
+        if (!this.turn.Running && this.Running) {
             this.startTurn();
         }
     }
 
+    /**
+     * Metodo inicializador de variables
+     */
+    private void initVariables() {
+        this.player1Characters = this.GetComponent<Game>().Player1.GetComponent<Player>().getAliveCharacters();
+        this.player2Characters = this.GetComponent<Game>().Player2.GetComponent<Player>().getAliveCharacters();
+        this.CharactersQueue = this.getCharacterQueue();
+    }
+
+    /**
+     * Inicializa el turno. En el caso que la cola de caracteres esta vacia se desabilita la Ronda
+     */
     private void startTurn() {
-        Debug.Log("Round Start");
         Destroy(this.turn);
         if (this.charactersQueue.Count > 0) {
             this.turn = this.gameObject.AddComponent<Turn>();
-        }else {
-            this.Enabled = false;
+        } else {
+            Debug.Log("Round End");
+            this.Running = false;
         }
     }
 
-    private Queue<GameObject> getCharacterQueue() {
-        List<GameObject> list = new List<GameObject>();
+    /**
+     * Construye la cola de caracteres randomizada
+     */
+    private Queue<Character> getCharacterQueue() {
+        List<Character> list = new List<Character>();
         list.AddRange(this.player1Characters);
         list.AddRange(this.player2Characters);
         this.shuffle(list);
         return this.addListToQueue(list);
     }
 
-    private Queue<GameObject> addListToQueue(List<GameObject> list) {
-        Queue<GameObject> queue = new Queue<GameObject>();
-        foreach(GameObject obj in list) {
+    /**
+     * Añade una lista de objectos a una cola
+     */
+    private Queue<Character> addListToQueue(List<Character> list) {
+        Queue<Character> queue = new Queue<Character>();
+        foreach(Character obj in list) {
             queue.Enqueue(obj);
         }
         return queue;
     }
 
-    private void shuffle(List<GameObject> list) {
+    /**
+     * Randomiza una lista de objetos
+     */
+    private void shuffle(List<Character> list) {
         int size = list.Count;
         for (int i = 0; i < size; i++) {
-            GameObject temp = list[i];
+            Character temp = list[i];
             int randomIndex = UnityEngine.Random.Range(i, size);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
     }
 
-    public GameObject getNextCharacter() {
-        GameObject character = this.charactersQueue.Dequeue();
+    /**
+     * Devuelve el proximo caracter de la cola
+     */
+    public Character getNextCharacter() {
+        Character character = this.charactersQueue.Dequeue();
         return character;
     }
 }

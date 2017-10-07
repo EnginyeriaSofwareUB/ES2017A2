@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    [SerializeField] private List<GameObject> characters;
+    [SerializeField] private int coins;
+    private List<Character> characters;
 
-    public List<GameObject> Characters {
+    public List<Character> Characters {
         get {
             return this.characters;
         }
@@ -17,19 +19,27 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	
+        this.initVariables();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
-    public List<GameObject> getAliveCharacters() {
-        List<GameObject> aliveCharacters = new List<GameObject>();
-        foreach(GameObject characterGO in this.Characters) {
-            if (characterGO.GetComponent<Character>().isAlive()) {
-                aliveCharacters.Add(characterGO);
+    /**
+     * Metodo inicializador de variables
+     */
+    private void initVariables() {
+        this.characters = new List<Character>();
+        this.characters.AddRange(this.GetComponentsInChildren<Character>());
+    }
+
+    public List<Character> getAliveCharacters() {
+        List<Character> aliveCharacters = new List<Character>();
+        foreach(Character character in this.Characters) {
+            if (character.isAlive()) {
+                aliveCharacters.Add(character);
             }
         }
         return aliveCharacters;
