@@ -78,16 +78,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game Assets\Scripts\Game.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Character.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Mole.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Movement.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Round.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Assets\Animations\ReadMe.txt" />
     <None Include="Assets\Game Assets\Other\ReadMe.txt" />
     <None Include="Assets\Game Assets\Prefabs\ReadMe.txt" />
     <None Include="Assets\Game Assets\Scenes\ReadMe.txt" />
-    <None Include="Assets\Game Assets\Scripts\ReadMe.txt" />
     <None Include="Assets\Game Assets\Sprites\ReadMe.txt" />
     <None Include="Assets\Game Assets\UI\ReadMe.txt" />
   </ItemGroup>
