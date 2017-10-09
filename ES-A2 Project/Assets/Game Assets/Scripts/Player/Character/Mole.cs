@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Mole : Character {
 
-    override
-	protected void Start () {
-		
-	}
+	protected override void Start () {
+        base.Start();
+    }
 
-    override
-    protected void Update () {
-		
+    protected override void Update () {
+        base.Update();
 	}
 }

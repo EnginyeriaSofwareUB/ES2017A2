@@ -7,6 +7,17 @@ public class Movement : MonoBehaviour {
     private Character character;
     private bool isGrounded = false;
     private Rigidbody2D rigidbody;
+    [SerializeField] private bool enabled = false;
+
+    public bool Enabled {
+        get {
+            return enabled;
+        }
+
+        set {
+            enabled = value;
+        }
+    }
 
     // Use this for initialization
     void Start () {
@@ -16,7 +27,24 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
         this.movementController();
-        
+    }
+
+    protected void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "Terrain") {
+            this.isGrounded = true;
+        }
+    }
+
+    protected void OnCollisionStay2D(Collision2D other) {
+        if (other.gameObject.tag == "Terrain") {
+            this.isGrounded = true;
+        }
+    }
+
+    protected void OnCollisionExit2D(Collision2D other) {
+        if (other.gameObject.tag == "Terrain") {
+            this.isGrounded = false;
+        }
     }
 
     /**
@@ -31,8 +59,10 @@ public class Movement : MonoBehaviour {
      * Controlador de movimientos en todas las direcciones.
      */
     private void movementController() {
-        this.horizontalMovement();
-        this.verticalMovement();
+        if (this.enabled) {
+            this.horizontalMovement();
+            this.verticalMovement();
+        }
     }
 
     /**
@@ -54,23 +84,5 @@ public class Movement : MonoBehaviour {
     private void horizontalMovement() {
         float xSpeed = Input.GetAxis("Horizontal") * this.character.XSpeed;
         this.rigidbody.velocity = new Vector2(xSpeed, this.rigidbody.velocity.y);
-    }
-
-    protected void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Terrain") {
-            this.isGrounded = true;
-        }
-    }
-
-    protected void OnCollisionStay2D(Collision2D other) {
-        if (other.gameObject.tag == "Terrain") {
-            this.isGrounded = true;
-        }
-    }
-
-    protected void OnCollisionExit2D(Collision2D other) {
-        if (other.gameObject.tag == "Terrain") {
-            this.isGrounded = false;
-        }
     }
 }
