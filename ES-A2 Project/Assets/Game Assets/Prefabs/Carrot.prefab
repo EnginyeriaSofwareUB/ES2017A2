@@ -22,13 +22,14 @@ GameObject:
   - component: {fileID: 212439806096283346}
   - component: {fileID: 50690841202186020}
   - component: {fileID: 114817226740910794}
+  - component: {fileID: 61982164601196348}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4670442025727210
 Transform:
   m_ObjectHideFlags: 1
@@ -62,6 +63,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61982164601196348
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128482669693896}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.27, y: 0.15}
+    newSize: {x: 0.27, y: 0.15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.27, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!114 &114817226740910794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,11 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a740ff6d33e9342964c191c53f56af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 0.5
-  speed: 200
+  weight: 1
+  speed: 10
   damage: 1
   detonationArea: 1
   ammo: 1
+  colliderDestroy:
+  - Player
+  - Terrain
 --- !u!212 &212439806096283346
 SpriteRenderer:
   m_ObjectHideFlags: 1

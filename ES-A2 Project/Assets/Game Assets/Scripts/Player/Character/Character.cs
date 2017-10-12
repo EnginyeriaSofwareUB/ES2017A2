@@ -106,8 +106,7 @@ public abstract class Character : MonoBehaviour {
     /// <param name="vec1"></param>
     /// <param name="vec2"></param>
     /// <returns></returns>
-    private float AngleBetweenVectors(Vector2 vec1, Vector2 vec2)
-    {
+    private float AngleBetweenVectors(Vector2 vec1, Vector2 vec2) {
         Vector2 dif = vec2 - vec1;
         float angle = Vector2.Angle(Vector2.right, dif);
         float sign = (vec2.y < vec1.y) ? -1.0f : 1.0f;
@@ -154,5 +153,6 @@ public abstract class Character : MonoBehaviour {
         this.Fire = true;
         GameObject projectil = Instantiate(prefabCarrot, arrow.transform.position, arrow.transform.rotation);
         projectil.GetComponent<Projectile>().Angles = this.angles;
+        projectil.SetActive(true);
     }
 }

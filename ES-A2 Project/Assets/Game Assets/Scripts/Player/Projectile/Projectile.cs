@@ -10,6 +10,7 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField] protected float damage;
     [SerializeField] protected int detonationArea;
     [SerializeField] protected int ammo;
+    [SerializeField] protected List<string> colliderDestroy;
 
     Rigidbody2D rb2;
     private float angles;
@@ -105,7 +106,7 @@ public abstract class Projectile : MonoBehaviour
         con una barra (la flecha misma) como referencia para saber si sera con mucha o poca fuerza */
         rb2 = GetComponent<Rigidbody2D>();
         rb2.mass = weight; // Aplicamos el peso a la masa del RigidBody2D para que despues distingamos entre una manzana o sandria por ej.
-        rb2.AddForce(transform.right * speed);
+        rb2.AddForce(transform.right * speed, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
@@ -124,7 +125,7 @@ public abstract class Projectile : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "DestroyProjectil")
+        if ( this.colliderDestroy.Contains(collision.gameObject.tag))
         {
             Destroy(gameObject);
         }

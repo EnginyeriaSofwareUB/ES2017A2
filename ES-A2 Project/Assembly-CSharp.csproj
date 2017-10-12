@@ -58,6 +58,8 @@
      <Compile Include="Assets\Game Assets\Scripts\Player\Character\Mole.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Player\Character\Movement.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Carrot.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Projectile.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Round.cs" />
      <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
