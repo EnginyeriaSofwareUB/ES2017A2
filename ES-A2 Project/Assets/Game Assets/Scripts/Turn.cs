@@ -5,6 +5,8 @@ using UnityEngine;
 public class Turn : MonoBehaviour {
     private Character character;
     private bool running = true;
+    private TimerGame timerGame;
+    private int seconds;
 
     public bool Running {
         get {
@@ -26,6 +28,8 @@ public class Turn : MonoBehaviour {
      */
     private void initVariables() {
         this.character = this.GetComponent<Round>().getNextCharacter();
+        this.seconds = 3;
+        this.timerGame = this.gameObject.AddComponent<TimerGame>();
     }
 
     /**
@@ -36,6 +40,8 @@ public class Turn : MonoBehaviour {
         Debug.Log("Turn Start");
         this.character.enableCharacter();
         this.StartCoroutine(this.timer());
+        //Debug.Log("milis");
+        this.timerGame.init(seconds);
     }
 
     /**
@@ -45,10 +51,11 @@ public class Turn : MonoBehaviour {
         Debug.Log("Turn End");
         this.character.disableCharacter();
         this.Running = false;
+        this.timerGame.stop();
     }
 
     IEnumerator timer() {
-        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.Fire)
+        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.Fire && !this.timerGame.isTimeOver())
             yield return null;
         this.endTurn();
     }
