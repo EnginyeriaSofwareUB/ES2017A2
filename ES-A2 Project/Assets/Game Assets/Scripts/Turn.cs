@@ -39,9 +39,8 @@ public class Turn : MonoBehaviour {
     public void startTurn() {
         Debug.Log("Turn Start");
         this.character.enableCharacter();
-        this.StartCoroutine(this.timer());
-        //Debug.Log("milis");
         this.timerGame.init(seconds);
+        this.StartCoroutine(this.timer());
     }
 
     /**
@@ -50,12 +49,13 @@ public class Turn : MonoBehaviour {
     public void endTurn() {
         Debug.Log("Turn End");
         this.character.disableCharacter();
-        this.Running = false;
         this.timerGame.stop();
+        Destroy(this.timerGame);
+        this.Running = false;
     }
 
     IEnumerator timer() {
-        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.Fire && !this.timerGame.isTimeOver())
+        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.Fire && !this.timerGame.TimeOver)
             yield return null;
         this.endTurn();
     }

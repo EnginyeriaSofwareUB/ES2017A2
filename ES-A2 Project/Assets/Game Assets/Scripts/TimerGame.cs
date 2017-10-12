@@ -13,6 +13,16 @@ public class TimerGame : MonoBehaviour
     [SerializeField] private double currentTime;
     private bool running;
 
+    public bool TimeOver {
+        get {
+            return this.timeOver;
+        }
+
+        set {
+            this.timeOver = value;
+        }
+    }
+
     /**
      * Metodo que inicializa el timer
      */
@@ -20,9 +30,9 @@ public class TimerGame : MonoBehaviour
     {
         this.limit = seconds;
         this.currentTime = 0;
-        this.timeOver = false;
+        this.TimeOver = false;
         this.running = true;
-        Debug.Log("2 constructor limit = " + this.limit + " curr = " + this.currentTime);
+        //Debug.Log("2 constructor limit = " + this.limit + " curr = " + this.currentTime);
     }
 
     private void FixedUpdate()
@@ -30,8 +40,8 @@ public class TimerGame : MonoBehaviour
         if (running)
         {
             currentTime += Time.deltaTime;
-            Debug.Log("currentTime: " + currentTime + ",  limit = " + this.limit);
-            this.timeOver = this.currentTime >= this.limit;
+            Debug.Log("currentTime: " + (int) currentTime + ",  limit = " + this.limit);
+            this.TimeOver = this.currentTime >= this.limit;
         }
     }
 
@@ -43,26 +53,17 @@ public class TimerGame : MonoBehaviour
     }
 
     /**
-     * Metodo que resetea el timer con los ms iniciales
+     * Metodo que resetea el timer con los s iniciales
      */
     public void reset() {
         init(this.limit);
     }
 
     /**
-     * Metodo que resetea el timer con los ms dados por parametros
+     * Metodo que resetea el timer con los s dados por parametros
      */
     public void reset(int seconds) {
-        //miliseconds = milis;
-        timeOver = false;
+        TimeOver = false;
         init(seconds);
     }
-
-    /**
-     * Metodo para comprobar si el timer ha acabado
-     */
-    public bool isTimeOver() {
-        return timeOver;
-    }
-
 }
