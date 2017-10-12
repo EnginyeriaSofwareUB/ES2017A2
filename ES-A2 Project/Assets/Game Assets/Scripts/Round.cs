@@ -105,6 +105,7 @@ public class Round : MonoBehaviour {
      */
     public Character getNextCharacter() {
         Character character = this.charactersQueue.Dequeue();
+        character.GetComponentInParent<Player>().SelectedCharacter = character;
         return character;
     }
 }
