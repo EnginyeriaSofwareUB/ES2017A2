@@ -64,6 +64,7 @@
      <Compile Include="Assets\Game Assets\Scripts\Round.cs" />
      <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
+     <Compile Include="Assets\Game Assets\UI\Scripts\Buttons.cs" />
      <None Include="Assets\Game Assets\Sprites\ReadMe.txt" />
      <None Include="Assets\Game Assets\Scenes\ReadMe.txt" />
      <None Include="Assets\Game Assets\UI\ReadMe.txt" />
