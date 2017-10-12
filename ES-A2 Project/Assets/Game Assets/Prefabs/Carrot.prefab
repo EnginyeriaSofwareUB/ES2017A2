@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a740ff6d33e9342964c191c53f56af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
-  speed: 10
+  weight: 2
+  speed: 20
   damage: 1
   detonationArea: 1
   ammo: 1

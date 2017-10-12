@@ -12,7 +12,7 @@ public abstract class Character : MonoBehaviour {
 
 	[SerializeField] private GameObject prefabCarrot;
 	[SerializeField] private GameObject arrow;
-	[SerializeField] private GameObject barrel;
+	[SerializeField] private GameObject firePoint;
 
 	public int Health {
 		get {
@@ -75,24 +75,6 @@ public abstract class Character : MonoBehaviour {
 		this.Shoot();
 	}
 
-	/// <summary>
-	/// Funcion encargada de rotar la flecha segun vaya el cursor y disparar siempre y cuando tenga el character tenga la flecha
-	/// </summary>
-	private void Shoot() {
-		// Rotacion de la flecha       
-		float angle = Pointer.AngleBetweenVectors(this.arrow.transform.position, Pointer.Position());
-		this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
-		//TODO ver que deja disparar mas de una vez por turno. Limitarlo.
-		if (this.arrow.activeInHierarchy)
-		{
-			if (Input.GetButtonDown("Fire1"))
-			{
-				this.fireProjectile(angle);
-			}
-		}
-	}
-
 	/**
       * Metodo que deshabilita el personaje (p.e. el movimeinto)
       */
@@ -112,7 +94,6 @@ public abstract class Character : MonoBehaviour {
 		this.Fire = false;
 		movement.Enabled = true;
 		this.arrow.SetActive(true);
-
 	}
 
 	/**
@@ -127,8 +108,26 @@ public abstract class Character : MonoBehaviour {
 	/// </summary>
 	public void fireProjectile(float angle) {
 		this.Fire = true;
-		GameObject projectil = Instantiate(this.prefabCarrot, this.barrel.transform.position, this.arrow.transform.rotation);
+		GameObject projectil = Instantiate(this.prefabCarrot, this.firePoint.transform.position, this.arrow.transform.rotation);
 		projectil.GetComponent<Projectile>().Angle = angle;
 		projectil.SetActive(true);
+	}
+
+	/// <summary>
+	/// Funcion encargada de rotar la flecha segun vaya el cursor y disparar siempre y cuando tenga el character tenga la flecha
+	/// </summary>
+	private void Shoot() {
+		// Rotacion de la flecha       
+		float angle = Pointer.AngleBetweenVectors(this.arrow.transform.position, Pointer.Position());
+		this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+		//TODO ver que deja disparar mas de una vez por turno. Limitarlo.
+		if (this.arrow.activeInHierarchy)
+		{
+			if (Input.GetButtonDown("Fire1"))
+			{
+				this.fireProjectile(angle);
+			}
+		}
 	}
 }

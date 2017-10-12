@@ -47,29 +47,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1761688015845070
+--- !u!1 &1840365489939102
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4253766218900618}
+  - component: {fileID: 4300747175076532}
   m_Layer: 0
-  m_Name: Barrel
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4253766218900618
+--- !u!4 &4300747175076532
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1761688015845070}
+  m_GameObject: {fileID: 1840365489939102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.486, y: 0.172, z: 0}
+  m_LocalPosition: {x: 0.51, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4432830729198754}
@@ -86,7 +86,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458215679845120}
-  - {fileID: 4253766218900618}
+  - {fileID: 4300747175076532}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076828595683610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 0.57, z: 0}
+  m_LocalPosition: {x: -0.18, y: 0.9, z: 0}
   m_LocalScale: {x: 0.13729, y: 0.18611999, z: 1}
   m_Children: []
   m_Father: {fileID: 4432830729198754}
@@ -169,7 +169,7 @@ MonoBehaviour:
   prefabCarrot: {fileID: 1128482669693896, guid: 50c1b57df510cfb4f9a14726c2f5703b,
     type: 2}
   arrow: {fileID: 1076828595683610}
-  barrel: {fileID: 1761688015845070}
+  firePoint: {fileID: 1840365489939102}
 --- !u!212 &212031620339042320
 SpriteRenderer:
   m_ObjectHideFlags: 1

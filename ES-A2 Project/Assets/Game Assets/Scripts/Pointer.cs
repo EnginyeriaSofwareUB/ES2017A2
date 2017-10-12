@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Pointer : MonoBehaviour {
 
+	/// <summary>
+	/// Funcion encargada de dar la posicion del mouse
+	/// </summary>
 	public static Vector2 Position() {
 		return Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	}
