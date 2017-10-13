@@ -87,14 +87,20 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Mole.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Movement.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Carrot.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Projectile.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Round.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Game Assets\Scripts\Tangible\AmmoBox.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Tangible\HealthBox.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Tangible\ObjectItem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Tangible\Stone.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Tangible\Tangible.cs" />
+=======
+>>>>>>> develop
     <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
+    <Compile Include="Assets\Game Assets\UI\Scripts\Buttons.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Assets\Animations\ReadMe.txt" />
