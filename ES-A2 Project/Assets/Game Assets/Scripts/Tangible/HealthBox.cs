@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class HealthBox : Tangible {
 	[SerializeField] private int health;
-    //[SerializeField] private Projectile projectile;
-    public HealthBox() : base() {
 
+
+    protected override void Start()
+    {
+        base.Start();
     }
 
-	protected void Start () {
-
-	}
-
-    protected void Update () {
-
-	}
+    // Update is called once per frame
+    protected override void Update()
+    {
+        base.Update();
+    }
 }

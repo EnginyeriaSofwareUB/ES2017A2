@@ -5,15 +5,12 @@ using UnityEngine;
 public class Stone : Tangible {
     // Use this for initialization
 
-    public Stone() : base() {
-
+    protected override void Start () {
+        base.Start();
     }
 
-    protected void Start () {
-	}
-
     // Update is called once per frame
-    protected void Update () {
-		
+    protected override void Update () {
+        base.Update();
 	}
 }

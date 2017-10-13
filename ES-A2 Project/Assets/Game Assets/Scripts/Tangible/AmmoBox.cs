@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class AmmoBox : Tangible {
 	[SerializeField] private int ammo;
-    //[SerializeField] private Projectile projectile;
 
-    public AmmoBox() : base() {
-
+    protected override void Start()
+    {
+        base.Start();
     }
-    protected void Start () {
 
-	}
-
-    protected void Update () {
-		
-	}
+    // Update is called once per frame
+    protected override void Update()
+    {
+        base.Update();
+    }
 }
