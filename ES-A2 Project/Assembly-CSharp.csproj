@@ -62,6 +62,11 @@
      <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Projectile.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Pointer.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Round.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Tangible\AmmoBox.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Tangible\HealthBox.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Tangible\ObjectItem.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Tangible\Stone.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Tangible\Tangible.cs" />
      <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
      <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
