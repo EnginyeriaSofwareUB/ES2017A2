@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -89,18 +87,18 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Carrot.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Projectile.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Pointer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Round.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Game Assets\Scripts\Tangible\AmmoBox.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Tangible\HealthBox.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Tangible\ObjectItem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Tangible\Stone.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Tangible\Tangible.cs" />
-=======
->>>>>>> develop
     <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
-    <Compile Include="Assets\Game Assets\UI\Scripts\Buttons.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\AvatarSelect.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\CharacterMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Assets\Animations\ReadMe.txt" />
@@ -108,7 +106,7 @@
     <None Include="Assets\Game Assets\Prefabs\ReadMe.txt" />
     <None Include="Assets\Game Assets\Scenes\ReadMe.txt" />
     <None Include="Assets\Game Assets\Sprites\ReadMe.txt" />
-    <None Include="Assets\Game Assets\UI\ReadMe.txt" />
+    <None Include="Assets\Game Assets\UI\Pantalla Principal\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
