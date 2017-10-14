@@ -27,6 +27,18 @@ public class Cloud : Intangible {
 		transform.position = new Vector3 ((float) nextX, (float) nextY, (float) nextZ);
 		currentPos = currentPos + 1;
 
+		if (start.x < end.x) {
+			if (transform.position.x >= end.x) {
+				transform.position = start;
+				currentPos = 0;
+			}
+		} else {
+			if (transform.position.x <= end.x) {
+				transform.position = start;
+				currentPos = 0;
+			}
+		}
+
 	}
 
 	protected void OnCollisionEnter2D(Collision2D other) {
