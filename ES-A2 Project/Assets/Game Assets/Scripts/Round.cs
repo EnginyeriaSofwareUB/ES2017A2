@@ -108,4 +108,13 @@ public class Round : MonoBehaviour {
         character.GetComponentInParent<Player>().SelectedCharacter = character;
         return character;
     }
+
+	public double getTimeLeft(){
+		try {
+			return turn.getTimeLeft ();
+		} catch {
+			return 0;
+		}
+	}
+
 }

@@ -66,4 +66,8 @@ public class TimerGame : MonoBehaviour
         TimeOver = false;
         init(seconds);
     }
+
+	public double getTimeLeft(){
+		return this.currentTime;
+	}
 }

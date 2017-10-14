@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Game : MonoBehaviour {
     [SerializeField] private GameObject player1;
     [SerializeField] private GameObject player2;
+	[SerializeField] private Text countDownText;
     private Round round;
+	private double count = 0;
+
+
 
     public GameObject Player1 {
         get {
@@ -30,15 +35,18 @@ public class Game : MonoBehaviour {
     // Use this for initialization
     void Start () {
         this.startRound();
+		this.countDownText.text = "Count: ";
     }
 
     void FixedUpdate() {
-        if (!this.round.Running) {
-            this.endRound();
-            this.startRound();
-        }
-    }
+		if (!this.round.Running) {
+			this.endRound ();
+			this.startRound ();
+		}
 
+		this.countDownText.text = ((int) round.getTimeLeft ()).ToString ();
+    }
+		
     /**
      * Metodo que instancia una Ronda
      */
@@ -52,4 +60,9 @@ public class Game : MonoBehaviour {
     private void endRound() {
         Destroy(this.round);
     }
+
+	private void update(){
+		this.countDownText.text = "Count: AA";
+	}
+
 }

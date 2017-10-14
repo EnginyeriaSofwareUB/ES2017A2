@@ -59,4 +59,10 @@ public class Turn : MonoBehaviour {
             yield return null;
         this.endTurn();
     }
+
+	public double getTimeLeft(){
+		return (this.seconds+1 - timerGame.getTimeLeft ());
+	}
+
+
 }
