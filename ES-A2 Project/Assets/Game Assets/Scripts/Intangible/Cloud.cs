@@ -18,33 +18,14 @@ public class Cloud : Intangible {
 	void Update () {
 		var start = cloudStart.transform.position;
 		var end = cloudEnd.transform.position;
-		//transform.position = end;
 
-		var vect = end - start;
-		double nextX = start.x + vect.x*0.005*speed*currentPos;
-		double nextY = start.y + vect.y*0.005*speed*currentPos;
-		double nextZ = start.z + vect.z*0.005*speed*currentPos;
-		transform.position = new Vector3 ((float) nextX, (float) nextY, (float) nextZ);
-		currentPos = currentPos + 1;
-
-		if (start.x < end.x) {
-			if (transform.position.x >= end.x) {
-				transform.position = start;
-				currentPos = 0;
-			}
-		} else {
-			if (transform.position.x <= end.x) {
-				transform.position = start;
-				currentPos = 0;
-			}
-		}
-
+		transform.position = Vector3.Lerp (start, end, currentPos);
+		currentPos = currentPos + 0.001f*speed;
 	}
 
-	protected void OnCollisionEnter2D(Collision2D other) {
-		transform.position = new Vector3(0.0f,0.0f,0.0f);
+	protected void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "CloudEnd") {
-			transform.position = new Vector3(0.0f,0.0f,0.0f);
+			this.currentPos = 0;
 		}
 	}
 }
