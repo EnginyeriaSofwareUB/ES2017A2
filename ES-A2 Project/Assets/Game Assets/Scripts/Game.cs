@@ -44,7 +44,7 @@ public class Game : MonoBehaviour {
 			this.startRound ();
 		}
 
-		this.countDownText.text = ((int) round.getTimeLeft ()).ToString ();
+		this.countDownText.text = "Count: " + ((int) round.getTimeLeft ()).ToString ();
     }
 		
     /**
