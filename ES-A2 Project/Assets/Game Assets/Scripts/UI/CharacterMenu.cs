@@ -41,7 +41,7 @@ public class CharacterMenu : MonoBehaviour {
                 Debug.Log(select);
                 if (count % 2 == 0)
                 {
-                    GameObject t = GameObject.Find("/Circles" + numCharacters + "C/circle " + "(" + orden + ")");
+                    GameObject t = GameObject.Find("/canvas/Circles" + numCharacters + "C/circle " + "(" + orden + ")");
                     //Como solo hay un caracater no se mira que tipo ha seleccionado
                     t.GetComponent<SpriteRenderer>().sprite = monkey;
                     P1Characters.Add(new Mole());
@@ -52,7 +52,7 @@ public class CharacterMenu : MonoBehaviour {
                 } else if (count % 2 != 0)
                 {
 
-                    GameObject t = GameObject.Find("/Circles" + numCharacters + "C/circle " + "(" +(orden+numCharacters-1)+ ")");
+                    GameObject t = GameObject.Find("/canvas/Circles" + numCharacters + "C/circle " + "(" +(orden+numCharacters-1)+ ")");
                     //Como solo hay un caracater no se mira que tipo ha seleccionado
                     t.GetComponent<SpriteRenderer>().sprite = monkey;
                     P2Characters.Add(new Mole());
@@ -69,7 +69,7 @@ public class CharacterMenu : MonoBehaviour {
             {
                 if (count % 2 != 0)
                 {
-                    GameObject t = GameObject.Find("/Circles" + numCharacters + "C/circle " + "(" + orden + ")");
+                    GameObject t = GameObject.Find("/canvas/Circles" + numCharacters + "C/circle " + "(" + orden + ")");
                     //Como solo hay un caracater no se mira que tipo ha seleccionado
                     t.GetComponent<SpriteRenderer>().sprite = monkey;
                     P1Characters.Add(new Mole());
@@ -81,7 +81,7 @@ public class CharacterMenu : MonoBehaviour {
                 }
                 else if (count % 2 == 0)
                 {
-                    GameObject t = GameObject.Find("/Circles" + numCharacters + "C/circle " + "(" + (orden + numCharacters) + ")");
+                    GameObject t = GameObject.Find("/canvas/Circles" + numCharacters + "C/circle " + "(" + (orden + numCharacters) + ")");
                     //Como solo hay un caracater no se mira que tipo ha seleccionado
                     t.GetComponent<SpriteRenderer>().sprite = monkey;
                     P2Characters.Add(new Mole());
@@ -96,57 +96,57 @@ public class CharacterMenu : MonoBehaviour {
 
     void drawMenu() {
         if (numCharacters == 1) {
-            GameObject.Find("Circles1C").SetActive(true);
-            GameObject.Find("Circles2C").SetActive(false);
-            GameObject.Find("Circles3C").SetActive(false);
-            GameObject.Find("Circles4C").SetActive(false);
-            GameObject.Find("Circles5C").SetActive(false);
-            GameObject.Find("Circles6C").SetActive(false);
+            GameObject.Find("/canvas/Circles1C").SetActive(true);
+            GameObject.Find("/canvas/Circles2C").SetActive(false);
+            GameObject.Find("/canvas/Circles3C").SetActive(false);
+            GameObject.Find("/canvas/Circles4C").SetActive(false);
+            GameObject.Find("/canvas/Circles5C").SetActive(false);
+            GameObject.Find("/canvas/Circles6C").SetActive(false);
         }
         else if (numCharacters == 2)
         {
-            GameObject.Find("Circles1C").SetActive(false);
-            GameObject.Find("Circles2C").SetActive(true);
-            GameObject.Find("Circles3C").SetActive(false);
-            GameObject.Find("Circles4C").SetActive(false);
-            GameObject.Find("Circles5C").SetActive(false);
-            GameObject.Find("Circles6C").SetActive(false);
+            GameObject.Find("/canvas/Circles1C").SetActive(false);
+            GameObject.Find("/canvas/Circles2C").SetActive(true);
+            GameObject.Find("/canvas/Circles3C").SetActive(false);
+            GameObject.Find("/canvas/Circles4C").SetActive(false);
+            GameObject.Find("/canvas/Circles5C").SetActive(false);
+            GameObject.Find("/canvas/Circles6C").SetActive(false);
         }
         else if (numCharacters == 3)
         {
-            GameObject.Find("Circles1C").SetActive(false);
-            GameObject.Find("Circles2C").SetActive(false);
-            GameObject.Find("Circles3C").SetActive(true);
-            GameObject.Find("Circles4C").SetActive(false);
-            GameObject.Find("Circles5C").SetActive(false);
-            GameObject.Find("Circles6C").SetActive(false);
+            GameObject.Find("/canvas/Circles1C").SetActive(false);
+            GameObject.Find("/canvas/Circles2C").SetActive(false);
+            GameObject.Find("/canvas/Circles3C").SetActive(true);
+            GameObject.Find("/canvas/Circles4C").SetActive(false);
+            GameObject.Find("/canvas/Circles5C").SetActive(false);
+            GameObject.Find("/canvas/Circles6C").SetActive(false);
         }
         else if (numCharacters == 4)
         {
-            GameObject.Find("Circles1C").SetActive(false);
-            GameObject.Find("Circles2C").SetActive(false);
-            GameObject.Find("Circles3C").SetActive(false);
-            GameObject.Find("Circles4C").SetActive(true);
-            GameObject.Find("Circles5C").SetActive(false);
-            GameObject.Find("Circles6C").SetActive(false);
+            GameObject.Find("/canvas/Circles1C").SetActive(false);
+            GameObject.Find("/canvas/Circles2C").SetActive(false);
+            GameObject.Find("/canvas/Circles3C").SetActive(false);
+            GameObject.Find("/canvas/Circles4C").SetActive(true);
+            GameObject.Find("/canvas/Circles5C").SetActive(false);
+            GameObject.Find("/canvas/Circles6C").SetActive(false);
         }
         else if (numCharacters == 5)
         {
-            GameObject.Find("Circles1C").SetActive(false);
-            GameObject.Find("Circles2C").SetActive(false);
-            GameObject.Find("Circles3C").SetActive(false);
-            GameObject.Find("Circles4C").SetActive(false);
-            GameObject.Find("Circles5C").SetActive(true);
-            GameObject.Find("Circles6C").SetActive(false);
+            GameObject.Find("/canvas/Circles1C").SetActive(false);
+            GameObject.Find("/canvas/Circles2C").SetActive(false);
+            GameObject.Find("/canvas/Circles3C").SetActive(false);
+            GameObject.Find("/canvas/Circles4C").SetActive(false);
+            GameObject.Find("/canvas/Circles5C").SetActive(true);
+            GameObject.Find("/canvas/Circles6C").SetActive(false);
         }
         else if (numCharacters == 6)
         {
-            GameObject.Find("Circles1C").SetActive(false);
-            GameObject.Find("Circles2C").SetActive(false);
-            GameObject.Find("Circles3C").SetActive(false);
-            GameObject.Find("Circles4C").SetActive(false);
-            GameObject.Find("Circles5C").SetActive(false);
-            GameObject.Find("Circles6C").SetActive(true);
+            GameObject.Find("/canvas/Circles1C").SetActive(false);
+            GameObject.Find("/canvas/Circles2C").SetActive(false);
+            GameObject.Find("/canvas/Circles3C").SetActive(false);
+            GameObject.Find("/canvas/Circles4C").SetActive(false);
+            GameObject.Find("/canvas/Circles5C").SetActive(false);
+            GameObject.Find("/canvas/Circles6C").SetActive(true);
         }
     }
 }
