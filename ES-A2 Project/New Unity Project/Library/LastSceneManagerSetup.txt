@@ -1,0 +1,5 @@
+sceneSetups:
+- path: C:/Users/William/Documents/ES2017A2/ES-A2 Project/Assets/Game Assets/Scenes/Test
+    Scene.unity
+  isLoaded: 1
+  isActive: 1

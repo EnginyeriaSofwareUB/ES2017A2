@@ -61,7 +61,7 @@ public class Turn : MonoBehaviour {
     }
 
 	public double getTimeLeft(){
-		return (this.seconds+1 - timerGame.getTimeLeft ());
+		return timerGame.getTimeLeft ();
 	}
 
 
