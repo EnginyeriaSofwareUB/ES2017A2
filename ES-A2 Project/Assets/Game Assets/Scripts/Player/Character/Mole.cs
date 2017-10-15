@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Mole : Character {
 
+    public Mole() {
+
+    }
 	protected override void Start () {
         base.Start();
     }

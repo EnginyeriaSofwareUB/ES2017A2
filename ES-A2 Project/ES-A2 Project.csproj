@@ -96,7 +96,13 @@
     <Compile Include="Assets\Game Assets\Scripts\Tangible\Tangible.cs" />
     <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
+=======
+    <Compile Include="Assets\Game Assets\Scripts\UI\AvatarSelect.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\CharacterMenu.cs" />
+>>>>>>> feature/SeleccionPJ
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Assets\Animations\ReadMe.txt" />
