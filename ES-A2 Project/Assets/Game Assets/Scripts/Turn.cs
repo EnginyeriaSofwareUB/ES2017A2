@@ -67,4 +67,22 @@ public class Turn : MonoBehaviour {
             yield return null;
         this.endTurn();
     }
+
+    /**
+     * Retorna el timepo que queda en ese turno
+     */
+    public double getTimeLeft()
+    {
+        double value = timerGame.getTimeLeft();
+        value = value + 1;
+        if (value > this.seconds)
+        {
+            return this.seconds;
+        } else
+        {
+            return value;
+        }
+        
+    }
+
 }

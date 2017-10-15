@@ -119,4 +119,12 @@ public class Round : MonoBehaviour {
         character.GetComponentInParent<Player>().SelectedCharacter = character;
         return character;
     }
+
+    /**
+     * Devuelve el tiempo restante del turno activo
+     */
+     public double getTimeLeft()
+    {
+        return turn.getTimeLeft();
+    }
 }
