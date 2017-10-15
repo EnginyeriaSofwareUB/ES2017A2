@@ -79,11 +79,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Game Assets\Scripts\Game.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Intangible\Cloud.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Intangible\Intangible.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Character.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Mole.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Movement.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Round.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
   </ItemGroup>
   <ItemGroup>

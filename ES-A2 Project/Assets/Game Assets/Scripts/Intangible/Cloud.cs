@@ -19,8 +19,9 @@ public class Cloud : Intangible {
 		var start = cloudStart.transform.position;
 		var end = cloudEnd.transform.position;
 
-		transform.position = Vector3.Lerp (start, end, currentPos);
-		currentPos = currentPos + 0.001f*speed;
+        currentPos = currentPos + 0.0001f * speed;
+        transform.position = Vector3.Lerp (start, end, currentPos);
+		
 	}
 
 	protected void OnTriggerEnter2D(Collider2D other){
