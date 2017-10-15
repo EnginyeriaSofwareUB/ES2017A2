@@ -60,9 +60,4 @@ public class Game : MonoBehaviour {
     private void endRound() {
         Destroy(this.round);
     }
-
-	private void update(){
-		this.countDownText.text = "Count: AA";
-	}
-
 }
