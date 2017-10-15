@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Game : MonoBehaviour {
     [SerializeField] private GameObject player1;
@@ -45,7 +46,7 @@ public class Game : MonoBehaviour {
             this.betweenRounds();
         }
         //Update the countdown
-        this.countDownText.text = "Count: " + ((int)round.getTimeLeft()).ToString();
+        this.countDownText.text = "Count: " + round.getTimeLeft();
     }
 
     /**
