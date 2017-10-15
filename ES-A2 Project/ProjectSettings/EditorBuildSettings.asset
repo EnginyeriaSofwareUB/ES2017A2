@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game Assets/Scenes/Test Scene.unity
     guid: 3f1d4dadac614614d976e04982395977
-  - enabled: 1
-    path: Assets/Game Assets/Scenes/VariablesMenu.unity
+  - enabled: 0
+    path: 
     guid: 9f2959b089ea1b543b94e64fdb2273ca
   - enabled: 0
     path: 
     guid: 112ed87ff0421b4478b0eb9fc6d8a0a6
+  - enabled: 1
+    path: Assets/Game Assets/Scenes/VariablesMenu.unity
+    guid: 060041b9e8803b84681eeeae6cc9387a
+  - enabled: 1
+    path: Assets/Game Assets/Scenes/IndexMenu.unity
+    guid: 40de6c0d17513b7449bb5d798b2ed7c9
