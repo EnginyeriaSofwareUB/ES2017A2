@@ -18,6 +18,15 @@ public class Turn : MonoBehaviour {
         }
     }
 
+    public int Time {
+        get {
+            return seconds;
+        }
+        set {
+            seconds = value;
+        }
+    }
+
     void Start() {
         this.initVariables();
         this.startTurn();
@@ -28,7 +37,6 @@ public class Turn : MonoBehaviour {
      */
     private void initVariables() {
         this.character = this.GetComponent<Round>().getNextCharacter();
-        this.seconds = 3;
         this.timerGame = this.gameObject.AddComponent<TimerGame>();
     }
 
@@ -39,7 +47,7 @@ public class Turn : MonoBehaviour {
     public void startTurn() {
         Debug.Log("Turn Start");
         this.character.enableCharacter();
-        this.timerGame.init(seconds);
+        this.timerGame.init(this.seconds);
         this.StartCoroutine(this.timer());
     }
 
@@ -60,9 +68,21 @@ public class Turn : MonoBehaviour {
         this.endTurn();
     }
 
-	public double getTimeLeft(){
-		return timerGame.getTimeLeft ();
-	}
-
+    /**
+     * Retorna el timepo que queda en ese turno
+     */
+    public double getTimeLeft()
+    {
+        double value = timerGame.getTimeLeft();
+        value = value + 1;
+        if (value > this.seconds)
+        {
+            return this.seconds;
+        } else
+        {
+            return value;
+        }
+        
+    }
 
 }

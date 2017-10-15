@@ -17,7 +17,7 @@ public class TimerGame : MonoBehaviour
         get {
             return this.timeOver;
         }
-
+        
         set {
             this.timeOver = value;
         }
@@ -29,7 +29,7 @@ public class TimerGame : MonoBehaviour
     public void init(int seconds)
     {
         this.limit = seconds;
-        this.currentTime = 0;
+        this.currentTime = seconds;
         this.TimeOver = false;
         this.running = true;
         //Debug.Log("2 constructor limit = " + this.limit + " curr = " + this.currentTime);
@@ -39,9 +39,9 @@ public class TimerGame : MonoBehaviour
     {
         if (running)
         {
-            currentTime += Time.deltaTime;
+            currentTime -= Time.deltaTime;
             Debug.Log("currentTime: " + (int) currentTime + ",  limit = " + this.limit);
-            this.TimeOver = this.currentTime >= this.limit;
+            this.TimeOver = this.currentTime <= 0;
         }
     }
 
@@ -50,6 +50,7 @@ public class TimerGame : MonoBehaviour
      */
     public void stop() {
         this.running = false;
+        //this.TimeOver = false;
     }
 
     /**
@@ -67,7 +68,11 @@ public class TimerGame : MonoBehaviour
         init(seconds);
     }
 
-	public double getTimeLeft(){
-		return this.currentTime;
-	}
+    /**
+     * Retorna el timepo que queda en el timer
+     */
+    public double getTimeLeft()
+    {
+        return this.currentTime;
+    }
 }
