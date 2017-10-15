@@ -5,6 +5,8 @@ using UnityEngine;
 public class Turn : MonoBehaviour {
     private Character character;
     private bool running = true;
+    private TimerGame timerGame;
+    private int seconds;
 
     public bool Running {
         get {
@@ -13,6 +15,15 @@ public class Turn : MonoBehaviour {
 
         set {
             running = value;
+        }
+    }
+
+    public int Time {
+        get {
+            return seconds;
+        }
+        set {
+            seconds = value;
         }
     }
 
@@ -26,6 +37,7 @@ public class Turn : MonoBehaviour {
      */
     private void initVariables() {
         this.character = this.GetComponent<Round>().getNextCharacter();
+        this.timerGame = this.gameObject.AddComponent<TimerGame>();
     }
 
     /**
@@ -35,6 +47,7 @@ public class Turn : MonoBehaviour {
     public void startTurn() {
         Debug.Log("Turn Start");
         this.character.enableCharacter();
+        this.timerGame.init(this.seconds);
         this.StartCoroutine(this.timer());
     }
 
@@ -44,12 +57,32 @@ public class Turn : MonoBehaviour {
     public void endTurn() {
         Debug.Log("Turn End");
         this.character.disableCharacter();
+        this.timerGame.stop();
+        Destroy(this.timerGame);
         this.Running = false;
     }
 
     IEnumerator timer() {
-        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.Fire)
+        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.Fire && !this.timerGame.TimeOver)
             yield return null;
         this.endTurn();
     }
+
+    /**
+     * Retorna el timepo que queda en ese turno
+     */
+    public double getTimeLeft()
+    {
+        double value = timerGame.getTimeLeft();
+        value = value + 1;
+        if (value > this.seconds)
+        {
+            return this.seconds;
+        } else
+        {
+            return value;
+        }
+        
+    }
+
 }

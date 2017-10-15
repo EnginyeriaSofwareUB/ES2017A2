@@ -7,62 +7,72 @@ using UnityEngine;
 
 public class TimerGame : MonoBehaviour
 {
-
     private Timer aTimer;
-    [SerializeField] private int miliseconds;
-    [SerializeField] private bool timeOver;
+    private bool timeOver;
+    private int limit;
+    [SerializeField] private double currentTime;
+    private bool running;
 
-    public TimerGame(int milis)
+    public bool TimeOver {
+        get {
+            return this.timeOver;
+        }
+        
+        set {
+            this.timeOver = value;
+        }
+    }
+
+    /**
+     * Metodo que inicializa el timer
+     */
+    public void init(int seconds)
     {
-        miliseconds = milis;
-        timeOver = false;
-        init();
-
-        //Console.WriteLine("\n_______________ Press the Enter key to exit the application...\n");
-        //Console.WriteLine("_______________ The application started at {0:HH:mm:ss.fff}", DateTime.Now);
-        //while (Console.ReadLine() == null) ;
+        this.limit = seconds;
+        this.currentTime = seconds;
+        this.TimeOver = false;
+        this.running = true;
+        //Debug.Log("2 constructor limit = " + this.limit + " curr = " + this.currentTime);
     }
 
-    private void init()
+    private void FixedUpdate()
     {
-        // Create a timer with a two second interval.
-        aTimer = new Timer(miliseconds);
-        // Hook up the Elapsed event for the timer. 
-        aTimer.Elapsed += OnTimedEvent;
-        aTimer.AutoReset = true;
-        aTimer.Enabled = true;
+        if (running)
+        {
+            currentTime -= Time.deltaTime;
+            Debug.Log("currentTime: " + (int) currentTime + ",  limit = " + this.limit);
+            this.TimeOver = this.currentTime <= 0;
+        }
     }
 
-
-    public void start() {
-        aTimer.Start();
-    }
-
+    /**
+     * Metodo que para el timer
+     */
     public void stop() {
-        aTimer.Stop();
-        //aTimer.Dispose();
+        this.running = false;
+        //this.TimeOver = false;
     }
 
+    /**
+     * Metodo que resetea el timer con los s iniciales
+     */
     public void reset() {
-        timeOver = false;
-        init();
+        init(this.limit);
     }
 
-    public void reset(int milis) {
-        miliseconds = milis;
-        timeOver = false;
-        init();
+    /**
+     * Metodo que resetea el timer con los s dados por parametros
+     */
+    public void reset(int seconds) {
+        TimeOver = false;
+        init(seconds);
     }
 
-    public bool isTimeOver() {
-        return timeOver;
-    }
-
-
-    private void OnTimedEvent(System.Object source, ElapsedEventArgs e)
+    /**
+     * Retorna el timepo que queda en el timer
+     */
+    public double getTimeLeft()
     {
-        //Console.WriteLine("_______________ The Elapsed event was raised at {0:HH:mm:ss.fff}",
-        //                e.SignalTime);
-        timeOver = true;
+        return this.currentTime;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     [SerializeField] private int coins;
     private List<Character> characters;
+    [SerializeField] private Character selectedCharacter;
 
     public List<Character> Characters {
         get {
@@ -14,6 +15,19 @@ public class Player : MonoBehaviour {
 
         set {
             this.characters = value;
+        }
+    }
+
+    public Character SelectedCharacter
+    {
+        get
+        {
+            return selectedCharacter;
+        }
+
+        set
+        {
+            selectedCharacter = value;
         }
     }
 
