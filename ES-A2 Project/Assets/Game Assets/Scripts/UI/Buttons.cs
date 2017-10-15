@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour {
 
 	public void PlayOnClick()
 	{
-		Application.LoadLevel(1);
+		Application.LoadLevel(0);
 	}
 
 	public void OptionsOnClick()
@@ -34,4 +34,9 @@ public class Buttons : MonoBehaviour {
 	{
 		Application.Quit();
 	}
+
+    public void GoBackOnClick()
+    {
+        Application.LoadLevel(2);
+    }
 }
