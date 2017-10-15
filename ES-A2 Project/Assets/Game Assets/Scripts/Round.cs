@@ -9,6 +9,7 @@ public class Round : MonoBehaviour {
     private List<Character> player2Characters;
     private Queue<Character> charactersQueue;
     private bool running = true;
+    private int timeTurn;
 
     public Queue<Character> CharactersQueue {
         get {
@@ -30,10 +31,19 @@ public class Round : MonoBehaviour {
         }
     }
 
+    public int TimeTurn {
+        get {
+            return this.timeTurn;
+        }
+
+        set {
+            this.timeTurn = value;
+        }
+    }
+
     void Start() {
         this.initVariables();
         Debug.Log("Round Start");
-
         this.startTurn();
     }
 
@@ -59,6 +69,7 @@ public class Round : MonoBehaviour {
         Destroy(this.turn);
         if (this.charactersQueue.Count > 0) {
             this.turn = this.gameObject.AddComponent<Turn>();
+            this.turn.Time = this.TimeTurn;
         } else {
             Debug.Log("Round End");
             this.Running = false;
@@ -107,5 +118,13 @@ public class Round : MonoBehaviour {
         Character character = this.charactersQueue.Dequeue();
         character.GetComponentInParent<Player>().SelectedCharacter = character;
         return character;
+    }
+
+    /**
+     * Devuelve el tiempo restante del turno activo
+     */
+     public double getTimeLeft()
+    {
+        return turn.getTimeLeft();
     }
 }

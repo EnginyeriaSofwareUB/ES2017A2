@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class Cloud : Intangible {
 
-	[SerializeField] private float startX = -6f;
-	[SerializeField] private float endX = 6;
-	private float currentPos;
+	private float currentPos = 0;
 	[SerializeField] private float speed = 1f;
-
-	[SerializeField] private float height = 4f;
+	[SerializeField] private GameObject cloudEnd;
+	[SerializeField] private GameObject cloudStart;
 
 	// Use this for initialization
-	void Start () {		
+	void Start () {
 	}
+
 
 	// Update is called once per frame
 	void Update () {
-		currentPos = transform.position.x;
+		var start = cloudStart.transform.position;
+		var end = cloudEnd.transform.position;
 
-		float nextPos = currentPos + 0.01f * speed;
-			
-		if (currentPos >= endX) {
-			transform.position = new Vector3 (startX, height, transform.position.z);
-		} else {
-			transform.position = new Vector3 (nextPos, height, transform.position.z);
+        currentPos = currentPos + 0.0001f * speed;
+        transform.position = Vector3.Lerp (start, end, currentPos);
+		
+	}
+
+	protected void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "CloudEnd") {
+			this.currentPos = 0;
 		}
 	}
 }
