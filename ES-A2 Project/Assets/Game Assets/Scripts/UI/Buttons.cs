@@ -34,4 +34,10 @@ public class Buttons : MonoBehaviour {
 	{
 		Application.Quit();
 	}
+
+    public void AddCharacter()
+    {
+        CharacterMenu.Select = 1;
+        Debug.Log(CharacterMenu.Select);
+    }
 }
