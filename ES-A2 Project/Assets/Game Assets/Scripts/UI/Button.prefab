@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d812dded8552c747b269637b255d81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   background: {fileID: 114338610576021678}
   projectileImage: {fileID: 114561336883382670}
   button: {fileID: 114376127108567174}
