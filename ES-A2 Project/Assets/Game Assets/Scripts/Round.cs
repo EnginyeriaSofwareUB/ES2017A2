@@ -123,8 +123,12 @@ public class Round : MonoBehaviour {
     /**
      * Devuelve el tiempo restante del turno activo
      */
-     public double getTimeLeft()
-    {
-        return turn.getTimeLeft();
-    }
+     public int getTimeLeft() {
+        int seconds = 0;
+        if(this.turn != null) {
+            seconds = (int) this.turn.getTimeLeft();
+        }
+
+        return seconds;
+     }
 }

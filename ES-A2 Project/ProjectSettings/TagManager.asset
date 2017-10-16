@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Terrain
   - DestroyProjectil
+  - CloudEnd
+  - CloudStart
+  - Character
   layers:
   - Default
   - TransparentFX
