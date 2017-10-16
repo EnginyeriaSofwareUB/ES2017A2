@@ -51,8 +51,10 @@ public class user_active
 [System.Serializable]
 public class GameControl
 {
-    public List<Projectile> player1_projectiles;
-    public List<Projectile> player2_projectiles;
+    public List<ProjectileScript> player1_projectiles;
+    public List<int> player1_num_elements;
+    public List<ProjectileScript> player2_projectiles;
+    public List<int> player2_num_elements;
     public int turn; //1 - Player1 2 - Player2
 }
 
@@ -71,13 +73,10 @@ public class GameControl
     [SerializeField] private Stats_popup stats_popup;
 
     //Values of all projectiles
-    private Dictionary<string, float> dict_damage = new Dictionary<string, float>();
-    private Dictionary<string, float> dict_velocity = new Dictionary<string, float>();
-    private Dictionary<string, float> dict_weight = new Dictionary<string, float>();
-    private Dictionary<string, int> dict_damage_radius = new Dictionary<string, int>();
-    private Dictionary<string, int> dict_detonation_time = new Dictionary<string, int>();
-    private Dictionary<string, Text> dict_cost = new Dictionary<string, Text>();
     string[] projectilesName = { "pastanaga", "tomaquet", "ceba", "pebrot", "alberginia" };
+
+    private Dictionary<string, ProjectileScript> list_projectiles = new Dictionary<string, ProjectileScript>();
+    private Dictionary<string, Text> dict_cost = new Dictionary<string, Text>();
 
     //Game control
     [SerializeField] private GameControl game_control;
@@ -101,6 +100,9 @@ public class GameControl
             users_active.player2active.enabled = false;
             users_active.buttonNext.enabled = true;
             users_active.buttonPlay.enabled = false;
+
+            //Debug.Log(game_control.player1_projectiles[0].name);
+
         }
         else
         {
@@ -131,7 +133,18 @@ public class GameControl
     public void BuyOnClick()
     {
         popup.enabled = false;
-        //TODO
+        
+        if(game_control.turn == 1)
+        {
+            // SI EXISTE EL PROYECTIL, AUMENTAR EL NUMERO DE ELEMENTOS
+            // SI NO EXISTE, AÑADIRLO
+                game_control.player1_projectiles.Add(list_projectiles[stats_popup.name]);
+
+        }
+        else
+        {
+            game_control.player2_projectiles.Add(list_projectiles[stats_popup.name]);
+        }
     }
 
     public void NextOnClick()
@@ -142,6 +155,14 @@ public class GameControl
 
     public void init_projectiles()
     {
+        float[] damages = { 1, 2, 3, 4, 5 };
+        float[] speeds = { 1, 2, 3, 4, 5 };
+        float[] weights = { 1, 2, 3, 4, 5 };
+        int[] damages_radius = { 1, 2, 3, 4, 5 };
+        int[] detonations_time = { 1, 2, 3, 4, 5 };
+
+        int i = 0;
+
         foreach (var projectile in projectiles)
         {
             GameObject newImage = Instantiate(sampleImage) as GameObject;
@@ -149,52 +170,56 @@ public class GameControl
             projectileScript.background.sprite = projectile.background;
             projectileScript.projectileImage.sprite = projectile.hortaliza;
             projectileScript.name = projectile.name;
-            projectileScript.button.onClick = projectile.thingToDo;
+            projectileScript.button.onClick = projectile.thingToDo;           
+            projectileScript.damage = damages[i];
+            projectileScript.velocity = speeds[i];
+            projectileScript.weight = weights[i];
+            projectileScript.damage_radius = damages_radius[i];
+            projectileScript.detonation_time = detonations_time[i];
+
+            list_projectiles[projectile.name] = projectileScript;
 
             newImage.transform.SetParent(contentParent);
+
+            i += 1;
         }
     }
 
     public void init_attributes()
     {
-        float[] damages = { 1, 2, 3, 4, 5 };
-        float[] speeds = { 1, 2, 3, 4, 5 };
-        float[] weights = { 1, 2, 3, 4, 5 };
-        int[] damages_radius = { 1, 2, 3, 4, 5 };
-        int[] detonations_time = { 1, 2, 3, 4, 5 };
         string[] costes = { "20", "25", "30", "35", "40" };
-        
+
         GameObject newGO = new GameObject("myTextGO");
         newGO.transform.SetParent(this.transform);
         Text myText1 = newGO.AddComponent<Text>();
         myText1.text = costes[0];
+
         GameObject newGO2 = new GameObject("myTextGO");
         newGO2.transform.SetParent(this.transform);
         Text myText2 = newGO2.AddComponent<Text>();
         myText2.text = costes[1];
+
         GameObject newGO3 = new GameObject("myTextGO");
         newGO3.transform.SetParent(this.transform);
         Text myText3 = newGO3.AddComponent<Text>();
         myText3.text = costes[2];
+
         GameObject newGO4 = new GameObject("myTextGO");
         newGO4.transform.SetParent(this.transform);
         Text myText4 = newGO4.AddComponent<Text>();
         myText4.text = costes[3];
+
         GameObject newGO5 = new GameObject("myTextGO");
         newGO5.transform.SetParent(this.transform);
         Text myText5 = newGO5.AddComponent<Text>();
         myText5.text = costes[4];
-        Text[] costs = { myText1,myText2,myText3,myText4,myText5};
 
+        Text[] costs = { myText1,myText2,myText3,myText4,myText5};
+        
         int i = 0;
 
         foreach (var projectile in projectilesName) {
-            dict_velocity[projectile] = speeds[i];
-            dict_weight[projectile] = weights[i];
-            dict_detonation_time[projectile] = detonations_time[i];
-            dict_damage_radius[projectile] = damages_radius[i];
-            dict_cost[projectile] = costs[i];
-            dict_damage[projectile] = damages[i];
+            list_projectiles[projectile].cost = costs[i];
             i += 1;
         }
     }
@@ -213,12 +238,12 @@ public class GameControl
         imagenes[dic[name]].hortaliza.enabled = true;
         imagenes[dic[name]].descripcion.enabled = true;
         stats_popup.hortaliza = imagenes[dic[name]].hortaliza;
-        stats_popup.cost.text = dict_cost[name].text;
-        stats_popup.damage = dict_damage[name];
-        stats_popup.weight = dict_weight[name];
-        stats_popup.detonation_time = dict_detonation_time[name];
-        stats_popup.velocity = dict_velocity[name];
-        stats_popup.damage_radius = dict_damage_radius[name];
+        stats_popup.cost.text = list_projectiles[name].cost.text;
+        stats_popup.damage = list_projectiles[name].damage;
+        stats_popup.weight = list_projectiles[name].weight;
+        stats_popup.detonation_time = list_projectiles[name].detonation_time;
+        stats_popup.velocity = list_projectiles[name].velocity;
+        stats_popup.damage_radius = list_projectiles[name].damage_radius;
 
         popup.enabled = true;
     }
