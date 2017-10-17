@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 1617428564}
   - component: {fileID: 1617428563}
   m_Layer: 5
-  m_Name: Play Button
+  m_Name: Continue Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1619,7 +1619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -700, y: 50}
+  m_AnchoredPosition: {x: -20, y: 20}
   m_SizeDelta: {x: 370, y: 170}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1617428563
@@ -1662,7 +1662,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: PlayOnClick
+        m_MethodName: ContinueVariablesOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1693,7 +1693,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 053fb69c73bb5ed419c832bb79320603, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4a087634a7390c4c8c6b6d60859c3b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1962,7 +1962,7 @@ GameObject:
   - component: {fileID: 1892749755}
   - component: {fileID: 1892749754}
   m_Layer: 5
-  m_Name: Exit Button2
+  m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1983,7 +1983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 700, y: 50}
+  m_AnchoredPosition: {x: 20, y: 20}
   m_SizeDelta: {x: 370, y: 170}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1892749754
@@ -2026,7 +2026,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: GoBackOnClick
+        m_MethodName: GoBackVariablesOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2057,7 +2057,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1f55b6f97e6e2c74b99e9b6de83e2f58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9cabfd7e52975047bf45db321e06ea8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
