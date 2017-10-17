@@ -252,7 +252,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: HelpOnClick
+        m_MethodName: HelpIndexOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1282,7 +1282,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: PlayOnClick
+        m_MethodName: PlayIndexOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1539,7 +1539,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: ExitOnClick
+        m_MethodName: ExitIndexOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1660,7 +1660,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: OptionsOnClick
+        m_MethodName: OptionsIndexOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
