@@ -44,23 +44,24 @@ public class user_active
     public Image player1active;
     public Image player2;
     public Image player2active;
-    public Button buttonNext;
-    public Button buttonPlay;
+    public Text buttonText;
 }
 
 [System.Serializable]
 public class GameControl
 {
-    public List<ProjectileScript> player1_projectiles;
-    public List<int> player1_num_elements;
-    public List<ProjectileScript> player2_projectiles;
-    public List<int> player2_num_elements;
+    public Dictionary<ProjectileScript, int> player1_projectiles = new Dictionary<ProjectileScript, int>();
+    public Dictionary<ProjectileScript, int> player2_projectiles = new Dictionary<ProjectileScript, int>();
     public int turn; //1 - Player1 2 - Player2
+    public Text player1_money;
+    public Text player2_money;
 }
 
     public class Btn_ProjectileMenu : MonoBehaviour {
 
     [SerializeField] private Canvas popup;
+
+    [SerializeField] private Image imagen_prueba;
 
     [SerializeField] private List<Img_and_desc> imagenes;
 
@@ -71,6 +72,16 @@ public class GameControl
     [SerializeField] private Transform contentParent;
     [SerializeField] private List<Item> projectiles;
     [SerializeField] private Stats_popup stats_popup;
+
+    //Player 1 container
+    [SerializeField] private List<Image> player1_button_background;
+    [SerializeField] private List<Image> player1_button_projectile;
+    [SerializeField] private List<Text> player1_elements;
+
+    //Player 2 container
+    [SerializeField] private List<Image> player2_button_background;
+    [SerializeField] private List<Image> player2_button_projectile;
+    [SerializeField] private List<Text> player2_elements;
 
     //Values of all projectiles
     string[] projectilesName = { "pastanaga", "tomaquet", "ceba", "pebrot", "alberginia" };
@@ -86,7 +97,10 @@ public class GameControl
         popup.enabled = false;
         init_projectiles();
         init_attributes();
+        clearUsersProjectiles();
         game_control.turn = 1;
+        game_control.player1_money.text = "3000";
+        game_control.player2_money.text = "3000";
     }
 	
 	// Update is called once per frame
@@ -98,11 +112,7 @@ public class GameControl
             users_active.player1active.enabled = true;
             users_active.player2.enabled = true;
             users_active.player2active.enabled = false;
-            users_active.buttonNext.enabled = true;
-            users_active.buttonPlay.enabled = false;
-
-            //Debug.Log(game_control.player1_projectiles[0].name);
-
+            users_active.buttonText.text = "Next";
         }
         else
         {
@@ -110,14 +120,15 @@ public class GameControl
             users_active.player1active.enabled = false;
             users_active.player2.enabled = false;
             users_active.player2active.enabled = true;
-            users_active.buttonNext.enabled = false;
-            users_active.buttonPlay.enabled = true;
+            users_active.buttonText.text = "Play!";
         }
-	}
+    }
 
 	public void PlayOnClick()
 	{
-        SceneManager.LoadScene("Test Scene");
+        if(game_control.turn == 2)
+            SceneManager.LoadScene("Test Scene");
+        game_control.turn = 2;
     }
 
     public void BackOnClick()
@@ -136,17 +147,119 @@ public class GameControl
         
         if(game_control.turn == 1)
         {
-            // SI EXISTE EL PROYECTIL, AUMENTAR EL NUMERO DE ELEMENTOS
-            // SI NO EXISTE, AÑADIRLO
-                game_control.player1_projectiles.Add(list_projectiles[stats_popup.name]);
+            int futureCoins = System.Int32.Parse(game_control.player1_money.text) 
+                - System.Int32.Parse(stats_popup.num_elements.text) * System.Int32.Parse(stats_popup.cost.text);
 
+            if(futureCoins >= 0)
+            {
+                if (game_control.player1_projectiles.ContainsKey(list_projectiles[stats_popup.name]))
+                {
+                    game_control.player1_projectiles[list_projectiles[stats_popup.name]] += System.Int32.Parse(stats_popup.num_elements.text);
+                }
+                else
+                {
+                    game_control.player1_projectiles[list_projectiles[stats_popup.name]] = System.Int32.Parse(stats_popup.num_elements.text);
+                }
+                game_control.player1_money.text = futureCoins.ToString();
+            }
         }
         else
         {
-            game_control.player2_projectiles.Add(list_projectiles[stats_popup.name]);
+
+            int futureCoins = System.Int32.Parse(game_control.player2_money.text)
+                - System.Int32.Parse(stats_popup.num_elements.text) * System.Int32.Parse(stats_popup.cost.text);
+
+            if (futureCoins >= 0)
+            {
+                if (game_control.player2_projectiles.ContainsKey(list_projectiles[stats_popup.name]))
+                {
+                    game_control.player2_projectiles[list_projectiles[stats_popup.name]] += System.Int32.Parse(stats_popup.num_elements.text);
+                }
+                else
+                {
+                    game_control.player2_projectiles[list_projectiles[stats_popup.name]] = System.Int32.Parse(stats_popup.num_elements.text);
+                }
+                game_control.player2_money.text = futureCoins.ToString();
+            }
         }
+        updateBoughtProjectiles();
     }
 
+    public void updateBoughtProjectiles()
+    {
+        if (game_control.turn == 1)
+        {
+            switch (stats_popup.name)
+            {
+                case "pastanaga":
+                    player1_button_background[0].enabled = true;
+                    player1_button_projectile[0].enabled = true;
+                    player1_elements[0].enabled = true;
+                    player1_elements[0].text = game_control.player1_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+                case "tomaquet":
+                    player1_button_background[1].enabled = true;
+                    player1_button_projectile[1].enabled = true;
+                    player1_elements[1].enabled = true;
+                    player1_elements[1].text = game_control.player1_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+                case "ceba":
+                    player1_button_background[2].enabled = true;
+                    player1_button_projectile[2].enabled = true;
+                    player1_elements[2].enabled = true;
+                    player1_elements[2].text = game_control.player1_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+                case "pebrot":
+                    player1_button_background[3].enabled = true;
+                    player1_button_projectile[3].enabled = true;
+                    player1_elements[3].enabled = true;
+                    player1_elements[3].text = game_control.player1_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+                case "alberginia":
+                    player1_button_background[4].enabled = true;
+                    player1_button_projectile[4].enabled = true;
+                    player1_elements[4].enabled = true;
+                    player1_elements[4].text = game_control.player1_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+            }
+        }
+        else
+        {
+            switch (stats_popup.name)
+            {
+                case "pastanaga":
+                    player2_button_background[0].enabled = true;
+                    player2_button_projectile[0].enabled = true;
+                    player2_elements[0].enabled = true;
+                    player2_elements[0].text = game_control.player2_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+                case "tomaquet":
+                    player2_button_background[1].enabled = true;
+                    player2_button_projectile[1].enabled = true;
+                    player2_elements[1].enabled = true;
+                    player2_elements[1].text = game_control.player2_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+                case "ceba":
+                    player2_button_background[2].enabled = true;
+                    player2_button_projectile[2].enabled = true;
+                    player2_elements[2].enabled = true;
+                    player2_elements[2].text = game_control.player2_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+                case "pebrot":
+                    player2_button_background[3].enabled = true;
+                    player2_button_projectile[3].enabled = true;
+                    player2_elements[3].enabled = true;
+                    player2_elements[3].text = game_control.player2_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+                case "alberginia":
+                    player2_button_background[4].enabled = true;
+                    player2_button_projectile[4].enabled = true;
+                    player2_elements[4].enabled = true;
+                    player2_elements[4].text = game_control.player2_projectiles[list_projectiles[stats_popup.name]].ToString();
+                    break;
+            }
+        }
+    }
     public void NextOnClick()
     {
         popup.enabled = false;
@@ -179,7 +292,7 @@ public class GameControl
 
             list_projectiles[projectile.name] = projectileScript;
 
-            newImage.transform.SetParent(contentParent);
+            //newImage.transform.SetParent(contentParent);
 
             i += 1;
         }
@@ -244,6 +357,7 @@ public class GameControl
         stats_popup.detonation_time = list_projectiles[name].detonation_time;
         stats_popup.velocity = list_projectiles[name].velocity;
         stats_popup.damage_radius = list_projectiles[name].damage_radius;
+        stats_popup.num_elements.text = "1";
 
         popup.enabled = true;
     }
@@ -273,6 +387,33 @@ public class GameControl
         if (num >= 1)
         {
             stats_popup.num_elements.text = num.ToString();
+        }
+    }
+    
+    public void clearUsersProjectiles() {
+
+        foreach(var button in player1_button_background) {
+            button.enabled = false;
+        }
+        foreach (var element in player1_elements)
+        {
+            element.enabled = false;
+        }
+        foreach (var button in player1_button_projectile)
+        {
+            button.enabled = false;
+        }
+        foreach (var element in player2_elements)
+        {
+            element.enabled = false;
+        }
+        foreach (var button in player2_button_projectile)
+        {
+            button.enabled = false;
+        }
+        foreach (var element in player2_button_background)
+        {
+            element.enabled = false;
         }
     }
 }
