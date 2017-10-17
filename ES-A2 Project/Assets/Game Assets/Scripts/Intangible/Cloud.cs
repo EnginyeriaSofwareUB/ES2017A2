@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cloud : Intangible {
-
-	[SerializeField] private float startX = -6f;
-	[SerializeField] private float endX = 6;
-	private float currentPos;
-	[SerializeField] private float speed = 1f;
-
-	[SerializeField] private float height = 4f;
+    [Range(0.0F, 10.0F)]
+    [SerializeField] private float speed = 1f;
+	[SerializeField] private GameObject cloudEnd;
+	[SerializeField] private GameObject cloudStart;
+    private float speedModifier = 100f;
 
 	// Use this for initialization
-	void Start () {		
+	protected void Awake() {
+        base.Start();
+        this.transform.position = this.cloudStart.transform.position;
 	}
 
-	// Update is called once per frame
-	void Update () {
-		currentPos = transform.position.x;
+    // Update is called once per frame
+    override
+    protected void Update() {
+        base.Update();
+        this.transform.position = Vector3.MoveTowards(this.transform.position, this.cloudEnd.transform.position, this.speed / this.speedModifier);
+	}
 
-		float nextPos = currentPos + 0.01f * speed;
-			
-		if (currentPos >= endX) {
-			transform.position = new Vector3 (startX, height, transform.position.z);
-		} else {
-			transform.position = new Vector3 (nextPos, height, transform.position.z);
+	protected void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "CloudEnd") {
+			this.transform.position = this.cloudStart.transform.position;
 		}
 	}
 }
