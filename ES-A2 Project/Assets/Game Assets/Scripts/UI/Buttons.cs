@@ -35,9 +35,15 @@ public class Buttons : MonoBehaviour {
 		Application.Quit();
 	}
 
+<<<<<<< HEAD
     public void AddCharacter()
     {
         CharacterMenu.Select = 1;
         Debug.Log(CharacterMenu.Select);
+=======
+    public void GoBackOnClick()
+    {
+        Application.LoadLevel(0);
+>>>>>>> 0dd033567eba4e942c6363b2dbdc4d244b57bea9
     }
 }
