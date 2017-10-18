@@ -28,22 +28,22 @@ public class Buttons : MonoBehaviour {
 
     public void ContinueVariablesOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 
     public void GoBackCharacterOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void ContinueCharacterOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
     }
 
     public void PlayIndexOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void OptionsIndexOnClick()
