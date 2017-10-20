@@ -79,6 +79,12 @@ MonoBehaviour:
   background: {fileID: 114338610576021678}
   projectileImage: {fileID: 114561336883382670}
   button: {fileID: 114376127108567174}
+  damage: 0
+  velocity: 0
+  weight: 0
+  damage_radius: 0
+  detonation_time: 0
+  cost: {fileID: 0}
 --- !u!114 &114290488375202062
 MonoBehaviour:
   m_ObjectHideFlags: 1
