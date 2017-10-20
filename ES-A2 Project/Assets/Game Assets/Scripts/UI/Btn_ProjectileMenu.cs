@@ -57,7 +57,7 @@ public class GameControl
     public Text player2_money;
 }
 
-    public class Btn_ProjectileMenu : MonoBehaviour {
+public class Btn_ProjectileMenu : MonoBehaviour {
 
     [SerializeField] private Canvas popup;
 
@@ -92,6 +92,8 @@ public class GameControl
     //Game control
     [SerializeField] private GameControl game_control;
 
+    private Buttons buttons;
+
     // Use this for initialization
     void Start () {
         popup.enabled = false;
@@ -101,6 +103,7 @@ public class GameControl
         game_control.turn = 1;
         game_control.player1_money.text = "3000";
         game_control.player2_money.text = "3000";
+        this.buttons = this.GetComponent<Buttons>();
     }
 	
 	// Update is called once per frame
@@ -126,14 +129,14 @@ public class GameControl
 
 	public void PlayOnClick()
 	{
-        if(game_control.turn == 2)
-            SceneManager.LoadScene("Test Scene");
+        if (game_control.turn == 2)
+            this.buttons.nextScene();
         game_control.turn = 2;
     }
 
     public void BackOnClick()
 	{
-        SceneManager.LoadScene("IndexMenu");
+        this.buttons.previousScene();
     }
 
     public void CancelOnClick()

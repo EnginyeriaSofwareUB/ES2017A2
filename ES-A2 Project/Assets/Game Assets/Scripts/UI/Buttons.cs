@@ -23,37 +23,47 @@ public class Buttons : MonoBehaviour {
     }
     public void GoBackVariablesOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        previousScene();
     }
 
     public void ContinueVariablesOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        nextScene();
     }
 
     public void GoBackCharacterOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        previousScene();
     }
 
     public void ContinueCharacterOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+        nextScene();
     }
 
     public void PlayIndexOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        nextScene();        
+    }
+
+    public void nextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void previousScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void OptionsIndexOnClick()
     {
-        //Application.LoadLevel(2);
+        //SceneManager.LoadScene("OptionsScene");
     }
 
     public void HelpIndexOnClick()
     {
-        //Application.LoadLevel(3);
+        //SceneManager.LoadScene("HelpScene");
     }
 
     public void ExitIndexOnClick()

@@ -15,5 +15,8 @@ EditorBuildSettings:
     path: Assets/Game Assets/Scenes/SelectCharacterMenu.unity
     guid: c59b93456200ec4409512b6a06c64534
   - enabled: 1
+    path: Assets/Game Assets/Scenes/ProjectilesMenu.unity
+    guid: c7047a041cc34a84eab972a006041562
+  - enabled: 1
     path: Assets/Game Assets/Scenes/Test Scene.unity
     guid: 3f1d4dadac614614d976e04982395977

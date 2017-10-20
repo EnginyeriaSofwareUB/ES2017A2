@@ -239,8 +239,11 @@
     <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\AvatarSelect.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\Btn_MainMenu.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\Btn_ProjectileMenu.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\CharacterMenu.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\ProjectileScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Assets\Animations\ReadMe.txt" />
