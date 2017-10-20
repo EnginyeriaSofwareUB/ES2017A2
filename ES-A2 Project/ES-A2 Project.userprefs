@@ -1,5 +1,5 @@
-﻿<Properties StartupItem="ES-A2 Project.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game Assets\Scripts\UI\Buttons.cs">
     <Files>
       <File FileName="Assets\Game Assets\Scripts\UI\Buttons.cs" Line="1" Column="1" />
