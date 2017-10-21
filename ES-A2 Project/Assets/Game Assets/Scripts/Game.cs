@@ -9,7 +9,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private GameObject player2;
     [SerializeField] private Text countDownText;
     private Round round;
-    private int timeBetweenRounds, timeTurn;  //in seconds
+    private int timeBetweenRounds, timeTurn; //, timeProjectile;  //in seconds
     private TimerGame timerRounds;
     private bool isBetweenRounds;
 
@@ -37,6 +37,7 @@ public class Game : MonoBehaviour {
     void Start () {
         timeBetweenRounds = 5;
         timeTurn = 10;
+        //timeProjectile = 5;
         this.startRound();
     }
 

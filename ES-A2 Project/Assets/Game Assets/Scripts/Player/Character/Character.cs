@@ -14,6 +14,8 @@ public abstract class Character : MonoBehaviour {
     [SerializeField] private GameObject arrow;
     [SerializeField] private GameObject firePoint;
 
+    //private int projDetonationTime;
+
     public int Health {
         get {
             return health;
@@ -64,6 +66,19 @@ public abstract class Character : MonoBehaviour {
         }
     }
 
+    /*public int ProjDetonationTime
+    {
+        get
+        {
+            return projDetonationTime;
+        }
+
+        set
+        {
+            projDetonationTime = value;
+        }
+    }*/
+
     // Use this for initialization
     protected virtual void Start() {
         this.disableCharacter();
@@ -107,6 +122,7 @@ public abstract class Character : MonoBehaviour {
         this.Fire = true;
         GameObject projectil = Instantiate(this.prefabCarrot, this.firePoint.transform.position, this.arrow.transform.rotation);
         projectil.GetComponent<Projectile>().Angle = angle;
+        //projectil.GetComponent<Projectile>().DetonationTime = this.ProjDetonationTime;
         projectil.SetActive(true);
         //this.disableCharacter();
     }

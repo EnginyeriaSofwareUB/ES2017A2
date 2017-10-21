@@ -14,6 +14,7 @@ public abstract class Projectile : MonoBehaviour {
 
     Rigidbody2D rb2;
     private float angle;
+    private TimerGame timerProjectile;
 
     public float Angle {
         get {
@@ -91,6 +92,9 @@ public abstract class Projectile : MonoBehaviour {
         this.rb2 = GetComponent<Rigidbody2D>();
         this.rb2.mass = this.weight;
         this.rb2.AddForce(transform.right * this.speed, ForceMode2D.Impulse);
+        this.timerProjectile = this.gameObject.AddComponent<TimerGame>();
+        this.DetonationTime = 6;
+        this.timerProjectile.init(this.DetonationTime);
     }
 
     // Update is called once per frame
@@ -98,6 +102,12 @@ public abstract class Projectile : MonoBehaviour {
         Vector2 velocity = this.rb2.velocity;
         this.angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(this.angle, Vector3.forward);
+        //Debug.Log("getTimeLeft(): " + this.timerProjectile.getTimeLeft());
+        if (this.timerProjectile.TimeOver) {
+            this.timerProjectile.stop();
+            Destroy(this.timerProjectile);
+            Destroy(gameObject);
+        }
     }
 
     /// <summary>
@@ -107,8 +117,9 @@ public abstract class Projectile : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (this.colliderDestroy.Contains(collision.gameObject.tag)) {
             SubtractLife(collision);
+            this.timerProjectile.stop();
+            Destroy(this.timerProjectile);
             Destroy(gameObject);
-
         }
     }
 
