@@ -1,1 +1,0 @@
-Teniu els botos a la subcarpeta de botons_pantalla_principal
