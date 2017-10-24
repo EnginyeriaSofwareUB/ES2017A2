@@ -23,11 +23,6 @@ public class Buttons : MonoBehaviour {
 		
 	}
 
-    public void AddCharacter()
-    {
-        CharacterMenu.Select = 1;
-        Debug.Log(CharacterMenu.Select);
-    }
     public void GoBackVariablesOnClick()
     {
         previousScene();

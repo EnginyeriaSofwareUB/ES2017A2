@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Game Assets/Scenes/VariablesMenu.unity
-=======
-- path: Assets/Game Assets/Scenes/Test Scene.unity
->>>>>>> develop
+- path: Assets/Game Assets/Scenes/SelectCharacterMenu.unity
   isLoaded: 1
   isActive: 1

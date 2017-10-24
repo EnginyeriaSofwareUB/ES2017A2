@@ -7,6 +7,8 @@ public class EstadoJuego : MonoBehaviour {
     public static EstadoJuego estadoJuego;
     public int coins;
     public int numCharacters;
+    public List<Character> P1Characters;
+    public List<Character> P2Characters;
 
     void Awake()
     {
