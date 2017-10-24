@@ -6,13 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    private GameObject estadoObject;
+    private EstadoJuego estadoJuego;
+
+    private void Awake()
+    {
+        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+    }
+
+    // Use this for initialization
+    void Start () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -28,6 +35,10 @@ public class Buttons : MonoBehaviour {
 
     public void ContinueVariablesOnClick()
     {
+        Text coins = GameObject.Find("TextCounterMoney").GetComponent<Text>();
+        int numCharacters = (int)GameObject.Find("SliderAnimals").GetComponent<Slider>().value;
+        this.estadoJuego.coins = System.Int32.Parse(coins.text);
+        this.estadoJuego.numCharacters = numCharacters;
         nextScene();
     }
 
