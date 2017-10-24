@@ -87,11 +87,14 @@ public abstract class Projectile : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
-    protected virtual void Start() {
+    /// <summary>
+    /// Funcion encargada de disparar el projectile con la fuerza que tiene el personaje
+    /// </summary>
+    /// <param name="force"></param>
+    protected virtual void Shoot(float force) {
         this.rb2 = GetComponent<Rigidbody2D>();
         this.rb2.mass = this.weight;
-        this.rb2.AddForce(transform.right * this.speed, ForceMode2D.Impulse);
+        this.rb2.AddForce(transform.right * (this.speed+force), ForceMode2D.Impulse);
         this.timerProjectile = this.gameObject.AddComponent<TimerGame>();
         this.DetonationTime = 6;
         this.timerProjectile.init(this.DetonationTime);
@@ -133,6 +136,8 @@ public abstract class Projectile : MonoBehaviour {
         }
     }
 
-    // Funcion a implementar: Si sale de la Escena el projectil tenemos que eliminarlo tambien
-
+    // Funcion a activar: Si sale de la Escena el projectil tenemos que eliminarlo tambien para liberar memoria
+    /* void OnBecameInvisible(){
+        Destroy(gameObject)
+     }*/
 }
