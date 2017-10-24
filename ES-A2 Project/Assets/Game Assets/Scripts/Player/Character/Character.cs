@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour {
 
     [SerializeField] protected int health;
+    [SerializeField] protected int maxhealth;
     [SerializeField] protected float xSpeed;
     [SerializeField] protected float ySpeed;
     [SerializeField] protected float strength;
@@ -13,6 +15,7 @@ public abstract class Character : MonoBehaviour {
     [SerializeField] private GameObject prefabCarrot;
     [SerializeField] private GameObject arrow;
     [SerializeField] private GameObject firePoint;
+    private Image healthBar;
 
     //private int projDetonationTime;
 
@@ -22,6 +25,19 @@ public abstract class Character : MonoBehaviour {
         }
 
         set {
+            health = value;
+        }
+    }
+
+    public int MaxHealth
+    {
+        get
+        {
+            return health;
+        }
+
+        set
+        {
             health = value;
         }
     }
@@ -82,6 +98,7 @@ public abstract class Character : MonoBehaviour {
     // Use this for initialization
     protected virtual void Start() {
         this.disableCharacter();
+        this.healthBar = transform.Find("CharacterCanvas").Find("HealthBG").Find("Health").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -148,5 +165,9 @@ public abstract class Character : MonoBehaviour {
     /// <param name="damage"></param>
     public void Damage(int damage) {
         this.health = this.health - damage;
+        this.healthBar.fillAmount = (float) this.health / this.maxhealth;
+        Debug.Log(this.healthBar.fillAmount);
+
+
     }
 }
