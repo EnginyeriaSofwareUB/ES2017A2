@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Game Assets/Scenes/VariablesMenu.unity
+=======
 - path: Assets/Game Assets/Scenes/Test Scene.unity
+>>>>>>> develop
   isLoaded: 1
   isActive: 1

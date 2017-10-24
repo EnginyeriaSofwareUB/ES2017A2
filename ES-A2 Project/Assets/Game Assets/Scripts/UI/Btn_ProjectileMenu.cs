@@ -94,6 +94,16 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     private Buttons buttons;
 
+    private EstadoJuego estadoJuego;
+
+    void Awake()
+    {
+        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+        game_control.player1_money.text = estadoJuego.coins.ToString();
+        game_control.player2_money.text = estadoJuego.coins.ToString();
+        Debug.Log(estadoJuego.numCharacters);
+    }
+
     // Use this for initialization
     void Start () {
         popup.enabled = false;
@@ -101,8 +111,6 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         init_attributes();
         clearUsersProjectiles();
         game_control.turn = 1;
-        game_control.player1_money.text = "3000";
-        game_control.player2_money.text = "3000";
         this.buttons = this.GetComponent<Buttons>();
     }
 	

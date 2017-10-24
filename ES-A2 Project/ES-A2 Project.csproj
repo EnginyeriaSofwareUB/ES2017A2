@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\endPoint.cs" />
+    <Compile Include="Assets\EstadoJuego.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Game.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Intangible\Cloud.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Intangible\Intangible.cs" />
@@ -244,6 +245,7 @@
     <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\CharacterMenu.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\ProjectileScript.cs" />
+    <Compile Include="Assets\VariablesScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Assets\Animations\ReadMe.txt" />
