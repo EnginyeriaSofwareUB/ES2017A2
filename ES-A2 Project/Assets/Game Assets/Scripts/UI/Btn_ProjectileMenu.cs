@@ -101,7 +101,6 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
         game_control.player1_money.text = estadoJuego.coins.ToString();
         game_control.player2_money.text = estadoJuego.coins.ToString();
-        Debug.Log(estadoJuego.numCharacters);
     }
 
     // Use this for initialization
@@ -138,7 +137,11 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 	public void PlayOnClick()
 	{
         if (game_control.turn == 2)
+        {
+            estadoJuego.player1_projectiles = game_control.player1_projectiles;
+            estadoJuego.player2_projectiles = game_control.player2_projectiles;
             this.buttons.nextScene();
+        }
         game_control.turn = 2;
     }
 
