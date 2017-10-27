@@ -61,8 +61,6 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     [SerializeField] private Canvas popup;
 
-    [SerializeField] private Image imagen_prueba;
-
     [SerializeField] private List<Img_and_desc> imagenes;
 
     [SerializeField] private user_active users_active;
@@ -84,10 +82,10 @@ public class Btn_ProjectileMenu : MonoBehaviour {
     [SerializeField] private List<Text> player2_elements;
 
     //Values of all projectiles
-    string[] projectilesName = { "pastanaga", "tomaquet", "ceba", "pebrot", "alberginia" };
+    private string[] projectilesName = { "pastanaga", "tomaquet", "ceba", "pebrot", "alberginia" };
 
     private Dictionary<string, ProjectileScript> list_projectiles = new Dictionary<string, ProjectileScript>();
-    private Dictionary<string, Text> dict_cost = new Dictionary<string, Text>();
+    //private Dictionary<string, Text> dict_cost = new Dictionary<string, Text>();
 
     //Game control
     [SerializeField] private GameControl game_control;
@@ -99,8 +97,10 @@ public class Btn_ProjectileMenu : MonoBehaviour {
     void Awake()
     {
         estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
-        game_control.player1_money.text = estadoJuego.coins.ToString();
-        game_control.player2_money.text = estadoJuego.coins.ToString();
+        game_control.player1_money.text = "1000";
+        game_control.player2_money.text = "1000";
+        //game_control.player1_money.text = estadoJuego.coins.ToString();
+        //game_control.player2_money.text = estadoJuego.coins.ToString();
     }
 
     // Use this for initialization
@@ -133,6 +133,8 @@ public class Btn_ProjectileMenu : MonoBehaviour {
             users_active.buttonText.text = "Play!";
         }
     }
+
+
 
 	public void PlayOnClick()
 	{
