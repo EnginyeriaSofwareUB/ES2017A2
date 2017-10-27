@@ -3369,7 +3369,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 660378429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -584.5, y: 422.14917, z: 0}
+  m_LocalPosition: {x: -584.5, y: 422.18796, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -3797,8 +3797,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 745319620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 402, y: 226, z: 0}
-  m_LocalScale: {x: 0.4185185, y: 0.4185185, z: 0.4185185}
+  m_LocalPosition: {x: 351, y: 197.5, z: 0}
+  m_LocalScale: {x: 0.365625, y: 0.365625, z: 0.365625}
   m_Children:
   - {fileID: 1490451983}
   - {fileID: 1634449839}
@@ -4835,7 +4835,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 900669431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.049987793, y: 5.5372314, z: 0}
+  m_LocalPosition: {x: 0.049987793, y: 5.708191, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -7462,7 +7462,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1334085603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -755.531, y: -435, z: 0}
+  m_LocalPosition: {x: -755, y: -435.17096, z: 0}
   m_LocalScale: {x: 0.9999971, y: 0.9999971, z: 0.9999971}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -8605,7 +8605,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1497276518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 578.4, y: 422.14923, z: 0}
+  m_LocalPosition: {x: 578.4, y: 422.188, z: 0}
   m_LocalScale: {x: 1.0000018, y: 1.0000018, z: 1.0000018}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -11806,11 +11806,11 @@ MonoBehaviour:
   stats_popup:
     name: 
     hortaliza: {fileID: 1933798329}
-    damage: 0
-    velocity: 0
-    weight: 0
-    damage_radius: 0
-    detonation_time: 0
+    damage: {fileID: 987824384}
+    velocity: {fileID: 126889344}
+    weight: {fileID: 1462092802}
+    damage_radius: {fileID: 1075864723}
+    detonation_time: {fileID: 1040218517}
     cost: {fileID: 862329707}
     description: {fileID: 1517159205}
     num_elements: {fileID: 1191716408}
@@ -11850,6 +11850,11 @@ MonoBehaviour:
   - {fileID: 1751625729}
   - {fileID: 1048701872}
   - {fileID: 1913781836}
+  sl_damage: {fileID: 1281145271}
+  sl_speed: {fileID: 243502294}
+  sl_weight: {fileID: 552621073}
+  sl_damage_radius: {fileID: 1971767490}
+  sl_det_time: {fileID: 853711893}
   game_control:
     turn: 0
     player1_money: {fileID: 746661487}

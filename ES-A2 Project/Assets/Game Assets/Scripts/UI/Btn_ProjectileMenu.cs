@@ -27,11 +27,11 @@ public class Stats_popup
 {
     public string name;
     public Image hortaliza;
-    public float damage;
-    public float velocity;
-    public float weight;
-    public int damage_radius;
-    public int detonation_time;
+    public Text damage;
+    public Text velocity;
+    public Text weight;
+    public Text damage_radius;
+    public Text detonation_time;
     public Text cost;
     public Image description;
     public Text num_elements;
@@ -83,6 +83,18 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     //Values of all projectiles
     private string[] projectilesName = { "pastanaga", "tomaquet", "ceba", "pebrot", "alberginia" };
+    float[] damages = { 1, 1, 3, 4, 3 };
+    float[] speeds = { 3, 0, 3, 1, 4 };
+    float[] weights = { 2, 5, 2, 2, 2 };
+    int[] damages_radius = { 1, 2, 5, 4, 5 };
+    int[] detonations_time = { 4, 2, 3, 3, 5 };
+    string[] costes = { "20", "25", "30", "35", "40" };
+
+    [SerializeField] private Slider sl_damage;
+    [SerializeField] private Slider sl_speed;
+    [SerializeField] private Slider sl_weight;
+    [SerializeField] private Slider sl_damage_radius;
+    [SerializeField] private Slider sl_det_time;
 
     private Dictionary<string, ProjectileScript> list_projectiles = new Dictionary<string, ProjectileScript>();
 
@@ -96,10 +108,8 @@ public class Btn_ProjectileMenu : MonoBehaviour {
     void Awake()
     {
         estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
-        game_control.player1_money.text = "50";
-        game_control.player2_money.text = "1000";
-        //game_control.player1_money.text = estadoJuego.coins.ToString();
-        //game_control.player2_money.text = estadoJuego.coins.ToString();
+        game_control.player1_money.text = estadoJuego.coins.ToString();
+        game_control.player2_money.text = estadoJuego.coins.ToString();
     }
 
     // Use this for initialization
@@ -249,6 +259,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
             player2_elements[indice].text = game_control.player2_projectiles[list_projectiles[stats_popup.name]].ToString();
         }
     }
+
     public void NextOnClick()
     {
         popup.enabled = false;
@@ -257,12 +268,6 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     public void init_projectiles()
     {
-        float[] damages = { 1, 2, 3, 4, 5 };
-        float[] speeds = { 1, 2, 3, 4, 5 };
-        float[] weights = { 1, 2, 3, 4, 5 };
-        int[] damages_radius = { 1, 2, 3, 4, 5 };
-        int[] detonations_time = { 1, 2, 3, 4, 5 };
-
         int i = 0;
 
         foreach (var projectile in projectiles)
@@ -289,8 +294,6 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     public void init_attributes()
     {
-        string[] costes = { "20", "25", "30", "35", "40" };
-
         GameObject newGO = new GameObject("myTextGO");
         newGO.transform.SetParent(this.transform);
         Text myText1 = newGO.AddComponent<Text>();
@@ -341,11 +344,16 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         imagenes[dic[name]].descripcion.enabled = true;
         stats_popup.hortaliza = imagenes[dic[name]].hortaliza;
         stats_popup.cost.text = list_projectiles[name].cost.text;
-        stats_popup.damage = list_projectiles[name].damage;
-        stats_popup.weight = list_projectiles[name].weight;
-        stats_popup.detonation_time = list_projectiles[name].detonation_time;
-        stats_popup.velocity = list_projectiles[name].velocity;
-        stats_popup.damage_radius = list_projectiles[name].damage_radius;
+        stats_popup.damage.text = list_projectiles[name].damage.ToString();
+        sl_damage.value = list_projectiles[name].damage;
+        stats_popup.weight.text = list_projectiles[name].weight.ToString();
+        sl_weight.value = list_projectiles[name].weight;
+        stats_popup.detonation_time.text = list_projectiles[name].detonation_time.ToString();
+        sl_det_time.value = list_projectiles[name].detonation_time;
+        stats_popup.velocity.text = list_projectiles[name].velocity.ToString();
+        sl_speed.value = list_projectiles[name].velocity;
+        stats_popup.damage_radius.text = list_projectiles[name].damage_radius.ToString();
+        sl_damage_radius.value = list_projectiles[name].damage_radius;
         stats_popup.num_elements.text = "1";
 
         popup.enabled = true;
