@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game Assets/Scenes/Test Scene.unity
     guid: 3f1d4dadac614614d976e04982395977
+  - enabled: 1
+    path: Assets/Game Assets/Scenes/OptionsMenu.unity
+    guid: d914cdcbf84efe4499b72b9203451138
