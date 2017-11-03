@@ -926,7 +926,18 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2115351317}
+        m_MethodName: onChangeSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &697481876
@@ -1153,8 +1164,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 745319620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 284.5, y: 160, z: 0}
-  m_LocalScale: {x: 0.2962963, y: 0.2962963, z: 0.2962963}
+  m_LocalPosition: {x: 275.5, y: 155, z: 0}
+  m_LocalScale: {x: 0.28697917, y: 0.28697917, z: 0.28697917}
   m_Children:
   - {fileID: 1490451983}
   m_Father: {fileID: 0}
@@ -1275,15 +1286,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 208855453}
   m_HandleRect: {fileID: 250696053}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 4000
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351317}
-        m_MethodName: onChangeMoneySlider
+        m_MethodName: onChangeSlider
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1810,7 +1821,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617428561}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 940.1875, y: -520, z: 0}
+  m_LocalPosition: {x: 940, y: -520.1089, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -2160,19 +2171,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.257467
+      value: 7.2574677
       objectReference: {fileID: 0}
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalRotation.w
@@ -2181,6 +2192,18 @@ Prefab:
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
@@ -2210,7 +2233,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1892749752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -940.1875, y: -520, z: 0}
+  m_LocalPosition: {x: -940, y: -520.1089, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -2425,3 +2448,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714719652fafdde4284e4219bf7297c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textCounterMoney: {fileID: 697481878}
+  sliderMoney: {fileID: 1107069513}

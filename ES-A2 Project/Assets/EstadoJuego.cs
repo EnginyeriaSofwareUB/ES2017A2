@@ -9,16 +9,19 @@ public class EstadoJuego : MonoBehaviour {
     public int numCharacters;
     public List<Character> P1Characters;
     public List<Character> P2Characters;
+    public Dictionary<ProjectileScript, int> player1_projectiles = new Dictionary<ProjectileScript, int>();
+    public Dictionary<ProjectileScript, int> player2_projectiles = new Dictionary<ProjectileScript, int>();
 
-    void Awake()
+    void Start()
     {
         if(estadoJuego == null)
         {
+            GameObject.DontDestroyOnLoad(this.gameObject);
             estadoJuego = this;
-            DontDestroyOnLoad(gameObject);
-        } else if(estadoJuego != this)
+        }
+        else
         {
-            Destroy(gameObject);
+            GameObject.Destroy(this.gameObject);
         }
     }
 }

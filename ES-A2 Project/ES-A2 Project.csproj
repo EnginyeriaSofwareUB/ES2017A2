@@ -217,12 +217,6 @@
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\endPoint.cs" />
@@ -233,8 +227,10 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Character.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Mole.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Movement.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\Inventory\Inventory.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Carrot.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\ForceBar.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Projectile\Projectile.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Pointer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Round.cs" />

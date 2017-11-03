@@ -18,10 +18,16 @@ public abstract class Character : MonoBehaviour {
     private Image healthBar;
 
     //private int projDetonationTime;
-    [SerializeField] private float force;
+    [Range(1, 30)]
+    [SerializeField]
+    private float force;
     private float initForce;
+
+    [Range(20, 60)]
+    [SerializeField]
     private float limitForce = 40f;
 
+    [SerializeField] private GameObject forceBar;
 
     public int Health {
         get {
@@ -33,15 +39,12 @@ public abstract class Character : MonoBehaviour {
         }
     }
 
-    public int MaxHealth
-    {
-        get
-        {
+    public int MaxHealth {
+        get {
             return health;
         }
 
-        set
-        {
+        set {
             health = value;
         }
     }
@@ -105,6 +108,7 @@ public abstract class Character : MonoBehaviour {
         this.healthBar = transform.Find("CharacterCanvas").Find("HealthBG").Find("Health").GetComponent<Image>();
     }
 
+
     // Update is called once per frame
     protected virtual void Update() {
         this.Shoot();
@@ -160,14 +164,20 @@ public abstract class Character : MonoBehaviour {
         this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         if (this.arrow.activeInHierarchy) {
-            if(Input.GetButton("Fire1")) {                
-                this.force += Time.deltaTime + 0.25f;               
+            if (Input.GetButtonDown("Fire1")) {
+                this.forceBar.SendMessage("Load");
+            }
+            if (Input.GetButton("Fire1")) {
+                float forceFactor = this.forceBar.GetComponent<ForceBar>().GetForce();
+                this.force = this.force * (forceFactor + Time.deltaTime);
             }
             if (Input.GetButtonUp("Fire1")) {
                 if (this.force >= this.limitForce) {
                     this.force = this.initForce + this.limitForce;
                 }
                 this.fireProjectile(angle);
+                this.forceBar.SendMessage("Stop");
+
             }
         }
     }
@@ -178,9 +188,7 @@ public abstract class Character : MonoBehaviour {
     /// <param name="damage"></param>
     public void Damage(int damage) {
         this.health = this.health - damage;
-        this.healthBar.fillAmount = (float) this.health / this.maxhealth;
+        this.healthBar.fillAmount = (float)this.health / this.maxhealth;
         Debug.Log(this.healthBar.fillAmount);
-
-
     }
 }

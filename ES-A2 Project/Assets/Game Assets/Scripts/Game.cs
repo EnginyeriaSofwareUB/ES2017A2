@@ -8,10 +8,13 @@ public class Game : MonoBehaviour {
     [SerializeField] private GameObject player1;
     [SerializeField] private GameObject player2;
     [SerializeField] private Text countDownText;
+    [SerializeField] private int timeBetweenRounds = 5;
+    [SerializeField] private int timeTurn = 10;
+
     private Round round;
-    private int timeBetweenRounds, timeTurn; //, timeProjectile;  //in seconds
     private TimerGame timerRounds;
     private bool isBetweenRounds;
+    private EstadoJuego estadoJuego;
 
     public GameObject Player1 {
         get {
@@ -35,9 +38,8 @@ public class Game : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        timeBetweenRounds = 5;
-        timeTurn = 10;
-        //timeProjectile = 5;
+        this.estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+        this.initPlayers();
         this.startRound();
     }
 
@@ -48,6 +50,14 @@ public class Game : MonoBehaviour {
         }
         //Update the countdown
         this.countDownText.text = "Count: " + round.getTimeLeft();
+    }
+
+    /**
+     * Introduce los proyectiles seleccionados en los inventarios de los jugadores
+     */
+    private void initPlayers() {
+        this.player1.GetComponent<Player>().addToInventory(this.estadoJuego.player1_projectiles);
+        this.player2.GetComponent<Player>().addToInventory(this.estadoJuego.player2_projectiles);
     }
 
     /**

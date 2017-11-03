@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class VariablesScript : MonoBehaviour {
 
-    public void onChangeMoneySlider()
+    [SerializeField] private Text textCounterMoney;
+    [SerializeField] private Slider sliderMoney;
+
+    public void onChangeSlider()
     {
-        Text coins = GameObject.Find("TextCounterMoney").GetComponent<Text>();
-        coins.text = ((int)GameObject.Find("SliderMoney").GetComponent<Slider>().value).ToString();
+        Text coins = textCounterMoney;
+        coins.text = ((int)sliderMoney.value).ToString();
     }
 }
