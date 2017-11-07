@@ -64,7 +64,11 @@ public class Buttons : MonoBehaviour {
 
     public void OptionsIndexOnClick()
     {
-        //SceneManager.LoadScene("OptionsScene");
+        SceneManager.LoadScene("OptionsMenu");
+    }
+    public void MenuIndexOnClick()
+    {
+        SceneManager.LoadScene("IndexMenu");
     }
 
     public void HelpIndexOnClick()
