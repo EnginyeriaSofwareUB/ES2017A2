@@ -20,7 +20,7 @@ public class AmmoBox : Tangible {
     {
         if (coll.gameObject.tag == "Character")
         {
-            coll.gameObject.SendMessage("ApplyAmmo", 50);
+            coll.gameObject.SendMessage("ApplyAmmo", ammo);
             Destroy(this.gameObject);
         }
     }

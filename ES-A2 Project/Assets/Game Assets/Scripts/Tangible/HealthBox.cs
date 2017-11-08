@@ -21,7 +21,7 @@ public class HealthBox : Tangible {
     {
         if (coll.gameObject.tag == "Character")
         {
-            coll.gameObject.SendMessage("ApplyHealth", 50);
+            coll.gameObject.SendMessage("ApplyHealth", health);
             Destroy(this.gameObject);
         }
     }
