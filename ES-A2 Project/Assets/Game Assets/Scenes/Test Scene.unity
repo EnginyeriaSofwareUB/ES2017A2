@@ -881,6 +881,12 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -0.22299999
       objectReference: {fileID: 0}
+    - target: {fileID: 212519696760254800, guid: 375d3293a53db8740aae497f58e4d28e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4058de883c519064e91aeecb073de116,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 375d3293a53db8740aae497f58e4d28e, type: 2}
   m_IsPrefabParent: 0
@@ -905,19 +911,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1355069099
-Transform:
+--- !u!224 &1355069099
+RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1355069098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -334, y: -188, z: 10}
+  m_LocalPosition: {x: -332.2, y: -186.9, z: 10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2031860498}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -332.2, y: -186.9}
+  m_SizeDelta: {x: 38.399998, y: 21.599998}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1355069100
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1482,7 +1493,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a2b3209e4ce7bb44a8bd433531852fd4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4058de883c519064e91aeecb073de116, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1516,7 +1527,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591951677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -324, y: 178, z: 0}
+  m_LocalPosition: {x: -322.5, y: 177, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2031860498}
@@ -1696,6 +1707,12 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -0.223
       objectReference: {fileID: 0}
+    - target: {fileID: 212519696760254800, guid: 375d3293a53db8740aae497f58e4d28e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4058de883c519064e91aeecb073de116,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 375d3293a53db8740aae497f58e4d28e, type: 2}
   m_IsPrefabParent: 0
@@ -1985,6 +2002,12 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -0.22299999
       objectReference: {fileID: 0}
+    - target: {fileID: 212519696760254800, guid: 375d3293a53db8740aae497f58e4d28e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4058de883c519064e91aeecb073de116,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 375d3293a53db8740aae497f58e4d28e, type: 2}
   m_IsPrefabParent: 0
@@ -2075,7 +2098,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2031860494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 244, y: -385, z: 0}
+  m_LocalPosition: {x: 242.5, y: -386, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1591951678}
