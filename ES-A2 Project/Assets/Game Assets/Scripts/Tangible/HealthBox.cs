@@ -16,4 +16,13 @@ public class HealthBox : Tangible {
     {
         base.Update();
     }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Character")
+        {
+            coll.gameObject.SendMessage("ApplyHealth", 50);
+            Destroy(this.gameObject);
+        }
+    }
 }
