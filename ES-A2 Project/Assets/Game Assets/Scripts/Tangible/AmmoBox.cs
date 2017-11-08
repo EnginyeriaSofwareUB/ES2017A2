@@ -15,4 +15,13 @@ public class AmmoBox : Tangible {
     {
         base.Update();
     }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Character")
+        {
+            coll.gameObject.SendMessage("ApplyAmmo", 50);
+            Destroy(this.gameObject);
+        }
+    }
 }

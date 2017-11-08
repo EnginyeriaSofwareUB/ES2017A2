@@ -211,6 +211,7 @@ public abstract class Character : MonoBehaviour {
     /// <param name="Ammo"></param>
     public void ApplyAmmo(int ammo)
     {
+        //this.prefabCarrot.AddAmmo(ammo);
         //void
     }
 }

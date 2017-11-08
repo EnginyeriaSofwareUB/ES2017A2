@@ -140,4 +140,13 @@ public abstract class Projectile : MonoBehaviour {
     /* void OnBecameInvisible(){
         Destroy(gameObject)
      }*/
+
+    /// <summary>
+    /// Funcion encargada de anadir ammo
+    /// </summary>
+    /// <param name="ammo"></param>
+    protected void AddAmmo(int ammo)
+    {
+        this.ammo = this.ammo + ammo;
+    }
 }
