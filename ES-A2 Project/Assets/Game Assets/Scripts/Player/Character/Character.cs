@@ -191,4 +191,27 @@ public abstract class Character : MonoBehaviour {
         this.healthBar.fillAmount = (float)this.health / this.maxhealth;
         Debug.Log(this.healthBar.fillAmount);
     }
+
+    /// <summary>
+    /// Funcion encargada de poner vida al current character
+    /// </summary>
+    /// <param name="health"></param>
+    public void ApplyHealth(int health)
+    {
+        this.health = this.health + health;
+        if (this.health > this.maxhealth)
+        {
+            this.health = this.maxhealth;
+        }
+    }
+
+    /// <summary>
+    /// Funcion encargada de poner ammo al character
+    /// </summary>
+    /// <param name="Ammo"></param>
+    public void ApplyAmmo(int ammo)
+    {
+        //this.prefabCarrot.AddAmmo(ammo);
+        //void
+    }
 }
