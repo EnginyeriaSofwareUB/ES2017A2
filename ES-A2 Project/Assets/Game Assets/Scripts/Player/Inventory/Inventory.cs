@@ -1,35 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory
 {
+    private Dictionary<ProjectileInfo, int> projectiles;
 
-    private Dictionary<ProjectileScript, int> projectiles;
-
-    // Use this for initialization
-    void Start()
+    public Inventory()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        this.projectiles = new Dictionary<ProjectileInfo, int>();
     }
 
 
-    public void initInventory()
+    public Dictionary<ProjectileInfo, int> Projectiles
     {
-        this.projectiles = new Dictionary<ProjectileScript, int>();
+        get
+        {
+            return new Dictionary<ProjectileInfo, int>(this.projectiles);
+        }
     }
 
 
     /**
      * Metodo para añadir un proyectil concreto y la cantidad
      */
-    public void addToInventory(ProjectileScript projectile, int amount)
+    public void addToInventory(ProjectileInfo projectile, int amount)
     {
         if (this.projectiles.ContainsKey(projectile))
             this.projectiles[projectile] += amount;
@@ -41,9 +35,9 @@ public class Inventory : MonoBehaviour
     /**
      * Metodo para añadir un diccionario de proyectiles con sus respectivas cantidades
      */
-    public void addToInventory(Dictionary<ProjectileScript, int> projectiles)
+    public void addToInventory(Dictionary<ProjectileInfo, int> projectiles)
     {
-        foreach (KeyValuePair<ProjectileScript, int> ps in this.projectiles)
+        foreach (KeyValuePair<ProjectileInfo, int> ps in this.projectiles)
         {
             this.addToInventory(ps.Key, ps.Value);
         }
@@ -56,35 +50,49 @@ public class Inventory : MonoBehaviour
      */
     public void deleteFiredProjectile(String name)
     {
-        foreach (KeyValuePair<ProjectileScript, int> ps in projectiles)
+        foreach (KeyValuePair<ProjectileInfo, int> ps in projectiles)
         {
-            if (ps.Key.name.Equals(name))
+            if (ps.Key.projectileName.StartsWith(name))
             {
                 projectiles[ps.Key]--;
                 if (ps.Value <= 0)
                     projectiles.Remove(ps.Key);
+                break;
             }
         }
     }
 
-    
+
     /**
      * Metodo que comprueba si esta el proyectil solicitado.
      * Si esta devuelve un subdiccionario con el proyectil y la cantaidad.
      * Si no devuelve null
      */
-    public Dictionary<ProjectileScript, int> getProjectile(String name)
+    public Dictionary<ProjectileInfo, int> getProjectile(String name)
     {
-        Dictionary<ProjectileScript, int> dic = null;
-        foreach (KeyValuePair<ProjectileScript, int> ps in projectiles)
+        Dictionary<ProjectileInfo, int> dic = null;
+        foreach (KeyValuePair<ProjectileInfo, int> ps in projectiles)
         {
-            if (ps.Key.name.Equals(name))
+            if (ps.Key.projectileName.Equals(name))
             {
-                dic = new Dictionary<ProjectileScript, int>();
+                dic = new Dictionary<ProjectileInfo, int>();
                 dic.Add(ps.Key, ps.Value);
+                break;
             }
         }
         return dic;
+    }
+
+
+    /**
+     * Metodo para poder 'imprimir' el inventario como un diccionario de 'nombre: unidades'
+     */
+    public String dicToString()
+    {
+        String s = "";
+        foreach (KeyValuePair<ProjectileInfo, int> ps in projectiles)
+            s += ps.Key.projectileName + ": " + ps.Value + ",\n\r";
+        return s;
     }
 
 }
