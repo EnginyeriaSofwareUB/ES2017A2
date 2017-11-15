@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 [RequireComponent(typeof(PolygonCollider2D))]
 [ExecuteInEditMode()]
