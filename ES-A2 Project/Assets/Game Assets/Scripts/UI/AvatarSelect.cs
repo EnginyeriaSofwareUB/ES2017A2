@@ -14,11 +14,11 @@ public class AvatarSelect : MonoBehaviour {
     }
     private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             CharacterMenu.Select = 1;
             Debug.Log(CharacterMenu.Select);
-        }
+        }*/
     }
 
 

@@ -5,100 +5,58 @@ using UnityEngine;
 
 
 public class CharacterMenu : MonoBehaviour {
-    [SerializeField] private int numCharacters;
+    private int numCharacters;
     [SerializeField] private Texture monkey;
-    private int count; //caracteres seleccionados
-    private int orden; //necesario para el orden de seleccion
-    [SerializeField] private static int select=0;
-    [SerializeField] private bool P1firstPlayer;//true = comienza player 1, false = comienza player 2
-    [SerializeField] private List<Character> P1Characters;
-    [SerializeField] private List<Character> P2Characters;
+    //[SerializeField] private static int select=0;
+    private bool P1firstPlayer;//true = comienza player 1, false = comienza player 2
+
+    private EstadoJuego estadoJuego;
+
+    private int contador; //caracteres seleccionados
+    private int añadidos; //necesario para el orden de seleccion
+
+    private void Awake()
+    {
+        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+        numCharacters = estadoJuego.numCharacters;
+        contador = numCharacters * 2;
+        añadidos = 0;
+    }
+
     // Use this for initialization
     void Start()
     {
-        count = 0;
-        orden = 0;
         drawMenu();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-
-        if (count < numCharacters * 2) {
-            startMenu();
-        }
+        P1firstPlayer = true;
     }
 
-    public static int Select
+    /*public static int Select
     {
         get { return select; }
         set { select = value; }
-    }
-    /// <summary>
-    /// Funcion encargada de hacer los turnos de seleccion de personaje
-    /// </summary>
-    /// <returns></returns>
-    void startMenu() {
-        if (P1firstPlayer) {
+    }*/
 
-            if (select != 0)
-            {
-                Debug.Log(select);
-                if (count % 2 == 0)
-                {
-                    GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + orden + ")");
-                    //Como solo hay un caracater no se mira que tipo ha seleccionado
-                    t.GetComponent<RawImage>().texture = monkey;
-                    P1Characters.Add(new Mole());
-                    //select se substituira por character cuando este implementado
-                    select = 0;
-                    count++;
-                    orden++;
-                } else if (count % 2 != 0)
-                {
-
-                    GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + (orden+numCharacters-1) + ")");
-                    //Como solo hay un caracater no se mira que tipo ha seleccionado
-                    t.GetComponent<RawImage>().texture = monkey;
-                    P2Characters.Add(new Mole());
-                    //
-
-                    select = 0;
-                    count++;
-                }
-            }
-        }
-        else if (!P1firstPlayer)
+    public void onClickCharacter(string nameCharacter)
+    {
+        if (P1firstPlayer && contador >= 0)
         {
-            if (select != 0)
-            {
-                if (count % 2 != 0)
-                {
-                    GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + orden + ")");
-                    //Como solo hay un caracater no se mira que tipo ha seleccionado
-                    t.GetComponent<RawImage>().texture = monkey;
-                    P1Characters.Add(new Mole());
-                    //
-
-                    select = 0;
-                    count++;
-                    orden++;
-                }
-                else if (count % 2 == 0)
-                {
-                    GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + (orden+numCharacters) + ")");
-                    //Como solo hay un caracater no se mira que tipo ha seleccionado
-                    t.GetComponent<RawImage>().texture = monkey;
-                    P2Characters.Add(new Mole());
-                    //
-
-                    select = 0;
-                    count++;
-                }
-            }
+            GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + añadidos + ")");
+            //Como solo hay un caracater no se mira que tipo ha seleccionado
+            t.GetComponent<RawImage>().texture = monkey;
+            estadoJuego.P1Characters.Add(new Mole());
+            añadidos += 1;
         }
+        else if (!P1firstPlayer && contador >= 0)
+        {
+            GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + (añadidos + 5) + ")");
+            //Como solo hay un caracater no se mira que tipo ha seleccionado
+            t.GetComponent<RawImage>().texture = monkey;
+            estadoJuego.P2Characters.Add(new Mole());
+            //
+        }
+        contador--;
+        P1firstPlayer = !P1firstPlayer;
     }
-
 
     /// <summary>
     /// Funcion encargada de dibujar los circulos del menu (dependiendo de cuantos personajes hay)

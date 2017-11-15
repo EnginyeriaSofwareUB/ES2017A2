@@ -10,10 +10,12 @@ public abstract class Projectile : MonoBehaviour {
     [SerializeField] protected int detonationTime;
     [SerializeField] protected CircleCollider2D afectationArea;
     [SerializeField] protected int ammo;
+    [SerializeField] protected GameObject explosionPrefab;
     [SerializeField] protected List<string> colliderDestroy;
 
     Rigidbody2D rb2;
     private float angle;
+    private TimerGame timerProjectile;
 
     public float Angle {
         get {
@@ -86,11 +88,17 @@ public abstract class Projectile : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
-    protected virtual void Start() {
+    /// <summary>
+    /// Funcion encargada de disparar el projectile con la fuerza que tiene el personaje
+    /// </summary>
+    /// <param name="force"></param>
+    protected virtual void Shoot(float force) {
         this.rb2 = GetComponent<Rigidbody2D>();
         this.rb2.mass = this.weight;
-        this.rb2.AddForce(transform.right * this.speed, ForceMode2D.Impulse);
+        this.rb2.AddForce(transform.right * (this.speed+force), ForceMode2D.Impulse);
+        this.timerProjectile = this.gameObject.AddComponent<TimerGame>();
+        this.DetonationTime = 6;
+        this.timerProjectile.init(this.DetonationTime);
     }
 
     // Update is called once per frame
@@ -98,6 +106,12 @@ public abstract class Projectile : MonoBehaviour {
         Vector2 velocity = this.rb2.velocity;
         this.angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(this.angle, Vector3.forward);
+        //Debug.Log("getTimeLeft(): " + this.timerProjectile.getTimeLeft());
+        if (this.timerProjectile.TimeOver) {
+            this.timerProjectile.stop();
+            Destroy(this.timerProjectile);
+            Destroy(gameObject);
+        }
     }
 
     /// <summary>
@@ -107,8 +121,10 @@ public abstract class Projectile : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (this.colliderDestroy.Contains(collision.gameObject.tag)) {
             SubtractLife(collision);
+            this.timerProjectile.stop();
+            Destroy(this.timerProjectile);
+            this.explode();
             Destroy(gameObject);
-
         }
     }
 
@@ -122,6 +138,23 @@ public abstract class Projectile : MonoBehaviour {
         }
     }
 
-    // Funcion a implementar: Si sale de la Escena el projectil tenemos que eliminarlo tambien
+    // Funcion a activar: Si sale de la Escena el projectil tenemos que eliminarlo tambien para liberar memoria
+    /* void OnBecameInvisible(){
+        Destroy(gameObject)
+     }*/
 
+    /// <summary>
+    /// Funcion encargada de anadir ammo
+    /// </summary>
+    /// <param name="ammo"></param>
+    protected void AddAmmo(int ammo)
+    {
+        this.ammo = this.ammo + ammo;
+    }
+
+    private void explode() {
+        GameObject explosion = Instantiate(this.explosionPrefab);
+        explosion.transform.position = this.transform.position;
+        explosion.SetActive(true);
+    }
 }
