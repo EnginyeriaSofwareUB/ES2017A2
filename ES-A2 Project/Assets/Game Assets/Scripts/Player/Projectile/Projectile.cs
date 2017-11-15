@@ -10,6 +10,7 @@ public abstract class Projectile : MonoBehaviour {
     [SerializeField] protected int detonationTime;
     [SerializeField] protected CircleCollider2D afectationArea;
     [SerializeField] protected int ammo;
+    [SerializeField] protected GameObject explosionPrefab;
     [SerializeField] protected List<string> colliderDestroy;
 
     Rigidbody2D rb2;
@@ -122,6 +123,7 @@ public abstract class Projectile : MonoBehaviour {
             SubtractLife(collision);
             this.timerProjectile.stop();
             Destroy(this.timerProjectile);
+            this.explode();
             Destroy(gameObject);
         }
     }
@@ -148,5 +150,11 @@ public abstract class Projectile : MonoBehaviour {
     protected void AddAmmo(int ammo)
     {
         this.ammo = this.ammo + ammo;
+    }
+
+    private void explode() {
+        GameObject explosion = Instantiate(this.explosionPrefab);
+        explosion.transform.position = this.transform.position;
+        explosion.SetActive(true);
     }
 }
