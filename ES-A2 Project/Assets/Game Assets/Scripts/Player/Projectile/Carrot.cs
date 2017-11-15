@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Carrot : Projectile
 {
-    // Use this for initialization
-    protected override void Start()
+    /// <summary>
+    /// Funcion encargada de disparar
+    /// </summary>
+    /// <param name="force"></param>
+    protected override void Shoot(float force)
     {
-        base.Start();
+        base.Shoot(force);
     }
 
     // Update is called once per frame

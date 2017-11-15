@@ -6,54 +6,74 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    private GameObject estadoObject;
+    private EstadoJuego estadoJuego;
+
+    private void Awake()
+    {
+        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+    }
+
+    // Use this for initialization
+    void Start () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
-    public void AddCharacter()
-    {
-        CharacterMenu.Select = 1;
-        Debug.Log(CharacterMenu.Select);
-    }
     public void GoBackVariablesOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        previousScene();
     }
 
     public void ContinueVariablesOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        Text coins = GameObject.Find("TextCounterMoney").GetComponent<Text>();
+        int numCharacters = (int)GameObject.Find("SliderAnimals").GetComponent<Slider>().value;
+        this.estadoJuego.coins = System.Int32.Parse(coins.text);
+        this.estadoJuego.numCharacters = numCharacters;
+        nextScene();
     }
 
     public void GoBackCharacterOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        previousScene();
     }
 
     public void ContinueCharacterOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+        nextScene();
     }
 
     public void PlayIndexOnClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        nextScene();        
+    }
+
+    public void nextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void previousScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void OptionsIndexOnClick()
     {
-        //Application.LoadLevel(2);
+        SceneManager.LoadScene("OptionsMenu");
+    }
+    public void MenuIndexOnClick()
+    {
+        SceneManager.LoadScene("IndexMenu");
     }
 
     public void HelpIndexOnClick()
     {
-        //Application.LoadLevel(3);
+        //SceneManager.LoadScene("HelpScene");
     }
 
     public void ExitIndexOnClick()

@@ -78,7 +78,8 @@ public class Turn : MonoBehaviour {
         if (value > this.seconds)
         {
             return this.seconds;
-        } else
+        }
+        else
         {
             return value;
         }
