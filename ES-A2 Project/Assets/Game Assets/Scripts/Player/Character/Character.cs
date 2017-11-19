@@ -31,6 +31,7 @@ public abstract class Character : MonoBehaviour
     [Range(1, 30)]
     [SerializeField]
     private float force;
+
     private float initForce;
 
     [Range(20, 60)]
@@ -40,6 +41,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     private GameObject forceBar;
 
+    private bool startShot;
 
     public int Health
     {
@@ -123,6 +125,7 @@ public abstract class Character : MonoBehaviour
     // Use this for initialization
     protected virtual void Start()
     {
+        this.initForce = this.force;
         this.disableCharacter();
         this.healthBar = transform.Find("CharacterCanvas").Find("HealthBG").Find("Health").GetComponent<Image>();
     }
@@ -142,7 +145,8 @@ public abstract class Character : MonoBehaviour
         Movement movement = this.GetComponent<Movement>();
         movement.Enabled = false;
         this.arrow.SetActive(false);
-        this.initForce = this.force;
+        this.startShot = false;
+        this.force = this.initForce;
     }
 
     /**
@@ -154,6 +158,7 @@ public abstract class Character : MonoBehaviour
         this.Fire = false;
         movement.Enabled = true;
         this.arrow.SetActive(true);
+        this.forceBar.SendMessage("Stop");
     }
 
     /**
@@ -174,11 +179,9 @@ public abstract class Character : MonoBehaviour
         projectil.GetComponent<Projectile>().Angle = angle;
         //projectil.GetComponent<Projectile>().DetonationTime = this.ProjDetonationTime;
         projectil.SetActive(true);
-        //this.disableCharacter();
         projectil.SendMessage("Shoot", (this.force));
         this.GetComponentInParent<Player>().deleteFiredProjectile();
         this.GetComponentInParent<Player>().updateInventoryPanel();
-        this.force = this.initForce;
     }
 
     /// <summary>
@@ -195,6 +198,7 @@ public abstract class Character : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 this.forceBar.SendMessage("Load");
+                this.startShot = true;
             }
             if (Input.GetButton("Fire1"))
             {
@@ -203,13 +207,16 @@ public abstract class Character : MonoBehaviour
             }
             if (Input.GetButtonUp("Fire1"))
             {
-                if (this.force >= this.limitForce)
+                if (this.startShot == true)
                 {
-                    this.force = this.initForce + this.limitForce;
+                    if (this.force >= this.limitForce)
+                    {
+                        this.force = this.initForce + this.limitForce;
+                    }
+                    this.fireProjectile(angle);
+                    this.forceBar.SendMessage("Stop");
+                    this.disableCharacter();
                 }
-                this.fireProjectile(angle);
-                this.forceBar.SendMessage("Stop");
-
             }
         }
     }
