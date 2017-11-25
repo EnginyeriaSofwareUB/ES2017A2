@@ -5,6 +5,8 @@ using UnityEngine;
 public class Pause : MonoBehaviour {
 
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject gamePanel;
+    private int gameLayer;
     private bool paused;
 
     // Use this for initialization
@@ -17,6 +19,8 @@ public class Pause : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown("p") && !paused)
         {
+            gameLayer = gamePanel.layer;
+            gamePanel.layer = 2;
             Time.timeScale = 0;
             pausePanel.SetActive(true);
             paused = true;
@@ -27,6 +31,7 @@ public class Pause : MonoBehaviour {
         {
             paused = false;
             pausePanel.SetActive(false);
+            gamePanel.layer = gameLayer;
         }
 
 

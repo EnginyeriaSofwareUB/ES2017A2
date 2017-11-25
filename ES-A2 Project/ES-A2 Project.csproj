@@ -221,10 +221,10 @@
   <ItemGroup>
     <Compile Include="Assets\endPoint.cs" />
     <Compile Include="Assets\EstadoJuego.cs" />
+    <Compile Include="Assets\Game Assets\Intangible\Cloud.cs" />
+    <Compile Include="Assets\Game Assets\Intangible\Intangible.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Game.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\Intangible\Cloud.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\Intangible\Intangible.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\Pause\pausebuttons.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Pause\Pause.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Character.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Mole.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Character\Movement.cs" />
@@ -252,8 +252,6 @@
     <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\CharacterMenu.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\ProjectileScript.cs" />
-    <Compile Include="Assets\Pause.cs" />
-    <Compile Include="Assets\pauseButtons.cs" />
     <Compile Include="Assets\VariablesScript.cs" />
   </ItemGroup>
   <ItemGroup>
