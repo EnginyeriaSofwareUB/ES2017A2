@@ -19,8 +19,11 @@ public class Cloud : Intangible {
     override
     protected void Update() {
         base.Update();
-        this.transform.position = Vector3.MoveTowards(this.transform.position, this.cloudEnd.transform.position, this.speed / this.speedModifier);
-	}
+        if (Time.timeScale != 0)
+        {
+            this.transform.position = Vector3.MoveTowards(this.transform.position, this.cloudEnd.transform.position, this.speed / this.speedModifier);
+        }
+    }
 
 	protected void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "CloudEnd") {
