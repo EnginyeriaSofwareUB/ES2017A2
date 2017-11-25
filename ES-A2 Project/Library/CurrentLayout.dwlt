@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 471}
   m_MaxSize: {x: 18006, y: 14021}
   vertical: 0
-  controlID: 128
+  controlID: 51
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 471}
   m_MaxSize: {x: 10004, y: 14021}
   vertical: 1
-  controlID: 82
+  controlID: 52
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -388,14 +388,14 @@ MonoBehaviour:
     width: 647
     height: 328
   m_SceneLighting: 1
-  lastFramingTime: 1842.3153432
+  lastFramingTime: 548.7914347
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 323.5, y: 182, z: 0}
+    m_Target: {x: 323.5, y: 133.5, z: 0}
     speed: 2
-    m_Value: {x: 323.5, y: 182, z: 0}
+    m_Value: {x: 323.5, y: 133.5, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -422,9 +422,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1224.9014
+    m_Target: 511.6836
     speed: 2
-    m_Value: 1224.9014
+    m_Value: 511.6836
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -490,9 +490,9 @@ MonoBehaviour:
     height: 284
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 56280000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: c6cbffffa6fbffff000000004a2b0000f02b0000fc2b0000
+    m_ExpandedIDs: a4f7ffff00fbffff000000006c2e0000c82e00001e2f0000822f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -511,7 +511,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
   m_ExpandedScenes:
-  - SelectCharacterMenu
+  - Test Scene
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -553,19 +553,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Game Assets/Scenes
+    - Assets/Game Assets/Scripts/UI
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Game Assets/Scenes
+  - Assets/Game Assets/Scripts/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\ES2017A2_v4\ES-A2 Project
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 27}
-    m_SelectedIDs: 4a2a0000
-    m_LastClickedID: 10826
-    m_ExpandedIDs: 000000006827000084270000b627000024280000f6280000a2290000bc29000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 123}
+    m_SelectedIDs: aa290000
+    m_LastClickedID: 10666
+    m_ExpandedIDs: 000000009c290000b8290000ea290000582a00001a2b0000d62b0000f02b0000f230000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -593,7 +593,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006827000084270000b627000024280000f6280000a2290000bc290000
+    m_ExpandedIDs: 000000009c290000b8290000ea290000582a00002a2b0000d62b0000f02b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

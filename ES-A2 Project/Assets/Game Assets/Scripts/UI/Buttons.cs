@@ -85,4 +85,15 @@ public class Buttons : MonoBehaviour {
     {
         Time.timeScale = 1;
     }
+
+    public void PauseMenuRestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("IndexMenu");
+    }
+    public void PauseMenuExitGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("IndexMenu");
+    }
 }
