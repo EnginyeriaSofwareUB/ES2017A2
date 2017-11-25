@@ -134,7 +134,10 @@ public abstract class Character : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        this.Shoot();
+        if (Time.timeScale != 0)
+        {
+            this.Shoot();
+        }
     }
 
     /**
