@@ -252,6 +252,7 @@
     <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\CharacterMenu.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\ProjectileScript.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\winScene.cs" />
     <Compile Include="Assets\VariablesScript.cs" />
   </ItemGroup>
   <ItemGroup>
