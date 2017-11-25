@@ -80,4 +80,9 @@ public class Buttons : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void PauseMenuContinueGame()
+    {
+        Time.timeScale = 1;
+    }
 }
