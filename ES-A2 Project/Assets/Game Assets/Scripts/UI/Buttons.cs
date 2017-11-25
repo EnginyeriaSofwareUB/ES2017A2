@@ -96,4 +96,13 @@ public class Buttons : MonoBehaviour {
         Time.timeScale = 1;
         SceneManager.LoadScene("IndexMenu");
     }
+
+    public void WinMenuRestartGame()
+    {
+        SceneManager.LoadScene("IndexMenu");
+    }
+    public void WinMenuExitGame()
+    {
+        SceneManager.LoadScene("IndexMenu");
+    }
 }

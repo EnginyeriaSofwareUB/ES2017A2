@@ -54,10 +54,6 @@ public class Game : MonoBehaviour {
         //Update the countdown
         this.countDownText.text = "Count: " + round.getTimeLeft();
 
-        this.estadoJuego.updateInfo(1,2,3,4);
-        SceneManager.LoadScene("winScene");
-
-
         //Comprobar fin de juego
         if (this.player1.GetComponent<Player>().hasNoCharacters() || this.player2.GetComponent<Player>().hasNoCharacters())
         {

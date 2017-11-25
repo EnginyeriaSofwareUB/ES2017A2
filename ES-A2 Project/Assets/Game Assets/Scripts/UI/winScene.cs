@@ -32,7 +32,7 @@ public class winScene : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate() {
         if (estadoJuego.numCharactersPlayer1 > estadoJuego.numCharactersPlayer2)
         {
             winPlayer1losePlayer2();
@@ -43,7 +43,7 @@ public class winScene : MonoBehaviour {
         }
         else
         {
-            winPlayer2losePlayer1();
+            winPlayer1losePlayer2();
         }
     }
 

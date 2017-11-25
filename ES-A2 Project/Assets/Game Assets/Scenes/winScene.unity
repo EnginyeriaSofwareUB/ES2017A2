@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 562395835}
   - component: {fileID: 562395834}
   m_Layer: 5
-  m_Name: winPlayer1
+  m_Name: winPlayer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1525,7 +1525,7 @@ GameObject:
   - component: {fileID: 1617428564}
   - component: {fileID: 1617428563}
   m_Layer: 5
-  m_Name: Continue Button
+  m_Name: Retry Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1589,7 +1589,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: ContinueVariablesOnClick
+        m_MethodName: WinMenuRestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1909,7 +1909,7 @@ GameObject:
   - component: {fileID: 1892749755}
   - component: {fileID: 1892749754}
   m_Layer: 5
-  m_Name: Exit Button
+  m_Name: Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1973,7 +1973,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: GoBackVariablesOnClick
+        m_MethodName: WinMenuExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 2009085295}
   - component: {fileID: 2009085294}
   m_Layer: 5
-  m_Name: winPlayer2
+  m_Name: winPlayer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2342,9 +2342,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1Lose: {fileID: 1824538850}
-  player1win: {fileID: 562395832}
+  player1win: {fileID: 2009085292}
   player2Lose: {fileID: 1169343884}
-  player2win: {fileID: 2009085292}
+  player2win: {fileID: 562395832}
   player1LoseCont: {fileID: 193499459}
   player1winCont: {fileID: 1794218204}
   player2LoseCont: {fileID: 261406127}
