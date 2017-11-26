@@ -36,6 +36,20 @@ public class EstadoJuego : MonoBehaviour {
         this.numCharactersPlayer1 = numCharactersPlayer1;
         this.coinsPlayer2 = coinsPlayer2;
         this.numCharactersPlayer2 = numCharactersPlayer2;
+    }
 
+    public void resetInfo()
+    {
+        this.coins = 0;
+        this.numCharacters = 0;
+        this.P1Characters = new List<Character>();
+        this.P2Characters = new List<Character>();
+        this.player1_projectiles = new Dictionary<ProjectileScript, int>();
+        this.player2_projectiles = new Dictionary<ProjectileScript, int>();
+
+        this.coinsPlayer1 = 0;
+        this.numCharactersPlayer1 = 0;
+        this.coinsPlayer2 = 0;
+        this.numCharactersPlayer2 = 0;
     }
 }
