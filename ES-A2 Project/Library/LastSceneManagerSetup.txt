@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Game Assets/Scenes/Test Scene.unity
+=======
+- path: Assets/Game Assets/Scenes/ProjectilesMenu.unity
+>>>>>>> f1a0f41283bc1d48d4ec390ca1b5d43966c8be13
   isLoaded: 1
   isActive: 1

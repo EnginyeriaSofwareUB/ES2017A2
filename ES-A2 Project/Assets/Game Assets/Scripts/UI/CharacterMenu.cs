@@ -19,6 +19,9 @@ public class CharacterMenu : MonoBehaviour {
 
     [SerializeField] private user_active users_active;
 
+    Button monkeyButton;
+    Button nopeCharacterButton;
+    Button playButton;
 
     private void Awake()
     {
@@ -35,6 +38,12 @@ public class CharacterMenu : MonoBehaviour {
     {
         drawMenu();
         P1firstPlayer = true;
+        estadoJuego.P1Characters = new List<Character>();
+        estadoJuego.P2Characters = new List<Character>();
+        monkeyButton = GameObject.Find("/Canvas/Buttons/MonkeyCharacter").GetComponent<Button>();
+        nopeCharacterButton = GameObject.Find("/Canvas/Buttons/NOPECharacter").GetComponent<Button>();
+        playButton = GameObject.Find("/Canvas/Button_continue").GetComponent<Button>();
+        playButton.enabled = false;
     }
 
     private void Update()
@@ -53,25 +62,47 @@ public class CharacterMenu : MonoBehaviour {
             users_active.player2.enabled = false;
             users_active.player2active.enabled = true;
         }
+        if (estadoJuego.P1Characters.Count == numCharacters && estadoJuego.P2Characters.Count == numCharacters)
+        {
+            playButton.enabled = true;
+            users_active.player1.enabled = true;
+            users_active.player1active.enabled = false;
+            users_active.player2.enabled = true;
+            users_active.player2active.enabled = false;
+        }
+        if (!canSelect(1) && !canSelect(2))
+        {
+            monkeyButton.enabled = false;
+            nopeCharacterButton.enabled = false;
+        }
+        if (numCharacters == 0)
+        {
+            playButton.enabled = false;
+        }
     }
 
     public void onClickCharacter(string nameCharacter)
     {
         if (P1firstPlayer && contador >= 0)
         {
-            GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + añadidos + ")");
-            //Como solo hay un caracater no se mira que tipo ha seleccionado
-            t.GetComponent<RawImage>().texture = monkey;
-            estadoJuego.P1Characters.Add(new Mole());
-            añadidos += 1;
+            if (canSelect(1))
+            {
+                GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + añadidos + ")");
+                //Como solo hay un caracater no se mira que tipo ha seleccionado
+                t.GetComponent<RawImage>().texture = monkey;
+                estadoJuego.P1Characters.Add(new Mole());
+                añadidos += 1;
+            }
         }
         else if (!P1firstPlayer && contador >= 0)
         {
-            GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + (añadidos + 5) + ")");
-            //Como solo hay un caracater no se mira que tipo ha seleccionado
-            t.GetComponent<RawImage>().texture = monkey;
-            estadoJuego.P2Characters.Add(new Mole());
-            //
+            if (canSelect(2))
+            {
+                GameObject t = GameObject.Find("/Canvas/Circles/Circle (" + (añadidos + 5) + ")");
+                //Como solo hay un caracater no se mira que tipo ha seleccionado
+                t.GetComponent<RawImage>().texture = monkey;
+                estadoJuego.P2Characters.Add(new Mole());
+            }
         }
         contador--;
         P1firstPlayer = !P1firstPlayer;
@@ -81,7 +112,7 @@ public class CharacterMenu : MonoBehaviour {
     /// Funcion encargada de dibujar los circulos del menu (dependiendo de cuantos personajes hay)
     /// </summary>
     /// <returns></returns>
-    void drawMenu() {
+    public void drawMenu() {
         if (numCharacters == 1) {
             GameObject.Find("/Canvas/Circles/Circle (1)").SetActive(false);
             GameObject.Find("/Canvas/Circles/Circle (2)").SetActive(false);
@@ -126,7 +157,32 @@ public class CharacterMenu : MonoBehaviour {
             GameObject.Find("/Canvas/Circles/Circle (5)").SetActive(false);
             GameObject.Find("/Canvas/Circles/Circle (11)").SetActive(false);
         }
+        else
+        {
+            GameObject.Find("/Canvas/Circles/Circle (0)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (1)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (2)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (3)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (4)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (5)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (6)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (7)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (8)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (9)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (10)").SetActive(false);
+            GameObject.Find("/Canvas/Circles/Circle (11)").SetActive(false);
+        }
     }
+
+    public bool canSelect(int player)
+    {
+        if(player == 1)
+        {
+            return estadoJuego.P1Characters.Count < numCharacters;
+        } 
+        return estadoJuego.P2Characters.Count < numCharacters;     
+    }
+
 }
 
 
