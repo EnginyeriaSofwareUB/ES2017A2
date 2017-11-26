@@ -216,15 +216,12 @@
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
-<<<<<<< HEAD
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-=======
->>>>>>> f1a0f41283bc1d48d4ec390ca1b5d43966c8be13
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -260,6 +257,7 @@
     <Compile Include="Assets\Game Assets\Scripts\UI\Btn_ProjectileMenu.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\CharacterMenu.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\UI\GameOptions.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\ProjectileScript.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\winScene.cs" />
     <Compile Include="Assets\VariablesScript.cs" />

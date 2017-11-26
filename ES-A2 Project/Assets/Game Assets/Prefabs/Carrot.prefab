@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a740ff6d33e9342964c191c53f56af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileImpact: {fileID: 0}
   weight: 2
   speed: 1
   damage: 3

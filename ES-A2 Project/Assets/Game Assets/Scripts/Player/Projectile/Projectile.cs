@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour {
 
+    [SerializeField] protected AudioSource projectileImpact;
     [SerializeField] protected float weight;
     [SerializeField] protected float speed;
     [SerializeField] protected int damage;
@@ -120,6 +121,7 @@ public abstract class Projectile : MonoBehaviour {
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision) {
         if (this.colliderDestroy.Contains(collision.gameObject.tag)) {
+            projectileImpact.Play();
             SubtractLife(collision);
             this.timerProjectile.stop();
             Destroy(this.timerProjectile);

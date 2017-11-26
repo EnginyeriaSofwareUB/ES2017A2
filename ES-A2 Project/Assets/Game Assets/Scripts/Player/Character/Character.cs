@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour
 {
-
+    [SerializeField]
+    protected AudioSource preparetoshootSound;
+    [SerializeField]
+    protected AudioSource damageRecievedSound;
+    [SerializeField]
+    protected AudioSource shootSound;
     [SerializeField]
     protected int health;
     [SerializeField]
@@ -202,6 +207,12 @@ public abstract class Character : MonoBehaviour
             {
                 this.forceBar.SendMessage("Load");
                 this.startShot = true;
+                int i = Random.Range(0, 10);
+                if (i==4) {
+                    preparetoshootSound.Play();
+                }
+                
+
             }
             if (Input.GetButton("Fire1"))
             {
@@ -217,6 +228,7 @@ public abstract class Character : MonoBehaviour
                         this.force = this.initForce + this.limitForce;
                     }
                     this.fireProjectile(angle);
+                    shootSound.Play();
                     this.forceBar.SendMessage("Stop");
                     this.disableCharacter();
                 }
@@ -232,6 +244,7 @@ public abstract class Character : MonoBehaviour
     {
         this.health = this.health - damage;
         this.healthBar.fillAmount = (float)this.health / this.maxhealth;
+        damageRecievedSound.Play();
         //Debug.Log(this.healthBar.fillAmount);
     }
 
