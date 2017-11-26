@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class Game : MonoBehaviour {
     [SerializeField] private GameObject player1;
     [SerializeField] private GameObject player2;
+    [SerializeField] private GameObject AmmoBox;
+    [SerializeField] private GameObject HealthBox;
     [SerializeField] private Text countDownText;
     [SerializeField] private int timeBetweenRounds = 5;
     [SerializeField] private int timeTurn = 10;
@@ -113,10 +115,24 @@ public class Game : MonoBehaviour {
     /**
      * Metodo que instancia una Ronda
      */
-    private void startRound() {
+    private void startRound()
+    {
         this.round = this.gameObject.AddComponent<Round>();
         this.round.TimeTurn = this.timeTurn;
         this.isBetweenRounds = false;
+
+
+        //random healthBox or AmmoBox
+        Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 10, 0);
+        float type = Random.Range(0, 2);//50%prob ammmo-health
+        if (type == 1)
+        {
+            Instantiate(HealthBox, position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(AmmoBox, position, Quaternion.identity);
+        }
     }
 
     /**
