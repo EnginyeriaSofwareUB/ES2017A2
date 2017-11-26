@@ -44,7 +44,7 @@ public class user_active
     public Image player1active;
     public Image player2;
     public Image player2active;
-    public Text buttonText;
+    public Button buttonText;
 }
 
 [System.Serializable]
@@ -105,6 +105,9 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     private EstadoJuego estadoJuego;
 
+    [SerializeField] private Sprite btn_play;
+    [SerializeField] private Sprite btn_next;
+
     void Awake()
     {
         estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
@@ -118,6 +121,9 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         init_projectiles();
         init_attributes();
         clearUsersProjectiles();
+
+
+
         game_control.turn = 1;
         this.buttons = this.GetComponent<Buttons>();
     }
@@ -131,7 +137,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
             users_active.player1active.enabled = true;
             users_active.player2.enabled = true;
             users_active.player2active.enabled = false;
-            users_active.buttonText.text = "Next";
+            users_active.buttonText.image.sprite = btn_next;
         }
         else
         {
@@ -139,7 +145,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
             users_active.player1active.enabled = false;
             users_active.player2.enabled = false;
             users_active.player2active.enabled = true;
-            users_active.buttonText.text = "Play!";
+            users_active.buttonText.image.sprite = btn_play;
         }
     }
 
@@ -211,7 +217,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     public int indexToAddPlayer1()
     {
-        int i = 0;
+        int i = 1;
 
         foreach(var projectile in game_control.player1_projectiles)
         {
@@ -224,7 +230,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     public int indexToAddPlayer2()
     {
-        int i = 0;
+        int i = 1;
 
         foreach (var projectile in game_control.player2_projectiles)
         {
@@ -237,7 +243,6 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     public void updateBoughtProjectiles()
     {
-
         if (game_control.turn == 1)
         {
             int indice = indexToAddPlayer1();
@@ -389,28 +394,46 @@ public class Btn_ProjectileMenu : MonoBehaviour {
     
     public void clearUsersProjectiles() {
 
+        int i = 0;
         foreach(var button in player1_button_background) {
-            button.enabled = false;
+            if(i != 0)
+                button.enabled = false;
+            i++;
         }
+        i = 0;
         foreach (var element in player1_elements)
         {
-            element.enabled = false;
+            if (i != 0)
+                element.enabled = false;
+            i++;
         }
+        i = 0;
         foreach (var button in player1_button_projectile)
         {
-            button.enabled = false;
+            if (i != 0)
+                button.enabled = false;
+            i++;
         }
+        i = 0;
         foreach (var element in player2_elements)
         {
-            element.enabled = false;
+            if (i != 0)
+                element.enabled = false;
+            i++;
         }
+        i = 0;
         foreach (var button in player2_button_projectile)
         {
-            button.enabled = false;
+            if (i != 0)
+                button.enabled = false;
+            i++;
         }
+        i = 0;
         foreach (var element in player2_button_background)
         {
-            element.enabled = false;
+            if (i != 0)
+                element.enabled = false;
+            i++;
         }
     }
 }

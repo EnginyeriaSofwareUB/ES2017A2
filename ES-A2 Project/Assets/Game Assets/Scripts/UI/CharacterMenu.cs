@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class CharacterMenu : MonoBehaviour {
     private int numCharacters;
     [SerializeField] private Texture monkey;
@@ -15,9 +14,17 @@ public class CharacterMenu : MonoBehaviour {
     private int contador; //caracteres seleccionados
     private int añadidos; //necesario para el orden de seleccion
 
+    [SerializeField] private Text player1_money;
+    [SerializeField] private Text player2_money;
+
+    [SerializeField] private user_active users_active;
+
+
     private void Awake()
     {
         estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+        player1_money.text = estadoJuego.coins.ToString();
+        player2_money.text = estadoJuego.coins.ToString();
         numCharacters = estadoJuego.numCharacters;
         contador = numCharacters * 2;
         añadidos = 0;
@@ -30,11 +37,23 @@ public class CharacterMenu : MonoBehaviour {
         P1firstPlayer = true;
     }
 
-    /*public static int Select
+    private void Update()
     {
-        get { return select; }
-        set { select = value; }
-    }*/
+        if (P1firstPlayer)
+        {
+            users_active.player1.enabled = false;
+            users_active.player1active.enabled = true;
+            users_active.player2.enabled = true;
+            users_active.player2active.enabled = false;
+        }
+        else
+        {
+            users_active.player1.enabled = true;
+            users_active.player1active.enabled = false;
+            users_active.player2.enabled = false;
+            users_active.player2active.enabled = true;
+        }
+    }
 
     public void onClickCharacter(string nameCharacter)
     {

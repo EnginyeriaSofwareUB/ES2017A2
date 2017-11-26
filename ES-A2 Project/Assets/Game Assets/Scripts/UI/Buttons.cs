@@ -80,4 +80,29 @@ public class Buttons : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void PauseMenuContinueGame()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void PauseMenuRestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("IndexMenu");
+    }
+    public void PauseMenuExitGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("IndexMenu");
+    }
+
+    public void WinMenuRestartGame()
+    {
+        SceneManager.LoadScene("IndexMenu");
+    }
+    public void WinMenuExitGame()
+    {
+        SceneManager.LoadScene("IndexMenu");
+    }
 }
