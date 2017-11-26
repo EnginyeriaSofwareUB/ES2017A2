@@ -107,11 +107,12 @@ public abstract class Projectile : MonoBehaviour {
         Vector2 velocity = this.rb2.velocity;
         this.angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(this.angle, Vector3.forward);
+        Vector3 pos = transform.position;
+        pos.z = 0;
+        transform.position = pos;
         //Debug.Log("getTimeLeft(): " + this.timerProjectile.getTimeLeft());
         if (this.timerProjectile.TimeOver) {
-            this.timerProjectile.stop();
-            Destroy(this.timerProjectile);
-            Destroy(gameObject);
+            this.Destroy();
         }
     }
 
@@ -121,12 +122,9 @@ public abstract class Projectile : MonoBehaviour {
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision) {
         if (this.colliderDestroy.Contains(collision.gameObject.tag)) {
-            projectileImpact.Play();
+            //projectileImpact.Play(); //La comento porque me esta dando problemas. Att. GUS
             SubtractLife(collision);
-            this.timerProjectile.stop();
-            Destroy(this.timerProjectile);
-            this.explode();
-            Destroy(gameObject);
+            this.Destroy();
         }
     }
 
@@ -158,5 +156,16 @@ public abstract class Projectile : MonoBehaviour {
         GameObject explosion = Instantiate(this.explosionPrefab);
         explosion.transform.position = this.transform.position;
         explosion.SetActive(true);
+    }
+
+    /// <summary>
+    /// Funcion encargada de destruir el proyectil
+    /// </summary>
+    private void Destroy() {
+        this.timerProjectile.stop();
+        this.explode();
+        this.GetComponentInParent<Game>().GetComponent<Turn>().ProjectileDestroyed = true;
+        Destroy(this.timerProjectile);
+        Destroy(gameObject);
     }
 }

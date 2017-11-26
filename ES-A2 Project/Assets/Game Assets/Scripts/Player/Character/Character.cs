@@ -47,6 +47,7 @@ public abstract class Character : MonoBehaviour
     private GameObject forceBar;
 
     private bool startShot;
+    private Movement movement;
 
     public int Health
     {
@@ -141,7 +142,7 @@ public abstract class Character : MonoBehaviour
     {
         if (Time.timeScale != 0)
         {
-            this.Shoot();
+            this.MakeShoot();
         }
     }
 
@@ -150,8 +151,8 @@ public abstract class Character : MonoBehaviour
       */
     public void disableCharacter()
     {
-        Movement movement = this.GetComponent<Movement>();
-        movement.Enabled = false;
+        this.movement = this.GetComponent<Movement>();
+        this.movement.Enabled = false;
         this.arrow.SetActive(false);
         this.startShot = false;
         this.force = this.initForce;
@@ -162,9 +163,9 @@ public abstract class Character : MonoBehaviour
      */
     public void enableCharacter()
     {
-        Movement movement = this.GetComponent<Movement>();
+        this.movement = this.GetComponent<Movement>();
         this.Fire = false;
-        movement.Enabled = true;
+        this.movement.Enabled = true;
         this.arrow.SetActive(true);
         this.forceBar.SendMessage("Stop");
     }
@@ -182,8 +183,10 @@ public abstract class Character : MonoBehaviour
     /// </summary>
     public void fireProjectile(float angle)
     {
+        this.GetComponentInParent<Game>().GetComponent<TimerGame>().stop();
         this.Fire = true;
         GameObject projectil = Instantiate(this.prefabCarrot, this.firePoint.transform.position, this.arrow.transform.rotation);
+        projectil.transform.parent = this.transform;
         projectil.GetComponent<Projectile>().Angle = angle;
         //projectil.GetComponent<Projectile>().DetonationTime = this.ProjDetonationTime;
         projectil.SetActive(true);
@@ -195,7 +198,7 @@ public abstract class Character : MonoBehaviour
     /// <summary>
     /// Funcion encargada de rotar la flecha segun vaya el cursor y disparar siempre y cuando tenga el character tenga la flecha
     /// </summary>
-    private void Shoot()
+    private void MakeShoot()
     {
         // Rotacion de la flecha       
         float angle = Pointer.AngleBetweenVectors(this.arrow.transform.position, Pointer.Position());
@@ -203,6 +206,7 @@ public abstract class Character : MonoBehaviour
 
         if (this.arrow.activeInHierarchy)
         {
+            this.MoveCharacter(angle);
             if (Input.GetButtonDown("Fire1"))
             {
                 this.forceBar.SendMessage("Load");
@@ -223,14 +227,7 @@ public abstract class Character : MonoBehaviour
             {
                 if (this.startShot == true)
                 {
-                    if (this.force >= this.limitForce)
-                    {
-                        this.force = this.initForce + this.limitForce;
-                    }
-                    this.fireProjectile(angle);
-                    shootSound.Play();
-                    this.forceBar.SendMessage("Stop");
-                    this.disableCharacter();
+                    this.Shoot(angle);                    
                 }
             }
         }
@@ -244,6 +241,13 @@ public abstract class Character : MonoBehaviour
     {
         this.health = this.health - damage;
         this.healthBar.fillAmount = (float)this.health / this.maxhealth;
+        if (this.health == 0) {
+            this.movement.SetAnimation("Shut-right");
+            this.movement.Enabled = false;
+            this.arrow.SetActive(false);
+            this.startShot = false;
+            Destroy(this.gameObject, 2);
+        }
         damageRecievedSound.Play();
         //Debug.Log(this.healthBar.fillAmount);
     }
@@ -267,6 +271,50 @@ public abstract class Character : MonoBehaviour
         if (this.health > this.maxhealth)
         {
             this.health = this.maxhealth;
+        }
+    }
+
+    /// <summary>
+    /// Funcion encargada de mover el personaje en la direccion que apunta la flecha (puntero del mouse)
+    /// </summary>
+    /// <param name="angle"></param>
+    private void MoveCharacter(float angle) {
+        if (!Input.GetButton("Horizontal")) {
+            if ((angle < 90) && (angle > -90)) {
+                this.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            }
+            else {
+                this.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+            }
+        }
+        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+    }
+
+    /// <summary>
+    /// Funcion encargada de gestionar el disparo del proyectil con la animacion determinada
+    /// </summary>
+    /// <param name="angle"></param>
+    private void Shoot(float angle) {
+        CheckHandShot();
+        if (this.force >= this.limitForce) {
+            this.force = this.initForce + this.limitForce;
+        }
+        this.fireProjectile(angle);
+        shootSound.Play();
+        this.forceBar.SendMessage("Stop");
+        this.disableCharacter();
+
+    }
+
+    /// <summary>
+    /// Funcion encargada poner la animacion de disparar dependiendo de hacia donde mira el character
+    /// </summary>
+    private void CheckHandShot() {
+        if (this.transform.rotation.y == 0.7071068f) {
+            this.movement.SetAnimation("disparar_dreta");
+        }
+        else {
+            this.movement.SetAnimation("disparar");
         }
     }
 }
