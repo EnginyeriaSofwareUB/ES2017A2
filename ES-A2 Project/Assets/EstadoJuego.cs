@@ -17,8 +17,8 @@ public class EstadoJuego : MonoBehaviour {
     public int coinsPlayer2;
     public int numCharactersPlayer2;
 
-    public int volumenEfectos;
-    public int volumenMusica;
+    public int volumenEfectos = 5;
+    public int volumenMusica = 5;
 
     void Start()
     {
