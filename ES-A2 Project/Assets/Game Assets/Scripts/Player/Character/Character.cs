@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour
 {
+    [SerializeField] private EstadoJuego estadoJuego;
     [SerializeField]
     protected AudioSource preparetoshootSound;
     [SerializeField]
@@ -133,6 +134,8 @@ public abstract class Character : MonoBehaviour
         this.initForce = this.force;
         this.disableCharacter();
         this.healthBar = transform.Find("CharacterCanvas").Find("HealthBG").Find("Health").GetComponent<Image>();
+
+
     }
 
 

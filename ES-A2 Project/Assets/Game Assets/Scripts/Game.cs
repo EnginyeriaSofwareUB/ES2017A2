@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 
 
 public class Game : MonoBehaviour {
+
+    [SerializeField] private AudioSource sound1;
+    [SerializeField] private AudioSource sound2;
+    [SerializeField] private AudioSource sound3;
+    [SerializeField] private AudioSource sound4;
+    [SerializeField] private AudioSource music;
     [SerializeField] private GameObject player1;
     [SerializeField] private GameObject player2;
     [SerializeField] private GameObject AmmoBox;
@@ -43,8 +49,12 @@ public class Game : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //this.estadoJuego = gameObject.GetComponent<EstadoJuego>();
+        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
         this.initPlayers();
         this.startRound();
+        changeVolume();
+        music.Play();
+
 
     }
 
@@ -81,6 +91,18 @@ public class Game : MonoBehaviour {
             SceneManager.LoadScene("winScene");
         } 
     }
+
+    private void changeVolume() {
+        Debug.Log(estadoJuego.volumenEfectos);
+        sound1.volume = estadoJuego.volumenEfectos / 10.0F;
+        sound2.volume = estadoJuego.volumenEfectos / 10.0F;
+        sound3.volume = estadoJuego.volumenEfectos / 10.0F;
+        sound4.volume = estadoJuego.volumenEfectos / 10.0F;
+        music.volume = estadoJuego.volumenMusica / 10.0F;
+        
+    }
+
+
 
     /**
      * Introduce los proyectiles seleccionados en los inventarios de los jugadores
