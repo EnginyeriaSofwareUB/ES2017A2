@@ -53,9 +53,10 @@
   <ItemGroup>
      <Compile Include="Assets\endPoint.cs" />
      <Compile Include="Assets\EstadoJuego.cs" />
+     <Compile Include="Assets\Game Assets\Intangible\Cloud.cs" />
+     <Compile Include="Assets\Game Assets\Intangible\Intangible.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Game.cs" />
-     <Compile Include="Assets\Game Assets\Scripts\Intangible\Cloud.cs" />
-     <Compile Include="Assets\Game Assets\Scripts\Intangible\Intangible.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Pause\Pause.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Player\Character\Character.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Player\Character\Mole.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Player\Character\Movement.cs" />
@@ -74,6 +75,7 @@
      <Compile Include="Assets\Game Assets\Scripts\Tangible\Stone.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Tangible\Tangible.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Terrain\Terrain2D.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\Terrain\TerrainRenderer.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Terrain\Triangulator.cs" />
      <Compile Include="Assets\Game Assets\Scripts\TimerGame.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Turn.cs" />
@@ -82,7 +84,9 @@
      <Compile Include="Assets\Game Assets\Scripts\UI\Btn_ProjectileMenu.cs" />
      <Compile Include="Assets\Game Assets\Scripts\UI\Buttons.cs" />
      <Compile Include="Assets\Game Assets\Scripts\UI\CharacterMenu.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\UI\GameOptions.cs" />
      <Compile Include="Assets\Game Assets\Scripts\UI\ProjectileScript.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\UI\winScene.cs" />
      <Compile Include="Assets\VariablesScript.cs" />
      <None Include="Assets\Game Assets\Sprites\ReadMe.txt" />
      <None Include="Assets\Game Assets\Scenes\ReadMe.txt" />
