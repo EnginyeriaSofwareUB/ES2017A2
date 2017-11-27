@@ -40,6 +40,10 @@ public class Game : MonoBehaviour {
         }
     }
 
+    private void Awake()
+    {
+        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+    }
     // Use this for initialization
     void Start () {
         //this.estadoJuego = gameObject.GetComponent<EstadoJuego>();
@@ -79,6 +83,11 @@ public class Game : MonoBehaviour {
         if (this.player1.GetComponent<Player>().hasNoCharacters() || this.player2.GetComponent<Player>().hasNoCharacters())
         {
             SceneManager.LoadScene("winScene");
+            estadoJuego.coinsPlayer1 = this.player1.GetComponent<Player>().getCoins();
+            estadoJuego.numCharactersPlayer1 = this.player1.GetComponent<Player>().getNumAliveCharacters();
+
+            estadoJuego.coinsPlayer2 = this.player2.GetComponent<Player>().getCoins();
+            estadoJuego.numCharactersPlayer2 = this.player2.GetComponent<Player>().getNumAliveCharacters();
         } 
     }
 

@@ -36,6 +36,16 @@ public class Player : MonoBehaviour {
         this.initVariables();
     }
 
+    public int getCoins()
+    {
+        return this.coins;
+    }
+
+    public int getNumAliveCharacters()
+    {
+        return this.getAliveCharacters().Count;
+    }
+
     // Update is called once per frame
     void Update () {
         

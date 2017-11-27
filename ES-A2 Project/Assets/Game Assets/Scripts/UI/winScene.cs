@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class winScene : MonoBehaviour {
 
@@ -19,8 +20,8 @@ public class winScene : MonoBehaviour {
     [SerializeField] private GameObject player2thumbup;
     [SerializeField] private GameObject player2thumbdown;
 
-    [SerializeField] private GameObject player1money;
-    [SerializeField] private GameObject player2money;
+    [SerializeField] private Text player1money;
+    [SerializeField] private Text player2money;
 
     [SerializeField] private EstadoJuego estadoJuego;
 
@@ -30,9 +31,14 @@ public class winScene : MonoBehaviour {
         
 		
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate() {
+
+    private void Awake()
+    {
+        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate() {
         if (estadoJuego.numCharactersPlayer1 > estadoJuego.numCharactersPlayer2)
         {
             winPlayer1losePlayer2();
@@ -65,6 +71,9 @@ public class winScene : MonoBehaviour {
         this.player2thumbdown.SetActive(false);
         this.player2thumbup.SetActive(true);
 
+        this.player1money.text = this.estadoJuego.coins.ToString();
+        this.player2money.text = this.estadoJuego.coins.ToString();
+
     }
 
     private void winPlayer1losePlayer2()
@@ -84,5 +93,8 @@ public class winScene : MonoBehaviour {
 
         this.player2thumbdown.SetActive(true);
         this.player2thumbup.SetActive(false);
+
+        this.player1money.text = this.estadoJuego.coins.ToString();
+        this.player2money.text = this.estadoJuego.coins.ToString();
     }
 }
