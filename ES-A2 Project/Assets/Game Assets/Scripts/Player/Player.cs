@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 
     public bool hasNoCharacters()
     {
-        return this.characters.Count == 0;
+        return this.getAliveCharacters().Count == 0;
     }
 
     /**
