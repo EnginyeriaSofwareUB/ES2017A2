@@ -539,8 +539,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 745319620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 282.5, y: 159, z: 0}
-  m_LocalScale: {x: 0.29427084, y: 0.29427084, z: 0.29427084}
+  m_LocalPosition: {x: 533.5, y: 300, z: 0}
+  m_LocalScale: {x: 0.5555556, y: 0.5555556, z: 0.5555556}
   m_Children:
   - {fileID: 1490451983}
   m_Father: {fileID: 0}
@@ -764,15 +764,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 288.38464
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 137.79036
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.257467
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4658502172444244, guid: e76e6d7ef7266f7419a24d48eed75fc0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1003,7 +1003,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1496886138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -340.31854, z: 0}
+  m_LocalPosition: {x: 0, y: -340, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -1327,7 +1327,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: PlayIndexOnClick
+        m_MethodName: goToVariablesMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1705,7 +1705,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2115351315}
-        m_MethodName: OptionsIndexOnClick
+        m_MethodName: goToOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1784,7 +1784,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2115351314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 516, y: 380.45, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

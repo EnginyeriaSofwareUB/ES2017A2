@@ -5,13 +5,7 @@ using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour
 {
-    [SerializeField]
-    protected AudioSource preparetoshootSound;
-    [SerializeField]
-    protected AudioSource damageRecievedSound;
-    [SerializeField]
-    protected AudioSource shootSound;
-    [SerializeField]
+    
     protected int health;
     [SerializeField]
     protected int maxhealth;
@@ -23,29 +17,29 @@ public abstract class Character : MonoBehaviour
     protected float strength;
     [SerializeField]
     private bool fire = false;
-
     [SerializeField]
     private GameObject prefabCarrot;
     [SerializeField]
     private GameObject arrow;
     [SerializeField]
     private GameObject firePoint;
+    [SerializeField]
     private Image healthBar;
-
+    [SerializeField]
+    protected AudioSource preparetoshootSound;
+    [SerializeField]
+    protected AudioSource damageRecievedSound;
+    [SerializeField]
+    protected AudioSource shootSound;
     //private int projDetonationTime;
-    [Range(1, 30)]
-    [SerializeField]
+    [SerializeField, Range(1, 30)]
     private float force;
-
-    private float initForce;
-
-    [Range(20, 60)]
-    [SerializeField]
+    [SerializeField, Range(20, 60)]
     private float limitForce = 40f;
-
     [SerializeField]
     private GameObject forceBar;
 
+    private float initForce;
     private bool startShot;
     private Movement movement;
 
@@ -131,6 +125,7 @@ public abstract class Character : MonoBehaviour
     // Use this for initialization
     protected virtual void Start()
     {
+        this.movement = this.GetComponent<Movement>();
         this.initForce = this.force;
         this.disableCharacter();
         this.healthBar = transform.Find("CharacterCanvas").Find("HealthBG").Find("Health").GetComponent<Image>();
@@ -146,12 +141,18 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collider2D) {
+        if (collider2D.gameObject.tag == "Projectile") {
+            Projectile projectile = collider2D.GetComponent<Projectile>();
+            this.Damage(projectile.Damage);
+        }
+    }
+
     /**
       * Metodo que deshabilita el personaje (p.e. el movimeinto)
       */
     public void disableCharacter()
     {
-        this.movement = this.GetComponent<Movement>();
         this.movement.Enabled = false;
         this.arrow.SetActive(false);
         this.startShot = false;
@@ -163,7 +164,6 @@ public abstract class Character : MonoBehaviour
      */
     public void enableCharacter()
     {
-        this.movement = this.GetComponent<Movement>();
         this.Fire = false;
         this.movement.Enabled = true;
         this.arrow.SetActive(true);

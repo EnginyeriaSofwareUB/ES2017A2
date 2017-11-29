@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 114573622426259856}
   - component: {fileID: 114573630162383426}
   m_Layer: 0
-  m_Name: talpv2_more_movements_red (1)
+  m_Name: Mole 2
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 114422289474827070}
   - component: {fileID: 114886128008640906}
   m_Layer: 0
-  m_Name: talpv2_more_movements_red
+  m_Name: Mole 1
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 114293944203043840}
   - component: {fileID: 114439768465962886}
   m_Layer: 0
-  m_Name: talpv2_more_movements_green
+  m_Name: Mole 1
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1471,7 +1471,7 @@ GameObject:
   - component: {fileID: 114427790063853458}
   - component: {fileID: 114257518208463526}
   m_Layer: 0
-  m_Name: talpv2_more_movements_green (1)
+  m_Name: Mole 2
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3873,10 +3873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e747734ed5de4804d8e403246ff92652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preparetoshootSound: {fileID: 0}
-  damageRecievedSound: {fileID: 0}
-  shootSound: {fileID: 0}
-  health: 100
   maxhealth: 100
   xSpeed: 1
   ySpeed: 5
@@ -3886,6 +3882,10 @@ MonoBehaviour:
     type: 2}
   arrow: {fileID: 1657382347233086}
   firePoint: {fileID: 1411903714712504}
+  healthBar: {fileID: 0}
+  preparetoshootSound: {fileID: 0}
+  damageRecievedSound: {fileID: 0}
+  shootSound: {fileID: 0}
   force: 3
   limitForce: 40
   forceBar: {fileID: 1657382347233086}
@@ -4072,10 +4072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e747734ed5de4804d8e403246ff92652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preparetoshootSound: {fileID: 0}
-  damageRecievedSound: {fileID: 0}
-  shootSound: {fileID: 0}
-  health: 100
   maxhealth: 100
   xSpeed: 1
   ySpeed: 5
@@ -4085,6 +4081,10 @@ MonoBehaviour:
     type: 2}
   arrow: {fileID: 1777531118065766}
   firePoint: {fileID: 1023430332691366}
+  healthBar: {fileID: 0}
+  preparetoshootSound: {fileID: 0}
+  damageRecievedSound: {fileID: 0}
+  shootSound: {fileID: 0}
   force: 3
   limitForce: 40
   forceBar: {fileID: 1777531118065766}
@@ -4111,6 +4111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c12467e4fc0145ad125ffc8bb9587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound1: {fileID: 0}
+  sound2: {fileID: 0}
+  sound3: {fileID: 0}
+  sound4: {fileID: 0}
+  music: {fileID: 0}
   player1: {fileID: 1957918723683502}
   player2: {fileID: 1889243266079156}
   AmmoBox: {fileID: 0}
@@ -4224,10 +4229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e747734ed5de4804d8e403246ff92652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preparetoshootSound: {fileID: 0}
-  damageRecievedSound: {fileID: 0}
-  shootSound: {fileID: 0}
-  health: 100
   maxhealth: 100
   xSpeed: 1
   ySpeed: 5
@@ -4237,6 +4238,10 @@ MonoBehaviour:
     type: 2}
   arrow: {fileID: 1920626145952206}
   firePoint: {fileID: 1608071398162578}
+  healthBar: {fileID: 0}
+  preparetoshootSound: {fileID: 0}
+  damageRecievedSound: {fileID: 0}
+  shootSound: {fileID: 0}
   force: 5
   limitForce: 40
   forceBar: {fileID: 1920626145952206}
@@ -4584,10 +4589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e747734ed5de4804d8e403246ff92652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preparetoshootSound: {fileID: 0}
-  damageRecievedSound: {fileID: 0}
-  shootSound: {fileID: 0}
-  health: 100
   maxhealth: 100
   xSpeed: 1
   ySpeed: 5
@@ -4597,6 +4598,10 @@ MonoBehaviour:
     type: 2}
   arrow: {fileID: 1738239598399486}
   firePoint: {fileID: 1673907177035704}
+  healthBar: {fileID: 0}
+  preparetoshootSound: {fileID: 0}
+  damageRecievedSound: {fileID: 0}
+  shootSound: {fileID: 0}
   force: 5
   limitForce: 40
   forceBar: {fileID: 1738239598399486}
