@@ -7,12 +7,10 @@ public class InventoryController : MonoBehaviour {
     [SerializeField] private GameObject inventoryPanel;
     private Dictionary<GameObject, Toggle> projectileDictionary = new Dictionary<GameObject, Toggle>();
     private List<Toggle> inventoryItems = new List<Toggle>();
-    private ToggleGroup toggleGroup;
 
     // Use this for initialization
     void Awake () {
         this.inventoryItems.AddRange(this.inventoryPanel.GetComponentsInChildren<Toggle>());
-        this.toggleGroup = this.inventoryPanel.GetComponentInChildren<ToggleGroup>();
         foreach (Toggle item in inventoryItems) {
             MenuItem menuItem = item.GetComponent<MenuItem>();
             this.projectileDictionary.Add(menuItem.ProjectilePrefab, item);

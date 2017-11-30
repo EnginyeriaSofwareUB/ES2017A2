@@ -5,46 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour {
-    public void GoBackVariablesOnClick() {
-        previousScene();
-    }
-
-    public void ContinueVariablesOnClick() {
-        Text coins = GameObject.Find("TextCounterMoney").GetComponent<Text>();
-        int numCharacters = (int)GameObject.Find("SliderAnimals").GetComponent<Slider>().value;
-        nextScene();
-    }
-
-    public void GoBackCharacterOnClick() {
-        previousScene();
-    }
-
-    public void ContinueCharacterOnClick() {
-        nextScene();
-    }
-
-    public void PlayIndexOnClick() {
-        nextScene();
-    }
-
-    public void nextScene() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void previousScene() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
-
-    public void OptionsIndexOnClick() {
-        SceneManager.LoadScene("OptionsMenu");
-    }
-    public void MenuIndexOnClick() {
-        SceneManager.LoadScene("IndexMenu");
-    }
-
-    public void HelpIndexOnClick() {
-        //SceneManager.LoadScene("HelpScene");
-    }
 
     public void ExitIndexOnClick() {
         Application.Quit();

@@ -11,7 +11,7 @@ public class Terrain2D : MonoBehaviour {
     public List<String> destructionTags;
 
     void Awkae() {
-        this.polygonCollider2D = this.polygonCollider2D = this.GetComponent<PolygonCollider2D>();
+        this.polygonCollider2D = this.GetComponent<PolygonCollider2D>();
     }
 
     void Update() {
