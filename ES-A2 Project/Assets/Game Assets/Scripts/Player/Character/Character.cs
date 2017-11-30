@@ -17,8 +17,6 @@ public abstract class Character : MonoBehaviour {
     [SerializeField]
     private bool fire = false;
     [SerializeField]
-    private GameObject prefabCarrot;
-    [SerializeField]
     private GameObject arrow;
     [SerializeField]
     private GameObject firePoint;
@@ -105,6 +103,11 @@ public abstract class Character : MonoBehaviour {
         }
     }
 
+    protected virtual void Awake() {
+        this.damageRecievedSound = Instantiate(this.damageRecievedSound);
+        this.preparetoshootSound = Instantiate(this.preparetoshootSound);
+        this.shootSound = Instantiate(this.shootSound);
+    }
 
     // Use this for initialization
     protected virtual void Start() {

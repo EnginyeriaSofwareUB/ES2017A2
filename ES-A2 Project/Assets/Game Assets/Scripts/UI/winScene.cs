@@ -23,21 +23,15 @@ public class winScene : MonoBehaviour {
     [SerializeField] private EstadoJuego estadoJuego;
 
 
-    // Use this for initialization
-    void Start() {
-
-
-    }
-
-    private void Awake() {
+    void Awake() {
         estadoJuego = EstadoJuego.estadoJuego;
+
     }
 
-    // Update is called once per frame
-    void FixedUpdate() {
-        if (estadoJuego.player1.CharactersCount > estadoJuego.player2.CharactersCount) {
+    void Start() {
+        if (estadoJuego.player1.AliveCharacters > estadoJuego.player2.AliveCharacters) {
             winPlayer1losePlayer2();
-        } else if (estadoJuego.player2.CharactersCount > estadoJuego.player1.CharactersCount) {
+        } else if (estadoJuego.player2.AliveCharacters > estadoJuego.player1.AliveCharacters) {
             winPlayer2losePlayer1();
         } else {
             winPlayer1winPlayer2();

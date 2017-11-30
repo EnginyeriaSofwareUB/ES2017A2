@@ -6,11 +6,9 @@ using UnityEngine;
 public class PlayerUI {
     private int coins;
     private int charactersCount;
-    [SerializeField]
-    private List<GameObject> characters = new List<GameObject>();
-    [SerializeField]
-    private List<ProjectileInfo> projectiles = new List<ProjectileInfo>();
-    private int aliveCharacters;
+    [SerializeField] private List<GameObject> characters = new List<GameObject>();
+    [SerializeField] private List<ProjectileInfo> projectiles = new List<ProjectileInfo>();
+    [SerializeField] private int aliveCharacters;
 
     public void initDummyData(GameObject character, GameObject projectile) {
         this.coins = 1000;
