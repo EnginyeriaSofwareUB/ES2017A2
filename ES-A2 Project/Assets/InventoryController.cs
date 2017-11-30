@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour {
     [SerializeField] private GameObject inventoryPanel;
-    private Dictionary<GameObject, Toggle> projectileDictionary = new Dictionary<GameObject, Toggle>();
+    private Dictionary<GameObject, Toggle> projectileDictionary;
     private List<Toggle> inventoryItems = new List<Toggle>();
 
     // Use this for initialization
     void Awake () {
+        this.projectileDictionary = new Dictionary<GameObject, Toggle>();
         this.inventoryItems.AddRange(this.inventoryPanel.GetComponentsInChildren<Toggle>());
         foreach (Toggle item in inventoryItems) {
             MenuItem menuItem = item.GetComponent<MenuItem>();
-            this.projectileDictionary.Add(menuItem.ProjectilePrefab, item);
+            if (menuItem.ProjectilePrefab != null) {
+                this.projectileDictionary.Add(menuItem.ProjectilePrefab, item);
+            }
         }
         this.selectDefaultProjectile();
     }
