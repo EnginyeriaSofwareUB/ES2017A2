@@ -20,41 +20,25 @@ public class winScene : MonoBehaviour {
     [SerializeField] private GameObject player2thumbup;
     [SerializeField] private GameObject player2thumbdown;
 
-    [SerializeField] private Text player1money;
-    [SerializeField] private Text player2money;
-
     [SerializeField] private EstadoJuego estadoJuego;
 
 
-    // Use this for initialization
-    void Start () {
-        
-		
-	}
+    void Awake() {
+        estadoJuego = EstadoJuego.estadoJuego;
 
-    private void Awake()
-    {
-        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate() {
-        if (estadoJuego.numCharactersPlayer1 > estadoJuego.numCharactersPlayer2)
-        {
+    void Start() {
+        if (estadoJuego.player1.AliveCharacters > estadoJuego.player2.AliveCharacters) {
             winPlayer1losePlayer2();
-        }
-        else if (estadoJuego.numCharactersPlayer1 > estadoJuego.numCharactersPlayer2)
-        {
+        } else if (estadoJuego.player2.AliveCharacters > estadoJuego.player1.AliveCharacters) {
             winPlayer2losePlayer1();
-        }
-        else
-        {
-            winPlayer1losePlayer2();
+        } else {
+            winPlayer1winPlayer2();
         }
     }
 
-    private void winPlayer2losePlayer1()
-    {
+    private void winPlayer2losePlayer1() {
         this.player1Lose.SetActive(true);
         this.player1LoseCont.SetActive(true);
         this.player1win.SetActive(false);
@@ -70,14 +54,9 @@ public class winScene : MonoBehaviour {
 
         this.player2thumbdown.SetActive(false);
         this.player2thumbup.SetActive(true);
-
-        this.player1money.text = this.estadoJuego.coins.ToString();
-        this.player2money.text = this.estadoJuego.coins.ToString();
-
     }
 
-    private void winPlayer1losePlayer2()
-    {
+    private void winPlayer1losePlayer2() {
         this.player1Lose.SetActive(false);
         this.player1LoseCont.SetActive(false);
         this.player1win.SetActive(true);
@@ -93,8 +72,23 @@ public class winScene : MonoBehaviour {
 
         this.player2thumbdown.SetActive(true);
         this.player2thumbup.SetActive(false);
+    }
 
-        this.player1money.text = this.estadoJuego.coins.ToString();
-        this.player2money.text = this.estadoJuego.coins.ToString();
+    private void winPlayer1winPlayer2() {
+        this.player1Lose.SetActive(false);
+        this.player1LoseCont.SetActive(false);
+        this.player1win.SetActive(true);
+        this.player1winCont.SetActive(true);
+
+        this.player1thumbdown.SetActive(false);
+        this.player1thumbup.SetActive(true);
+
+        this.player2Lose.SetActive(false);
+        this.player2LoseCont.SetActive(false);
+        this.player2win.SetActive(true);
+        this.player2winCont.SetActive(true);
+
+        this.player2thumbdown.SetActive(false);
+        this.player2thumbup.SetActive(true);
     }
 }

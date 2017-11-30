@@ -9,10 +9,9 @@ public abstract class Projectile : MonoBehaviour {
     [SerializeField] protected float speed;
     [SerializeField] protected int damage;
     [SerializeField] protected int detonationTime;
-    [SerializeField] protected CircleCollider2D afectationArea;
     [SerializeField] protected int ammo;
     [SerializeField] protected GameObject explosionPrefab;
-    [SerializeField] protected List<string> colliderDestroy;
+    [SerializeField] private float damageRadius;
 
     Rigidbody2D rb2;
     private float angle;
@@ -69,16 +68,6 @@ public abstract class Projectile : MonoBehaviour {
         }
     }
 
-    public CircleCollider2D AfectationArea {
-        get {
-            return afectationArea;
-        }
-
-        set {
-            afectationArea = value;
-        }
-    }
-
     public int Ammo {
         get {
             return ammo;
@@ -86,6 +75,16 @@ public abstract class Projectile : MonoBehaviour {
 
         set {
             ammo = value;
+        }
+    }
+
+    public float DamageRadius {
+        get {
+            return this.damageRadius;
+        }
+
+        set {
+            this.damageRadius = value;
         }
     }
 
@@ -121,21 +120,7 @@ public abstract class Projectile : MonoBehaviour {
     /// </summary>
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (this.colliderDestroy.Contains(collision.gameObject.tag)) {
-            //projectileImpact.Play(); //La comento porque me esta dando problemas. Att. GUS
-            SubtractLife(collision);
-            this.Destroy();
-        }
-    }
-
-    /// <summary>
-    /// Funcion encargada de quitarle vida al character que le de el proyectil
-    /// </summary>
-    /// <param name="collision"></param>
-    private void SubtractLife(Collider2D collision) {
-        if (collision.gameObject.tag == "Character") {
-            collision.GetComponent<Character>().Damage(this.damage);
-        }
+        this.Destroy();
     }
 
     // Funcion a activar: Si sale de la Escena el projectil tenemos que eliminarlo tambien para liberar memoria
@@ -163,9 +148,9 @@ public abstract class Projectile : MonoBehaviour {
     /// </summary>
     private void Destroy() {
         this.timerProjectile.stop();
-        this.explode();
         this.GetComponentInParent<Game>().GetComponent<Turn>().ProjectileDestroyed = true;
         Destroy(this.timerProjectile);
+        this.explode();
         Destroy(gameObject);
     }
 }

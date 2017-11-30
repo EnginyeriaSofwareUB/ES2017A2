@@ -5,14 +5,13 @@ using UnityEngine;
 using UnityEditor;
 
 [RequireComponent(typeof(PolygonCollider2D))]
-[ExecuteInEditMode()]
 public class Terrain2D : MonoBehaviour {
     public PolygonCollider2D polygonCollider2D;
     public float angleDiference;
     public List<String> destructionTags;
 
     void Awkae() {
-        this.polygonCollider2D = this.polygonCollider2D = this.GetComponent<PolygonCollider2D>();
+        this.polygonCollider2D = this.GetComponent<PolygonCollider2D>();
     }
 
     void Update() {
@@ -105,7 +104,8 @@ public class Terrain2D : MonoBehaviour {
             List<Vector2> path = new List<Vector2>();
             main.AddRange(fullNewPath.GetRange(index, newPoints.FirstIndex - index));
             path.AddRange(fullNewPath.GetRange(newPoints.FirstIndex, newPoints.LastIndex - newPoints.FirstIndex));
-            newPaths.Add(path);
+            if(path.Count > 2)
+                newPaths.Add(path);
             index = newPoints.LastIndex + 1;
         }
         main.AddRange(fullNewPath.GetRange(index, fullNewPath.Count - index));

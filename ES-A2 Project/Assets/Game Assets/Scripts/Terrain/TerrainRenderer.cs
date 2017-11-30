@@ -6,7 +6,6 @@ using UnityEngine;
 [ExecuteInEditMode()]
 public class TerrainRenderer : MonoBehaviour {
     public PolygonCollider2D polygonCollider2D;
-    public Color color = Color.green;
     public GameObject meshRendererPrefab;
 
     void Awkae() {
@@ -20,18 +19,6 @@ public class TerrainRenderer : MonoBehaviour {
         this.renderPolygon();
     }
 
-    private void OnDrawGizmos() {
-        for (int i = 0; i < this.polygonCollider2D.pathCount; i++) {
-            Vector2[] path = this.polygonCollider2D.GetPath(i);
-            for (int j = 0; j < path.Length; j++) {
-                Vector2 firstPoint = this.transform.TransformPoint(path[j]);
-                Vector2 nextPoint = this.transform.TransformPoint(path[(j + 1) % path.Length]);
-
-                Gizmos.color = this.color;
-                this.DrawLine(firstPoint, nextPoint, 5);
-            }
-        }
-    }
     public void DrawLine(Vector3 p1, Vector3 p2, int width) {
         for (int i = 0; i < width; i++) {
             Gizmos.DrawLine(p1 - (p1 * i * 0.001f), p2 - (p2 * i * 0.001f));

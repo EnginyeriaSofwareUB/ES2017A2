@@ -8,10 +8,6 @@ public class ProjectileScript : MonoBehaviour {
     public Image background;
     public Image projectileImage;
     public Button button;
-    public float damage;
-    public float velocity;
-    public float weight;
-    public int damage_radius;
-    public int detonation_time;
+    public GameObject projectile;
     public Text cost;
 }

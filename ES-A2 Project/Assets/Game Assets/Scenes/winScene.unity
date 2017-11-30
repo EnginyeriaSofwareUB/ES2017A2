@@ -824,7 +824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &697481877
 RectTransform:
   m_ObjectHideFlags: 0
@@ -964,8 +964,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 745319620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 299.5, y: 168.5, z: 0}
-  m_LocalScale: {x: 0.31197917, y: 0.31197917, z: 0.31197917}
+  m_LocalPosition: {x: 377, y: 212, z: 0}
+  m_LocalScale: {x: 0.39259258, y: 0.39259258, z: 0.39259258}
   m_Children:
   - {fileID: 1490451983}
   m_Father: {fileID: 0}
@@ -992,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &918439612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1344,7 +1344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1212019402
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1538,7 +1538,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617428561}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 940, y: -520.10016, z: 0}
+  m_LocalPosition: {x: 940.2831, y: -520, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -1922,7 +1922,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1892749752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -940, y: -520.10016, z: 0}
+  m_LocalPosition: {x: -940.2831, y: -520, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -2237,7 +2237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2106958025
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2353,6 +2353,4 @@ MonoBehaviour:
   player1thumbdown: {fileID: 695702659}
   player2thumbup: {fileID: 70465637}
   player2thumbdown: {fileID: 2093288700}
-  player1money: {fileID: 918439613}
-  player2money: {fileID: 697481878}
   estadoJuego: {fileID: 1873240232}
