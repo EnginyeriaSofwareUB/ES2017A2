@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectileInfo {
-
-    public string projectileName;
-    public float weight;
-    public float speed;
-    public int damage;
-    public int detonationTime;
-    public CircleCollider2D afectationArea;
+    public GameObject projectile;
     public int ammo;
-    public List<string> colliderDestroy;
+
+    public ProjectileInfo(GameObject projectile, int ammo) {
+        this.projectile = projectile;
+        this.ammo = ammo;
+    }
 }

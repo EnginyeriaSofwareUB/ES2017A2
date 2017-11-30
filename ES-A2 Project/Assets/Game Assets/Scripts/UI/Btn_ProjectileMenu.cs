@@ -79,11 +79,6 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     //Values of all projectiles
     private string[] projectilesName = { "pastanaga", "tomaquet", "ceba", "pebrot", "alberginia" };
-    float[] damages = { 1, 1, 3, 4, 3 };
-    float[] speeds = { 3, 0, 3, 1, 4 };
-    float[] weights = { 2, 5, 2, 2, 2 };
-    int[] damages_radius = { 1, 2, 5, 4, 5 };
-    int[] detonations_time = { 4, 2, 3, 3, 5 };
     string[] costes = { "20", "25", "30", "35", "40" };
 
     [SerializeField] private Slider sl_damage;

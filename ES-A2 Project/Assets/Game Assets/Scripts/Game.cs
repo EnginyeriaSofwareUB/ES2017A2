@@ -24,7 +24,7 @@ public class Game : MonoBehaviour {
     private Round round;
     private TimerGame timerRounds;
     private bool isBetweenRounds;
-    [SerializeField] private EstadoJuego estadoJuego;
+    private EstadoJuego estadoJuego;
 
     public GameObject Player1 {
         get {
@@ -46,10 +46,11 @@ public class Game : MonoBehaviour {
         }
     }
 
-    private void Awake() {
+    void Awake() {
         estadoJuego = EstadoJuego.estadoJuego;
         this.initVariables();
     }
+
     // Use this for initialization
     void Start() {
         this.startRound();
@@ -97,7 +98,7 @@ public class Game : MonoBehaviour {
     private void initVariables(ref Vector2 initPosition, GameObject playerObject, PlayerUI playerUI) {
         Player player = playerObject.GetComponent<Player>();
         List<GameObject> characters =  playerUI.Characters;
-        Dictionary<GameObject, int> projectiles = playerUI.Projectiles;
+        List<ProjectileInfo> projectiles = playerUI.Projectiles;
 
         player.Characters = new List<Character>();
         foreach (GameObject characterPrefab in characters) {
@@ -107,6 +108,8 @@ public class Game : MonoBehaviour {
             player.Characters.Add(character.GetComponent<Character>());
             character.SetActive(true);
         }
+
+        player.Inventory.initInventory(projectiles);
     }
 
     /**
@@ -116,9 +119,6 @@ public class Game : MonoBehaviour {
         this.round = this.gameObject.AddComponent<Round>();
         this.round.TimeTurn = this.timeTurn;
         this.isBetweenRounds = false;
-
-
-
     }
 
     /**

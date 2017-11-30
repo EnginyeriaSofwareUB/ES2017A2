@@ -133,7 +133,6 @@ public class Round : MonoBehaviour {
         }
         if(character != null) {*/
         character.GetComponentInParent<Player>().SelectedCharacter = character;
-        character.GetComponentInParent<Player>().initInventoryPanel();
         // }    
         return character;
     }

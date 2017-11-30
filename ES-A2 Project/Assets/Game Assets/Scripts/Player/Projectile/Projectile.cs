@@ -148,9 +148,9 @@ public abstract class Projectile : MonoBehaviour {
     /// </summary>
     private void Destroy() {
         this.timerProjectile.stop();
-        this.explode();
         this.GetComponentInParent<Game>().GetComponent<Turn>().ProjectileDestroyed = true;
         Destroy(this.timerProjectile);
+        this.explode();
         Destroy(gameObject);
     }
 }

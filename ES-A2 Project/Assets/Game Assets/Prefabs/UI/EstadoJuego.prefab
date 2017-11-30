@@ -33,7 +33,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362899374183516}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -53,5 +53,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultProjectile: {fileID: 1279024082899926, guid: 50c1b57df510cfb4f9a14726c2f5703b,
     type: 2}
+  defaultCharacter: {fileID: 1810384814506090, guid: eeb756474c786974b8b3518872373681,
+    type: 2}
   volumenEfectos: 5
   volumenMusica: 5
+  player1:
+    characters: []
+  player2:
+    characters: []

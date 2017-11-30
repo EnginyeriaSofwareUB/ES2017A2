@@ -7,6 +7,8 @@ public class EstadoJuego : MonoBehaviour {
     public static EstadoJuego estadoJuego;
 
     public GameObject defaultProjectile;
+    public GameObject defaultCharacter;
+
     public int volumenEfectos = 5;
     public int volumenMusica = 5;
 
@@ -20,7 +22,12 @@ public class EstadoJuego : MonoBehaviour {
         }
         this.volumenEfectos = 5;
         this.volumenMusica = 5;
-        this.initVariables();
+        this.initDummyVariables();
+    }
+
+    private void initDummyVariables() {
+        this.player1.initDummyData(defaultCharacter, defaultProjectile);
+        this.player2.initDummyData(defaultCharacter, defaultProjectile);
     }
 
     private void initVariables() {
@@ -29,6 +36,10 @@ public class EstadoJuego : MonoBehaviour {
     }
 
     public void resetInfo() {
+        this.initVariables();
+    }
+
+    public void setIndexMenuValues() {
         this.initVariables();
     }
 
@@ -52,7 +63,8 @@ public class EstadoJuego : MonoBehaviour {
     public void setProjectiles(PlayerUI player, Dictionary<ProjectileScript, int> projectiles) {
         player.initProjectiles(this.defaultProjectile);
         foreach (KeyValuePair<ProjectileScript, int> projectile in projectiles) {
-            player.Projectiles.Add(projectile.Key.projectile, projectile.Value);
+            ProjectileInfo projectileInfo = new ProjectileInfo(projectile.Key.projectile, projectile.Value);
+            player.Projectiles.Add(projectileInfo);
         }
     }
 

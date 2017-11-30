@@ -2,14 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PlayerUI {
-    private int coins = 1000;
-    private int charactersCount = 3;
+    private int coins;
+    private int charactersCount;
     [SerializeField]
     private List<GameObject> characters = new List<GameObject>();
     [SerializeField]
-    private Dictionary<GameObject, int> projectiles = new Dictionary<GameObject, int>();
+    private List<ProjectileInfo> projectiles = new List<ProjectileInfo>();
     private int aliveCharacters;
+
+    public void initDummyData(GameObject character, GameObject projectile) {
+        this.coins = 1000;
+        this.characters = new List<GameObject>() {
+            character,
+            character
+        };
+        this.charactersCount = this.characters.Count;
+
+        this.initProjectiles(projectile);
+    }
 
     public int Coins {
         get {
@@ -41,16 +53,6 @@ public class PlayerUI {
         }
     }
 
-    public Dictionary<GameObject, int> Projectiles {
-        get {
-            return projectiles;
-        }
-
-        set {
-            projectiles = value;
-        }
-    }
-
     public int AliveCharacters {
         get {
             return this.aliveCharacters;
@@ -61,8 +63,19 @@ public class PlayerUI {
         }
     }
 
+    public List<ProjectileInfo> Projectiles {
+        get {
+            return this.projectiles;
+        }
+
+        set {
+            this.projectiles = value;
+        }
+    }
+
     public void initProjectiles(GameObject defaultProjectile) {
-        this.projectiles = new Dictionary<GameObject, int>();
-        this.projectiles.Add(defaultProjectile, 99);
+        this.Projectiles = new List<ProjectileInfo>() {
+            new ProjectileInfo(defaultProjectile, 99)
+        };
     }
 }
