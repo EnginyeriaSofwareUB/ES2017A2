@@ -67,13 +67,25 @@ public class Round : MonoBehaviour {
      */
     private void startTurn() {
         Destroy(this.turn);
+        this.removeNullsFromQueue();
         if (this.charactersQueue.Count > 0) {
             this.turn = this.gameObject.AddComponent<Turn>();
             this.turn.Time = this.TimeTurn;
-        } else {
+        }
+        else {
             Debug.Log("Round End");
             this.Running = false;
         }
+    }
+
+    private bool hasRoundEnded() {
+        int count = 0;
+        foreach (Character character in this.charactersQueue.ToArray()) {
+            if (character != null) {
+                count += 1;
+            }
+        }
+        return count > 0;
     }
 
     /**
@@ -92,7 +104,7 @@ public class Round : MonoBehaviour {
      */
     private Queue<Character> addListToQueue(List<Character> list) {
         Queue<Character> queue = new Queue<Character>();
-        foreach(Character obj in list) {
+        foreach (Character obj in list) {
             queue.Enqueue(obj);
         }
         return queue;
@@ -116,20 +128,35 @@ public class Round : MonoBehaviour {
      */
     public Character getNextCharacter() {
         Character character = this.charactersQueue.Dequeue();
+        /*while (character == null && this.charactersQueue.Count > 0) {
+            character = this.charactersQueue.Dequeue();
+        }
+        if(character != null) {*/
         character.GetComponentInParent<Player>().SelectedCharacter = character;
-        character.GetComponentInParent<Player>().initInventoryPanel();
+        // }    
         return character;
     }
 
     /**
      * Devuelve el tiempo restante del turno activo
      */
-     public int getTimeLeft() {
+    public int getTimeLeft() {
         int seconds = 0;
-        if(this.turn != null) {
-            seconds = (int) this.turn.getTimeLeft();
+        if (this.turn != null) {
+            seconds = (int)this.turn.getTimeLeft();
         }
 
         return seconds;
-     }
+    }
+
+    public void removeNullsFromQueue() {
+        Queue<Character> newQueue = new Queue<Character>();
+        while (this.charactersQueue.Count != 0) {
+            Character character = this.charactersQueue.Dequeue();
+            if (character != null) {
+                newQueue.Enqueue(character);
+            }
+        }
+        this.charactersQueue = newQueue;
+    }
 }

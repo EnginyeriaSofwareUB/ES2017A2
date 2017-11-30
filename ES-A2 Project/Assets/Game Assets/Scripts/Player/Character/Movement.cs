@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour {
     private bool isGrounded = false;
     private Rigidbody2D rigidbody;
     [SerializeField] private bool enabled = false;
-
+    Animator animator;
     public bool Enabled {
         get {
             return enabled;
@@ -20,12 +20,12 @@ public class Movement : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         this.initVariables();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate() {
+    }
+
+    // Update is called once per frame
+    void FixedUpdate() {
         this.movementController();
     }
 
@@ -53,6 +53,7 @@ public class Movement : MonoBehaviour {
     private void initVariables() {
         this.character = this.GetComponent<Character>();
         this.rigidbody = this.GetComponent<Rigidbody2D>();
+        this.animator = this.GetComponent<Animator>();
     }
 
     /**
@@ -62,7 +63,7 @@ public class Movement : MonoBehaviour {
         if (this.enabled) {
             this.horizontalMovement();
             this.verticalMovement();
-        }
+        }       
     }
 
     /**
@@ -82,7 +83,31 @@ public class Movement : MonoBehaviour {
      * Controla el movimiento horizontal del personaje.
      */
     private void horizontalMovement() {
-        float xSpeed = Input.GetAxis("Horizontal") * this.character.XSpeed;
-        this.rigidbody.velocity = new Vector2(xSpeed, this.rigidbody.velocity.y);
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), 0);
+        Vector2 inputDir = input.normalized;
+
+        if (inputDir != Vector2.zero) {
+            this.transform.eulerAngles = Vector3.up * Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
+        }
+
+        //block axis Z
+        Vector3 pos = transform.position;
+        pos.z = 0;
+        this.transform.position = pos;
+
+        float speed = this.character.XSpeed * inputDir.magnitude;
+        this.transform.Translate(this.transform.forward * speed * Time.deltaTime, Space.World);
+
+        if (Input.GetButton("Horizontal")) {
+            SetAnimation("Caminar");
+        }
+    }
+
+    /// <summary>
+    /// Funcion encargada de poner la animacion que le llega por parametro
+    /// </summary>
+    /// <param name="s"></param>
+    public void SetAnimation(String s) {
+        this.animator.Play(s);
     }
 }

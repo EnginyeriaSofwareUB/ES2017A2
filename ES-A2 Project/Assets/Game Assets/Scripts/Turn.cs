@@ -7,6 +7,7 @@ public class Turn : MonoBehaviour {
     private bool running = true;
     private TimerGame timerGame;
     private int seconds;
+    private bool projectileDestroyed = false;
 
     public bool Running {
         get {
@@ -36,8 +37,8 @@ public class Turn : MonoBehaviour {
      * Metodo inicializador de variables
      */
     private void initVariables() {
-        this.character = this.GetComponent<Round>().getNextCharacter();
-        this.timerGame = this.gameObject.AddComponent<TimerGame>();
+        this.character = this.GetComponent<Round>().getNextCharacter();        
+        this.timerGame = this.gameObject.AddComponent<TimerGame>();   
     }
 
     /**
@@ -63,7 +64,7 @@ public class Turn : MonoBehaviour {
     }
 
     IEnumerator timer() {
-        while (!Input.GetKeyDown(KeyCode.Z) && !this.character.Fire && !this.timerGame.TimeOver)
+        while (!this.timerGame.TimeOver && !this.ProjectileDestroyed)
             yield return null;
         this.endTurn();
     }
@@ -71,19 +72,25 @@ public class Turn : MonoBehaviour {
     /**
      * Retorna el timepo que queda en ese turno
      */
-    public double getTimeLeft()
-    {
+    public double getTimeLeft() {
         double value = timerGame.getTimeLeft();
         value = value + 1;
-        if (value > this.seconds)
-        {
+        if (value > this.seconds) {
             return this.seconds;
         }
-        else
-        {
+        else {
             return value;
         }
-        
+
+    }
+
+    public bool ProjectileDestroyed {
+        get {
+            return projectileDestroyed;
+        }
+        set {
+            projectileDestroyed = value;
+        }
     }
 
 }

@@ -6,78 +6,55 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour {
 
-    private GameObject estadoObject;
-    private EstadoJuego estadoJuego;
-
-    private void Awake()
-    {
-        estadoJuego = GameObject.Find("EstadoJuego").GetComponent<EstadoJuego>();
+    public void ExitIndexOnClick() {
+        Application.Quit();
     }
 
-    // Use this for initialization
-    void Start () {
+    public void PauseMenuContinueGame() {
+        Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
-    public void GoBackVariablesOnClick()
-    {
-        previousScene();
+    public void PauseMenuRestartGame() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("IndexMenu");
     }
-
-    public void ContinueVariablesOnClick()
-    {
-        Text coins = GameObject.Find("TextCounterMoney").GetComponent<Text>();
-        int numCharacters = (int)GameObject.Find("SliderAnimals").GetComponent<Slider>().value;
-        this.estadoJuego.coins = System.Int32.Parse(coins.text);
-        this.estadoJuego.numCharacters = numCharacters;
-        nextScene();
-    }
-
-    public void GoBackCharacterOnClick()
-    {
-        previousScene();
-    }
-
-    public void ContinueCharacterOnClick()
-    {
-        nextScene();
-    }
-
-    public void PlayIndexOnClick()
-    {
-        nextScene();        
-    }
-
-    public void nextScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void previousScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
-
-    public void OptionsIndexOnClick()
-    {
-        SceneManager.LoadScene("OptionsMenu");
-    }
-    public void MenuIndexOnClick()
-    {
+    public void PauseMenuExitGame() {
+        Time.timeScale = 1;
         SceneManager.LoadScene("IndexMenu");
     }
 
-    public void HelpIndexOnClick()
-    {
-        //SceneManager.LoadScene("HelpScene");
+    public void WinMenuRestartGame() {
+        SceneManager.LoadScene("IndexMenu");
+    }
+    public void WinMenuExitGame() {
+        SceneManager.LoadScene("IndexMenu");
     }
 
-    public void ExitIndexOnClick()
-    {
-        Application.Quit();
+    public void goToIndexMenu() {
+        SceneManager.LoadScene("IndexMenu");
+    }
+
+    public void goToCharacterSelectMenu() {
+        SceneManager.LoadScene("SelectCharacterMenu");
+    }
+
+    public void goToVariablesMenu() {
+        SceneManager.LoadScene("VariablesMenu");
+    }
+
+    public void goToOptions() {
+        SceneManager.LoadScene("OptionsMenu");
+    }
+
+    public void goToProjectilesSelectMenu() {
+        SceneManager.LoadScene("ProjectilesMenu");
+    }
+
+    public void goToGameScene() {
+        SceneManager.LoadScene("Test Scene");
+    }
+
+    public void goToWinScene() {
+        SceneManager.LoadScene("winScene");
     }
 }
