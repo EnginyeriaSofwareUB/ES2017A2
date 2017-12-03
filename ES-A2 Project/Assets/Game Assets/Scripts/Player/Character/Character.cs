@@ -116,6 +116,7 @@ public abstract class Character : MonoBehaviour {
         this.initForce = this.force;
         this.disableCharacter();
         this.healthBar = transform.Find("CharacterCanvas").Find("HealthBG").Find("Health").GetComponent<Image>();
+        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
     }
 
 
@@ -158,6 +159,7 @@ public abstract class Character : MonoBehaviour {
         this.isPlaying = true;
         this.arrow.SetActive(true);
         this.forceBar.SendMessage("Stop");
+
     }
 
     /**
@@ -186,12 +188,9 @@ public abstract class Character : MonoBehaviour {
     /// Funcion encargada de rotar la flecha segun vaya el cursor y disparar siempre y cuando tenga el character tenga la flecha
     /// </summary>
     private void MakeShoot() {
-        // Rotacion de la flecha       
         float angle = Pointer.AngleBetweenVectors(this.arrow.transform.position, Pointer.Position());
-        this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
-        if (this.arrow.activeInHierarchy) {
-            this.MoveCharacter(angle);
+        if (this.arrow.activeInHierarchy && (this.transform.rotation.y == 0.7071068f || this.transform.rotation.y == -0.7071068f)) {
+            this.MoveArrow(angle);
             if (Input.GetButtonDown("Fire1")) {
                 this.forceBar.SendMessage("Load");
                 this.startShot = true;
@@ -199,8 +198,6 @@ public abstract class Character : MonoBehaviour {
                 if (i == 4) {
                     preparetoshootSound.Play();
                 }
-
-
             }
             if (Input.GetButton("Fire1")) {
                 float forceFactor = this.forceBar.GetComponent<ForceBar>().GetForce();
@@ -220,12 +217,13 @@ public abstract class Character : MonoBehaviour {
     /// <param name="damage"></param>
     public void Damage(int damage) {
         this.health = this.health - damage;
-        this.healthBar.fillAmount = (float) this.health / this.maxhealth;
-        if (this.health == 0) {
+        this.healthBar.fillAmount = (float)this.health / this.maxhealth;
+        if (this.health <= 0) {
             this.movement.SetAnimation("Shut-right");
             this.movement.Enabled = false;
             this.arrow.SetActive(false);
             this.startShot = false;
+            this.isPlaying = false;
             Destroy(this.gameObject, 2);
         }
         damageRecievedSound.Play();
@@ -255,15 +253,22 @@ public abstract class Character : MonoBehaviour {
     /// Funcion encargada de mover el personaje en la direccion que apunta la flecha (puntero del mouse)
     /// </summary>
     /// <param name="angle"></param>
-    private void MoveCharacter(float angle) {
-        if (!Input.GetButton("Horizontal")) {
-            if ((angle < 90) && (angle > -90)) {
-                this.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-            } else {
-                this.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+    private void MoveArrow(float angle) {
+        if (this.transform.rotation.y == 0.7071068f) {
+            angle = Mathf.Clamp(angle, -70, 70);
+            this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
+        else if (this.transform.rotation.y == -0.7071068f) {
+            if (angle > 110) {
+                angle = Mathf.Clamp(angle, 105, 180);
+                this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            }
+            else if (angle < -90) {
+                angle = Mathf.Clamp(angle, -180, -105);
+                this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
         }
-        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+
     }
 
     /// <summary>
@@ -279,7 +284,6 @@ public abstract class Character : MonoBehaviour {
         shootSound.Play();
         this.forceBar.SendMessage("Stop");
         this.disableCharacter();
-
     }
 
     /// <summary>
@@ -288,7 +292,8 @@ public abstract class Character : MonoBehaviour {
     private void CheckHandShot() {
         if (this.transform.rotation.y == 0.7071068f) {
             this.movement.SetAnimation("disparar_dreta");
-        } else {
+        }
+        else {
             this.movement.SetAnimation("disparar");
         }
     }
