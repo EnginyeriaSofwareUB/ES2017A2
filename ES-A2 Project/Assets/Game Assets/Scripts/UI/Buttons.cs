@@ -57,4 +57,9 @@ public class Buttons : MonoBehaviour {
     public void goToWinScene() {
         SceneManager.LoadScene("winScene");
     }
+
+    public void goToHelpMenu()
+    {
+        SceneManager.LoadScene("HelpMenu");
+    }
 }
