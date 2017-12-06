@@ -219,13 +219,17 @@ public abstract class Character : MonoBehaviour {
         this.health = this.health - damage;
         this.healthBar.fillAmount = (float)this.health / this.maxhealth;
         if (this.health <= 0) {
-            this.movement.SetAnimation("Shut-right");
+            this.movement.SetAnimation("morir");
             this.movement.Enabled = false;
             this.arrow.SetActive(false);
             this.startShot = false;
             this.isPlaying = false;
-            Destroy(this.gameObject, 2);
+            Destroy(this.gameObject, 1);
         }
+        else {
+            this.movement.SetAnimation("rebre_mal");
+        }
+
         damageRecievedSound.Play();
         //Debug.Log(this.healthBar.fillAmount);
     }
@@ -255,12 +259,12 @@ public abstract class Character : MonoBehaviour {
     /// <param name="angle"></param>
     private void MoveArrow(float angle) {
         if (this.transform.rotation.y == 0.7071068f) {
-            angle = Mathf.Clamp(angle, -70, 70);
+            angle = Mathf.Clamp(angle, -80, 80);
             this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
         else if (this.transform.rotation.y == -0.7071068f) {
             if (angle > 110) {
-                angle = Mathf.Clamp(angle, 105, 180);
+                angle = Mathf.Clamp(angle, 100, 180);
                 this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
             else if (angle < -90) {
@@ -283,7 +287,9 @@ public abstract class Character : MonoBehaviour {
         this.fireProjectile(angle);
         shootSound.Play();
         this.forceBar.SendMessage("Stop");
-        this.disableCharacter();
+        if (this.isAlive()) {
+            this.disableCharacter();
+        }
     }
 
     /// <summary>

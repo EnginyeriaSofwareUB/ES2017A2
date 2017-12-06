@@ -72,10 +72,12 @@ public class Movement : MonoBehaviour {
      */
     private void verticalMovement() {
         float ySpeed = this.character.YSpeed;
-
+    
         if (Input.GetButtonDown("Jump") && this.isGrounded) {
             this.rigidbody.AddForce(new Vector2(0, ySpeed), ForceMode2D.Impulse);
             this.isGrounded = false;
+            SetAnimation("saltar");
+
         }
     }
 
