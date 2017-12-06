@@ -102,12 +102,15 @@ public class Player : MonoBehaviour {
     }
 
     public void closeInventory() {
-        this.selectedCharacter.enableCharacter();
-        this.inventory.closeInventory();
+        if (this.selectedCharacter != null && this.inventory != null) {
+            this.selectedCharacter.enableCharacter();
+            this.inventory.closeInventory();
+        }
     }
 
     public void setSelectedProjectile(MenuItem menuItem) {
         this.SelectedProjectile = menuItem;
+        this.closeInventory();
     }
 
     public GameObject useProjectile() {
