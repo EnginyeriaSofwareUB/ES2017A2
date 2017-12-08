@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 
 public class Game : MonoBehaviour {
+
     [SerializeField] private Buttons buttons;
     [SerializeField] private AudioSource sound1;
     [SerializeField] private AudioSource sound2;
@@ -21,7 +22,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private int timeBetweenRounds = 5;
     [SerializeField] private int timeTurn = 10;
 
-    private Round round;
+    public Round round;
     private TimerGame timerRounds;
     private bool isBetweenRounds;
     private EstadoJuego estadoJuego;

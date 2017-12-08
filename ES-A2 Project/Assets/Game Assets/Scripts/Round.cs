@@ -8,6 +8,7 @@ public class Round : MonoBehaviour {
     private List<Character> player1Characters;
     private List<Character> player2Characters;
     private Queue<Character> charactersQueue;
+    private List<Character> charactersOrder;
     private bool running = true;
     private int timeTurn;
 
@@ -96,6 +97,7 @@ public class Round : MonoBehaviour {
         list.AddRange(this.player1Characters);
         list.AddRange(this.player2Characters);
         this.shuffle(list);
+        this.charactersOrder = list;
         return this.addListToQueue(list);
     }
 
@@ -158,5 +160,10 @@ public class Round : MonoBehaviour {
             }
         }
         this.charactersQueue = newQueue;
+    }
+
+    public List<Character> getCharactersToPrint()
+    {
+        return this.charactersOrder;
     }
 }
