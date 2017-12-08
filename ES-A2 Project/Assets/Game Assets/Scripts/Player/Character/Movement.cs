@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour {
     private bool isGrounded = false;
     private Rigidbody2D rigidbody;
     [SerializeField] private bool enabled = false;
+    [SerializeField] private float fallMultiplier = 2.5f;
+    [SerializeField] private float lowJumpMultiplier = 2f;
     Animator animator;
     public bool Enabled {
         get {
@@ -72,12 +74,20 @@ public class Movement : MonoBehaviour {
      */
     private void verticalMovement() {
         float ySpeed = this.character.YSpeed;
-    
+
         if (Input.GetButtonDown("Jump") && this.isGrounded) {
             this.rigidbody.AddForce(new Vector2(0, ySpeed), ForceMode2D.Impulse);
             this.isGrounded = false;
             SetAnimation("saltar");
+        }
+        this.betterJump();
+    }
 
+    private void betterJump() {
+        if (this.rigidbody.velocity.y < 0) {
+            this.rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (this.fallMultiplier - 1) * Time.deltaTime;
+        } else if (this.rigidbody.velocity.y > 0 && !Input.GetButton("Jump")) {
+            this.rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (this.lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 

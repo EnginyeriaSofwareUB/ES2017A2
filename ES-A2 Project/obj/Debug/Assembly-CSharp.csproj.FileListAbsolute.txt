@@ -34,6 +34,6 @@ D:\GitHub\ES2017A2\ES-A2 Project\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializ
 D:\GitHub\ES2017A2\ES-A2 Project\Temp\bin\Debug\UnityEngine.HoloLens.xml
 D:\GitHub\ES2017A2\ES-A2 Project\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
 D:\GitHub\ES2017A2\ES-A2 Project\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-D:\GitHub\ES2017A2\ES-A2 Project\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 D:\GitHub\ES2017A2\ES-A2 Project\obj\Debug\Assembly-CSharp.dll
 D:\GitHub\ES2017A2\ES-A2 Project\obj\Debug\Assembly-CSharp.pdb
+D:\GitHub\ES2017A2\ES-A2 Project\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
