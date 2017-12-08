@@ -62,23 +62,27 @@ public class Game : MonoBehaviour {
 
     void FixedUpdate() {
 
-        //random healthBox or AmmoBox
-        float i = Random.Range(0, 2000);
-        if (i > 1995) {
-            Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 10, 0);
-            float type = Random.Range(0, 2);//50%prob ammmo-health
-            if (type == 1) {
-                Instantiate(HealthBox, position, Quaternion.identity);
-            } else {
-                Instantiate(AmmoBox, position, Quaternion.identity);
-            }
-        }
-
-
-
         if (!this.round.Running && !this.isBetweenRounds) {
             this.endRound();
             this.betweenRounds();
+
+            //random healthBox or AmmoBox
+            float i = Random.Range(1, 10);
+            for (int k = 0; k < i; k++)
+            {
+                Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 10, 0);
+                float type = Random.Range(0, 1);//50%prob ammmo-health
+                if (k % 2 == 0)
+                {
+                    Instantiate(HealthBox, position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(AmmoBox, position, Quaternion.identity);
+                }
+
+            }
+
         }
         //Update the countdown
         this.countDownText.text = "Count: " + round.getTimeLeft();
