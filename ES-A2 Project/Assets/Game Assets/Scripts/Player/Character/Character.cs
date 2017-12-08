@@ -239,7 +239,7 @@ public abstract class Character : MonoBehaviour {
     /// </summary>
     /// <param name="ammo"></param>
     public void ApplyAmmo(int ammo) {
-        //void pending other tasks
+        this.player.addAmmoToSelectedProjectile(ammo);
     }
 
     /// <summary>
