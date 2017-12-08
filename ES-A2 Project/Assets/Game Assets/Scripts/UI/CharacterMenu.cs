@@ -24,6 +24,11 @@ public class CharacterMenu : MonoBehaviour {
     private List<GameObject> player1Characters = new List<GameObject>();
     private List<GameObject> player2Characters = new List<GameObject>();
 
+    [SerializeField] private GameObject panel1;
+    [SerializeField] private GameObject panel2;
+    [SerializeField] private GameObject panel3;
+
+
     void Awake() {
         estadoJuego = EstadoJuego.estadoJuego;
         player1_money.text = estadoJuego.player1.Coins.ToString();
@@ -40,17 +45,26 @@ public class CharacterMenu : MonoBehaviour {
 
     private void Update() {
         if (isPlayer1Selecting) {
+            this.panel3.SetActive(false);
+            this.panel2.SetActive(false);
+            this.panel1.SetActive(true);
             users_active.player1.enabled = false;
             users_active.player1active.enabled = true;
             users_active.player2.enabled = true;
             users_active.player2active.enabled = false;
         } else {
+            this.panel3.SetActive(false);
+            this.panel2.SetActive(true);
+            this.panel1.SetActive(false);
             users_active.player1.enabled = true;
             users_active.player1active.enabled = false;
             users_active.player2.enabled = false;
             users_active.player2active.enabled = true;
         }
         if (this.player1Characters.Count == numCharacters && this.player2Characters.Count == numCharacters) {
+            this.panel2.SetActive(false);
+            this.panel1.SetActive(false);
+            this.panel3.SetActive(true);
             playButton.enabled = true;
             users_active.player1.enabled = true;
             users_active.player1active.enabled = false;

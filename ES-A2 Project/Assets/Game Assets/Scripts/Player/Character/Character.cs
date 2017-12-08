@@ -159,7 +159,6 @@ public abstract class Character : MonoBehaviour {
         this.isPlaying = true;
         this.arrow.SetActive(true);
         this.forceBar.SendMessage("Stop");
-
     }
 
     /**
@@ -189,7 +188,7 @@ public abstract class Character : MonoBehaviour {
     /// </summary>
     private void MakeShoot() {
         float angle = Pointer.AngleBetweenVectors(this.arrow.transform.position, Pointer.Position());
-        if (this.arrow.activeInHierarchy && (this.transform.rotation.y == 0.7071068f || this.transform.rotation.y == -0.7071068f)) {
+        if (this.arrow.activeInHierarchy) {
             this.MoveArrow(angle);
             if (Input.GetButtonDown("Fire1")) {
                 this.forceBar.SendMessage("Load");
@@ -259,21 +258,45 @@ public abstract class Character : MonoBehaviour {
     /// <param name="angle"></param>
     private void MoveArrow(float angle) {
         if (this.transform.rotation.y == 0.7071068f) {
-            angle = Mathf.Clamp(angle, -80, 80);
-            this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            MoveArrowRight(angle);
         }
         else if (this.transform.rotation.y == -0.7071068f) {
-            if (angle > 110) {
-                angle = Mathf.Clamp(angle, 100, 180);
-                this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            MoveArrowLeft(angle);
+        }
+        else {
+            if (this.transform.rotation.y == 0.7066739f) {
+                MoveArrowRight(angle);
             }
-            else if (angle < -90) {
-                angle = Mathf.Clamp(angle, -180, -105);
-                this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            else if (this.transform.rotation.y == -0.7066739f) {
+                MoveArrowLeft(angle);
             }
         }
-
     }
+
+    /// <summary>
+    /// Funcion encargada de limitar el movimiento de la flecha cuando el jugador mira a la derecha
+    /// </summary>
+    /// <param name="angle"></param>
+    private void MoveArrowRight(float angle) {
+        angle = Mathf.Clamp(angle, -80, 80);
+        this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+
+    /// <summary>
+    /// Funcion encargada de limitar el movimiento de la flecha cuando el jugador mira a la izquierda
+    /// </summary>
+    /// <param name="angle"></param>
+    private void MoveArrowLeft(float angle) {
+        if (angle > 110) {
+            angle = Mathf.Clamp(angle, 100, 180);
+            this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
+        else if (angle < -90) {
+            angle = Mathf.Clamp(angle, -180, -105);
+            this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
+    }
+
 
     /// <summary>
     /// Funcion encargada de gestionar el disparo del proyectil con la animacion determinada
