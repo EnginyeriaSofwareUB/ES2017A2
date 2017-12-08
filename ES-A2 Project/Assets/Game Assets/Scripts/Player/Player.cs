@@ -119,4 +119,9 @@ public class Player : MonoBehaviour {
         }
         return this.selectedProjectile.useProjectile();
     }
+
+    public void addAmmoToSelectedProjectile(int ammo)
+    {
+        this.selectedProjectile.Ammo += ammo;
+    }
 }
