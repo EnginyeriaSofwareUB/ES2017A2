@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 145
+  controlID: 68
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -394,9 +394,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.0136359, y: -3.7283983, z: 0.44921875}
+    m_Target: {x: -6.564265, y: 5.5853267, z: 0.3195415}
     speed: 2
-    m_Value: {x: -3.0136359, y: -3.7283983, z: 0.44921875}
+    m_Value: {x: -6.564265, y: 5.5853267, z: 0.3195415}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -423,9 +423,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 26.602936
+    m_Target: 39.534496
     speed: 2
-    m_Value: 26.602936
+    m_Value: 39.534496
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -511,23 +511,23 @@ MonoBehaviour:
     height: 728
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0e330000
-    m_LastClickedID: 13070
-    m_ExpandedIDs: a6fbffff00000000d0330000
+    m_SelectedIDs: 7cf7ffff
+    m_LastClickedID: -2180
+    m_ExpandedIDs: 9efbffff0000000082320000d0330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Player 1
-      m_OriginalName: Player 1
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13164
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -574,19 +574,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Game Assets/Materials
+    - Assets/Game Assets/Prefabs/Terrain
   m_ViewMode: 1
   m_StartGridSize: 50
   m_LastFolders:
-  - Assets/Game Assets/Materials
+  - Assets/Game Assets/Prefabs/Terrain
   m_LastFoldersGridSize: 50
   m_LastProjectPath: D:\GitHub\ES2017A2\ES-A2 Project
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 282e0000
-    m_LastClickedID: 11816
-    m_ExpandedIDs: 000000007c27000090270000f6270000fc2700000229000004290000742b00009e2b0000c62c0000002d000000ca9a3bffffff7f
+    m_SelectedIDs: ca270000
+    m_LastClickedID: 10186
+    m_ExpandedIDs: 00000000882700009c2700009e270000062800000c28000010290000122900007e2b0000a82b0000ce2c00000a2d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -614,7 +614,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007c27000090270000f6270000fc2700000229000004290000742b00009e2b0000c62c0000002d0000
+    m_ExpandedIDs: 00000000882700009c270000062800000c28000010290000122900007e2b0000a82b0000ce2c00000a2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
