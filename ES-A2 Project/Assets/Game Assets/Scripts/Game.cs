@@ -19,6 +19,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private GameObject AmmoBox;
     [SerializeField] private GameObject HealthBox;
     [SerializeField] private Text countDownText;
+    [SerializeField] private Text changeRoundText;
     [SerializeField] private int timeBetweenRounds = 5;
     [SerializeField] private int timeTurn = 10;
 
@@ -80,15 +81,20 @@ public class Game : MonoBehaviour {
                 {
                     Instantiate(AmmoBox, position, Quaternion.identity);
                 }
-
             }
-
         }
+
         //Update the countdown
         if (!this.isBetweenRounds)
+        {
+            this.changeRoundText.text = "";
             this.countDownText.text = "Count: " + this.round.getTimeLeft() + "  ";
+        }
         else
-            this.countDownText.text = "Next round in... " + ((int)this.timerRounds.getTimeLeft() + 1) + "  ";
+        {
+            this.countDownText.text = "";
+            this.changeRoundText.text = "Next round in... " + ((int)this.timerRounds.getTimeLeft() + 1) + "  ";
+        }
 
         //Comprobar fin de juego
         if (this.player1.GetComponent<Player>().hasNoCharacters() || this.player2.GetComponent<Player>().hasNoCharacters()) {

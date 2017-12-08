@@ -31,6 +31,7 @@ public class Stats_popup {
     public Text damage_radius;
     public Text detonation_time;
     public Text cost;
+    public int baseCost;
     public Image description;
     public Text num_elements;
 }
@@ -304,6 +305,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         imagenes[dic[name]].descripcion.enabled = true;
         stats_popup.hortaliza = imagenes[dic[name]].hortaliza;
         stats_popup.cost.text = projectileScript.cost.text;
+        stats_popup.baseCost = System.Int32.Parse(projectileScript.cost.text);
         stats_popup.damage.text = projectile.Damage.ToString();
         sl_damage.value = projectile.Damage;
         stats_popup.weight.text = projectile.Weight.ToString();
@@ -332,6 +334,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         num += 1;
         if (num < 30) {
             stats_popup.num_elements.text = num.ToString();
+            stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
         }
     }
 
@@ -340,6 +343,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         num -= 1;
         if (num >= 1) {
             stats_popup.num_elements.text = num.ToString();
+            stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
         }
     }
 
