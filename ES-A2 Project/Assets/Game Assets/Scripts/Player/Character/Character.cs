@@ -303,4 +303,9 @@ public abstract class Character : MonoBehaviour {
             this.movement.SetAnimation("disparar");
         }
     }
+
+    public Player getPlayer()
+    {
+        return this.player;
+    }
 }

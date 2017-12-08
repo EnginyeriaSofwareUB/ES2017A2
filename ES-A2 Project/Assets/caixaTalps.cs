@@ -155,7 +155,14 @@ public class caixaTalps : MonoBehaviour {
         foreach (Character c in infoList)
         {
             talp_num[count].SetActive(true);
-            talp_g[count].SetActive(true);
+            
+            if (c.getPlayer().name == "Player 1")
+            {
+                talp_g[count].SetActive(true);
+            } else
+            {
+                talp_b[count].SetActive(true);
+            }
             if (!c.isAlive())
             {
                 talp_dead[count].SetActive(true);
