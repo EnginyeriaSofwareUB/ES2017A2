@@ -85,7 +85,10 @@ public class Game : MonoBehaviour {
 
         }
         //Update the countdown
-        this.countDownText.text = "Count: " + round.getTimeLeft();
+        if (!this.isBetweenRounds)
+            this.countDownText.text = "Count: " + this.round.getTimeLeft() + "  ";
+        else
+            this.countDownText.text = "Next round in... " + ((int)this.timerRounds.getTimeLeft() + 1) + "  ";
 
         //Comprobar fin de juego
         if (this.player1.GetComponent<Player>().hasNoCharacters() || this.player2.GetComponent<Player>().hasNoCharacters()) {
