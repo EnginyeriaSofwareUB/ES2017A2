@@ -32,7 +32,7 @@ public class Stats_popup {
     public Text detonation_time;
     public Text cost;
     public int baseCost;
-    public Image description;
+    public Text description;
     public Text num_elements;
 }
 
@@ -90,6 +90,8 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     public Dictionary<string, ProjectileScript> list_projectiles = new Dictionary<string, ProjectileScript>();
 
+    public Dictionary<string, string> list_descriptions = new Dictionary<string, string>();
+
     //Game control
     [SerializeField] private GameControl game_control;
 
@@ -112,8 +114,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         init_projectiles();
         init_attributes();
         clearUsersProjectiles();
-
-
+        init_descriptions();
 
         game_control.turn = 1;
         this.buttons = this.GetComponent<Buttons>();
@@ -230,6 +231,15 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         }
     }
 
+    public void init_descriptions()
+    {
+        list_descriptions["tomaquet"] = "Tomato: Great vegetable to make the enemy go redish. Take some of them to make damage in short distances";
+        list_descriptions["alberginia"] = "Eggplant: Take some of them to the farthest enemies, but do not expect to make lots of damage";
+        list_descriptions["pastanaga"] = "Carrot: The infinite vegetable. This is your last hope to win the battle if you run out of more powerful vegetables";
+        list_descriptions["pebrot"] = "Pepper: Great for dealing damage in a large area. Use it carefully or you will be affected by its powers";
+        list_descriptions["ceba"] = "Onion: Take that to deal a large amount of damage, but you will need a great force to throw it away from you to not get injured yourself";
+    }
+
     public void NextOnClick() {
         popup.enabled = false;
         game_control.turn = 2;
@@ -317,6 +327,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         stats_popup.damage_radius.text = projectile.DamageRadius.ToString();
         sl_damage_radius.value = projectile.DamageRadius;
         stats_popup.num_elements.text = "1";
+        stats_popup.description.text = list_descriptions[name];
 
         popup.enabled = true;
     }
