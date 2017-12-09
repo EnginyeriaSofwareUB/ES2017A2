@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 
 public class Game : MonoBehaviour {
+
     [SerializeField] private Buttons buttons;
     [SerializeField] private AudioSource sound1;
     [SerializeField] private AudioSource sound2;
@@ -20,6 +21,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private Text countDownText;
     [SerializeField] private int timeBetweenRounds = 5;
     [SerializeField] private int timeTurn = 10;
+    [SerializeField] private List<Sprite> arrayNumbersSprites;
 
     private Round round;
     private TimerGame timerRounds;
@@ -49,6 +51,7 @@ public class Game : MonoBehaviour {
     void Awake() {
         estadoJuego = EstadoJuego.estadoJuego;
         this.initVariables();
+
     }
 
     // Use this for initialization
@@ -56,7 +59,6 @@ public class Game : MonoBehaviour {
         this.startRound();
         changeVolume();
         music.Play();
-
     }
 
     void FixedUpdate() {
@@ -73,6 +75,17 @@ public class Game : MonoBehaviour {
             }
         }
 
+        foreach (Character c in this.player1.GetComponent<Player>().getAliveCharacters())
+        {
+            c.Number.sprite = arrayNumbersSprites[c.Posicion];
+
+        }
+        foreach (Character c in this.player2.GetComponent<Player>().getAliveCharacters())
+        {
+            c.Number.sprite = arrayNumbersSprites[c.Posicion];
+        }
+
+
 
 
         if (!this.round.Running && !this.isBetweenRounds) {
@@ -87,6 +100,7 @@ public class Game : MonoBehaviour {
             this.estadoJuego.setRemaningCharacters(this.player1.GetComponent<Player>().getAliveCharacters().Count, this.player2.GetComponent<Player>().getAliveCharacters().Count);
             this.buttons.goToWinScene();
         }
+
     }
 
     private void initVariables() {
@@ -108,6 +122,9 @@ public class Game : MonoBehaviour {
             player.Characters.Add(character.GetComponent<Character>());
             character.SetActive(true);
         }
+
+ 
+
 
         player.Inventory.initInventory(projectiles);
     }

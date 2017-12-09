@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour {
-
+    [SerializeField]
+    protected int posicion;
+    [SerializeField]
+    protected Image number;
     protected int health;
     [SerializeField]
     protected int maxhealth;
@@ -42,6 +45,31 @@ public abstract class Character : MonoBehaviour {
     private Player player;
 
     private bool isPlaying = false;
+
+    public Image Number
+    {
+        get
+        {
+            return number;
+        }
+
+        set
+        {
+            number = value;
+        }
+    }
+    public int Posicion
+    {
+        get
+        {
+            return posicion;
+        }
+
+        set
+        {
+            posicion = value;
+        }
+    }
 
     public int Health {
         get {

@@ -121,6 +121,10 @@ public class Round : MonoBehaviour {
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+        for (int i = 0; i < size; i++)
+        {
+            list[i].Posicion = i;
+        }
     }
 
     /**
