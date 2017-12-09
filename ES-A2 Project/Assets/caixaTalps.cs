@@ -156,7 +156,7 @@ public class caixaTalps : MonoBehaviour {
         {
             talp_num[count].SetActive(true);
             
-            if (c.getPlayer().name == "Player 1")
+            if (c.getPlayer().name == "Player 2")
             {
                 talp_g[count].SetActive(true);
             } else
