@@ -159,7 +159,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
         if (game_control.turn == 1) {
             int futureCoins = System.Int32.Parse(game_control.player1_money.text)
-                - System.Int32.Parse(stats_popup.num_elements.text) * System.Int32.Parse(stats_popup.cost.text);
+                - System.Int32.Parse(stats_popup.num_elements.text) * stats_popup.baseCost;
 
             if (futureCoins >= 0) {
                 if (game_control.player1_projectiles.ContainsKey(list_projectiles[stats_popup.name])) {
@@ -171,9 +171,8 @@ public class Btn_ProjectileMenu : MonoBehaviour {
                 updateBoughtProjectiles();
             }
         } else {
-
             int futureCoins = System.Int32.Parse(game_control.player2_money.text)
-                - System.Int32.Parse(stats_popup.num_elements.text) * System.Int32.Parse(stats_popup.cost.text);
+                - System.Int32.Parse(stats_popup.num_elements.text) * stats_popup.baseCost;
 
             if (futureCoins >= 0) {
                 if (game_control.player2_projectiles.ContainsKey(list_projectiles[stats_popup.name])) {
