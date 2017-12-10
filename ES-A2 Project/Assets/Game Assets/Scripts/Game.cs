@@ -49,6 +49,19 @@ public class Game : MonoBehaviour {
         }
     }
 
+    public List<Sprite> ArrayNumbersSprites
+    {
+        get
+        {
+            return arrayNumbersSprites;
+        }
+
+        set
+        {
+            arrayNumbersSprites = value;
+        }
+    }
+
     void Awake() {
         estadoJuego = EstadoJuego.estadoJuego;
         this.initVariables();
@@ -104,19 +117,6 @@ public class Game : MonoBehaviour {
         if (this.player1.GetComponent<Player>().hasNoCharacters() || this.player2.GetComponent<Player>().hasNoCharacters()) {
             this.estadoJuego.setRemaningCharacters(this.player1.GetComponent<Player>().getAliveCharacters().Count, this.player2.GetComponent<Player>().getAliveCharacters().Count);
             this.buttons.goToWinScene();
-        }
-
-
-        //change sprites of tourn
-        foreach (Character c in this.player1.GetComponent<Player>().getAliveCharacters())
-        {
-            Debug.Log(c.Number);
-            c.Number.sprite = arrayNumbersSprites[c.Posicion];
-
-        }
-        foreach (Character c in this.player2.GetComponent<Player>().getAliveCharacters())
-        {
-            c.Number.sprite = arrayNumbersSprites[c.Posicion];
         }
     }
 

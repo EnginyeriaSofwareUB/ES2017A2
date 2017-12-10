@@ -58,9 +58,15 @@ public class Round : MonoBehaviour {
      * Metodo inicializador de variables
      */
     private void initVariables() {
-        this.player1Characters = this.GetComponent<Game>().Player1.GetComponent<Player>().getAliveCharacters();
-        this.player2Characters = this.GetComponent<Game>().Player2.GetComponent<Player>().getAliveCharacters();
+        Game game = this.gameObject.GetComponentInParent<Game>();
+        this.player1Characters = game.Player1.GetComponent<Player>().getAliveCharacters();
+        this.player2Characters = game.Player2.GetComponent<Player>().getAliveCharacters();
+
         this.CharactersQueue = this.getCharacterQueue();
+        foreach (Character character in this.charactersOrder)
+        {
+            character.Number.sprite = game.ArrayNumbersSprites[character.Posicion];
+        }
     }
 
     /**
