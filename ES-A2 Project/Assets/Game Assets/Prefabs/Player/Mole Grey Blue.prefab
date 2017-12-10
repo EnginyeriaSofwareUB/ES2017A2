@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e747734ed5de4804d8e403246ff92652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 100
+  maxhealth: 150
   xSpeed: 1
   ySpeed: 5
   strength: 0
@@ -1000,6 +1000,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 0
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!114 &114442533588345532
 MonoBehaviour:
   m_ObjectHideFlags: 1

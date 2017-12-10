@@ -68,7 +68,7 @@ public class Game : MonoBehaviour {
             this.betweenRounds();
 
             //random healthBox or AmmoBox
-            float i = Random.Range(1, 10);
+            float i = Random.Range(1, 3);
             for (int k = 0; k < i; k++)
             {
                 Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 10, 0);

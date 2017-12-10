@@ -905,6 +905,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 0
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!114 &114451546801276218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -930,7 +932,7 @@ MonoBehaviour:
     type: 2}
   shootSound: {fileID: 82414550746862432, guid: 49fa5e0e79563fc40bf2b20f2dc71b5d,
     type: 2}
-  force: 4.4
+  force: 10
   limitForce: 40
   forceBar: {fileID: 1584600462618242}
 --- !u!114 &114520209749765134

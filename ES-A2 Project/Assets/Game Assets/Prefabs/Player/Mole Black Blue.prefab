@@ -775,7 +775,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -841,6 +841,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 0
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!114 &114157754084624280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -942,7 +944,7 @@ MonoBehaviour:
     type: 2}
   shootSound: {fileID: 82414550746862432, guid: 49fa5e0e79563fc40bf2b20f2dc71b5d,
     type: 2}
-  force: 6.3
+  force: 5
   limitForce: 40
   forceBar: {fileID: 1847841880321036}
 --- !u!114 &114692762059975204
