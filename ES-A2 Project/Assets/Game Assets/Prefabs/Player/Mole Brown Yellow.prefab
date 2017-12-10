@@ -1013,6 +1013,7 @@ MonoBehaviour:
   force: 10
   limitForce: 40
   forceBar: {fileID: 1678852689604640}
+  color: BROWN
 --- !u!114 &114756761894739256
 MonoBehaviour:
   m_ObjectHideFlags: 1

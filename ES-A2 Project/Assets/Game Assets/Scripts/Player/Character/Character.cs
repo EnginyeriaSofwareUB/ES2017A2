@@ -44,6 +44,8 @@ public abstract class Character : MonoBehaviour {
     private Movement movement;
     private Player player;
 
+    [SerializeField] private string color = "NOCOLOR";
+
     private bool isPlaying = false;
 
     public Image Number
@@ -129,6 +131,11 @@ public abstract class Character : MonoBehaviour {
         set {
             this.fire = value;
         }
+    }
+
+    public string getColor()
+    {
+        return this.color;
     }
 
     protected virtual void Awake() {
