@@ -792,7 +792,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.25
+  m_GravityScale: 0.75
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -993,6 +993,7 @@ MonoBehaviour:
   force: 5
   limitForce: 40
   forceBar: {fileID: 1847841880321036}
+  color: BLACK
 --- !u!114 &114692762059975204
 MonoBehaviour:
   m_ObjectHideFlags: 1

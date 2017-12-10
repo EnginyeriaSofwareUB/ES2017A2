@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
-  health: 53
+  health: 100
 --- !u!212 &212058400463529908
 SpriteRenderer:
   m_ObjectHideFlags: 1
