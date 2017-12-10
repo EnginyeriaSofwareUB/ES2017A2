@@ -571,7 +571,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: f3a829b29aad1b643bca153bc2795f5d, type: 3}
+  m_Texture: {fileID: 2800000, guid: 86d8ff9066fe24044b69ec2276c42d99, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -964,8 +964,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 745319620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 377, y: 212, z: 0}
-  m_LocalScale: {x: 0.39259258, y: 0.39259258, z: 0.39259258}
+  m_LocalPosition: {x: 319, y: 179.5, z: 0}
+  m_LocalScale: {x: 0.33229166, y: 0.33229166, z: 0.33229166}
   m_Children:
   - {fileID: 1490451983}
   m_Father: {fileID: 0}
@@ -1538,7 +1538,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617428561}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 940.2831, y: -520, z: 0}
+  m_LocalPosition: {x: 940, y: -520.1881, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -1922,7 +1922,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1892749752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -940.2831, y: -520, z: 0}
+  m_LocalPosition: {x: -940, y: -520.1881, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490451983}
@@ -2072,7 +2072,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: f3a829b29aad1b643bca153bc2795f5d, type: 3}
+  m_Texture: {fileID: 2800000, guid: 0b059acfeccfd8a4fb250f361044628b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
