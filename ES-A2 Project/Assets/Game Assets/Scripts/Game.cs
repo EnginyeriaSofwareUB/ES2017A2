@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
+    [SerializeField] private List<Sprite> arrayNumbersSprites;
     [SerializeField] private Buttons buttons;
     [SerializeField] private AudioSource sound1;
     [SerializeField] private AudioSource sound2;
@@ -82,7 +83,10 @@ public class Game : MonoBehaviour {
                     Instantiate(AmmoBox, position, Quaternion.identity);
                 }
             }
+
         }
+
+
 
         //Update the countdown
         if (!this.isBetweenRounds)
@@ -100,6 +104,19 @@ public class Game : MonoBehaviour {
         if (this.player1.GetComponent<Player>().hasNoCharacters() || this.player2.GetComponent<Player>().hasNoCharacters()) {
             this.estadoJuego.setRemaningCharacters(this.player1.GetComponent<Player>().getAliveCharacters().Count, this.player2.GetComponent<Player>().getAliveCharacters().Count);
             this.buttons.goToWinScene();
+        }
+
+
+        //change sprites of tourn
+        foreach (Character c in this.player1.GetComponent<Player>().getAliveCharacters())
+        {
+            Debug.Log(c.Number);
+            c.Number.sprite = arrayNumbersSprites[c.Posicion];
+
+        }
+        foreach (Character c in this.player2.GetComponent<Player>().getAliveCharacters())
+        {
+            c.Number.sprite = arrayNumbersSprites[c.Posicion];
         }
     }
 
