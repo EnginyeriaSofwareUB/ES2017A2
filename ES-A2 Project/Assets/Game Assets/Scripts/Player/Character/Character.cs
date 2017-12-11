@@ -315,6 +315,8 @@ public abstract class Character : MonoBehaviour {
     private void MoveArrowRight(float angle) {
         angle = Mathf.Clamp(angle, -80, 80);
         this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+
     }
 
     /// <summary>
@@ -330,6 +332,8 @@ public abstract class Character : MonoBehaviour {
             angle = Mathf.Clamp(angle, -180, -105);
             this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
+        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
+
     }
 
 

@@ -105,7 +105,13 @@ public class Game : MonoBehaviour {
         if (!this.isBetweenRounds)
         {
             this.changeRoundText.text = "";
-            this.countDownText.text = "Count: " + this.round.getTimeLeft() + "  ";
+            if(this.round.getTimeLeft() > 9){
+                this.countDownText.text = "00:" + this.round.getTimeLeft() + "  ";
+            }
+            else {
+                this.countDownText.text = "00:0" + this.round.getTimeLeft() + "  ";
+
+            }
         }
         else
         {
