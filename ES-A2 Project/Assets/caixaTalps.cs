@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class caixaTalps : MonoBehaviour {
 
@@ -254,12 +255,22 @@ public class caixaTalps : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         infoList = game.gameObject.GetComponent<Game>().round.getCharactersToPrint();
+        Character ch = game.gameObject.GetComponent<Game>().round.Turn.Character;
         deactivateAll();
         int count = 0;
         foreach (Character c in infoList)
         {
+
+            if (ch.Equals(c))
+            {
+                talp_num[count].GetComponent<Image>().color = Color.white;
+            } else
+            {
+                talp_num[count].GetComponent<Image>().color = Color.gray;
+            }
+
             talp_num[count].SetActive(true);
-            
+
             if (c.getPlayer().name == "Player 1")
             {
                 if (c.getColor() == "BLACK")

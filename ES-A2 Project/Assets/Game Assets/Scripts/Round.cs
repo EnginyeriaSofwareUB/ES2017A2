@@ -42,6 +42,14 @@ public class Round : MonoBehaviour {
         }
     }
 
+    public Turn Turn
+    {
+        get
+        {
+            return this.turn;
+        }
+    }
+
     void Start() {
         this.initVariables();
         Debug.Log("Round Start");
