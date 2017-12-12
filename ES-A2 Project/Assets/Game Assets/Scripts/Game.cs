@@ -127,26 +127,42 @@ public class Game : MonoBehaviour {
     }
 
     private void initVariables() {
-        Vector2 initPosition = new Vector2(-10, 0);
-        this.initVariables(ref initPosition, this.player1, this.estadoJuego.player1);
-        this.initVariables(ref initPosition, this.player2, this.estadoJuego.player2);
+        Vector2 initPosition = new Vector2(-24, 24);
+        List<float> arrayPos = new List<float>();
+        this.initVariables(ref initPosition, this.player1, this.estadoJuego.player1, arrayPos);
+        this.initVariables(ref initPosition, this.player2, this.estadoJuego.player2, arrayPos);
     }
 
-    private void initVariables(ref Vector2 initPosition, GameObject playerObject, PlayerUI playerUI) {
+    private void initVariables(ref Vector2 initPosition, GameObject playerObject, PlayerUI playerUI, List<float> arrayPos) {
         Player player = playerObject.GetComponent<Player>();
         List<GameObject> characters =  playerUI.Characters;
         List<ProjectileInfo> projectiles = playerUI.Projectiles;
-
+      
         player.Characters = new List<Character>();
         foreach (GameObject characterPrefab in characters) {
             GameObject character = Instantiate(characterPrefab, player.transform, true);
             character.transform.position = initPosition;
-            initPosition.x += 2;
+            initPosition.x = getPositionRandom(arrayPos);
+            arrayPos.Add(initPosition.x);
             player.Characters.Add(character.GetComponent<Character>());
             character.SetActive(true);
         }
-
         player.Inventory.initInventory(projectiles);
+    }
+
+    /**
+    * Metodo que devuelve la posicion inicial de cada personaje
+    */
+    private float getPositionRandom(List<float> positions)
+    {
+        float position = Random.Range(-24, 24);
+
+        while (positions.Contains(position))
+        {
+            position = Random.Range(-24, 24);
+        }
+        
+        return position;
     }
 
     /**
