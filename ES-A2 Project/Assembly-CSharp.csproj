@@ -96,6 +96,7 @@
      <Compile Include="Assets\Game Assets\Scripts\UI\VariablesMenu\VariablesScript.cs" />
      <Compile Include="Assets\Game Assets\Scripts\UI\winScene.cs" />
      <Compile Include="Assets\InventoryController.cs" />
+     <Compile Include="Assets\test.cs" />
      <None Include="Assets\Game Assets\Sprites\ReadMe.txt" />
      <None Include="Assets\Fonts\Documentation\JazzCreateBubble_VersionHistory_1.1.txt" />
      <None Include="Assets\Game Assets\Scenes\ReadMe.txt" />

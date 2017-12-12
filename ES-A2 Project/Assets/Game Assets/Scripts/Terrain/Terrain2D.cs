@@ -107,7 +107,7 @@ public class Terrain2D : MonoBehaviour {
     }
 
     private void addNewPathPoints(List<Vector2> newPath, int firstImpactPointIndex, int lastExplosionInsertion, float minDistance, List<SeparationPoints> pointsNewPaths) {
-        if (newPath.Count >= 2 && firstImpactPointIndex != -1 && lastExplosionInsertion != -1 && Vector2.Distance(newPath[lastExplosionInsertion], newPath[newPath.Count - 1]) <= minDistance) {
+        if (newPath.Count >= 3 && firstImpactPointIndex != -1 && lastExplosionInsertion != -1 && Vector2.Distance(newPath[lastExplosionInsertion], newPath[newPath.Count - 1]) <= minDistance) {
             SeparationPoints points = new SeparationPoints(lastExplosionInsertion, newPath.Count - 1);
             pointsNewPaths.Add(points);
         }

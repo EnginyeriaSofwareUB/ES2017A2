@@ -106,10 +106,10 @@ public class Game : MonoBehaviour {
         {
             this.changeRoundText.text = "";
             if(this.round.getTimeLeft() > 9){
-                this.countDownText.text = "00:" + this.round.getTimeLeft() + "  ";
+                this.countDownText.text = "00:" + this.round.getTimeLeft();
             }
             else {
-                this.countDownText.text = "00:0" + this.round.getTimeLeft() + "  ";
+                this.countDownText.text = "00:0" + this.round.getTimeLeft();
 
             }
         }

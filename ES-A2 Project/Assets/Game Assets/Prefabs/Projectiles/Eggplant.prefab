@@ -169,8 +169,8 @@ MonoBehaviour:
     type: 2}
   weight: 10
   speed: 5
-  damage: 20
-  detonationTime: 0
+  damage: 60
+  detonationTime: 5
   ammo: 0
   explosionPrefab: {fileID: 1503846187049600, guid: 5dbf39a2baac84149a8867f75269d7ff,
     type: 2}
