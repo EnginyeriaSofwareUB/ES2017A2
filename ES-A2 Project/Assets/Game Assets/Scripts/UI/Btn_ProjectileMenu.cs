@@ -31,7 +31,8 @@ public class Stats_popup {
     public Text damage_radius;
     public Text detonation_time;
     public Text cost;
-    public Image description;
+    public int baseCost;
+    public Text description;
     public Text num_elements;
 }
 
@@ -89,6 +90,8 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     public Dictionary<string, ProjectileScript> list_projectiles = new Dictionary<string, ProjectileScript>();
 
+    public Dictionary<string, string> list_descriptions = new Dictionary<string, string>();
+
     //Game control
     [SerializeField] private GameControl game_control;
 
@@ -111,8 +114,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         init_projectiles();
         init_attributes();
         clearUsersProjectiles();
-
-
+        init_descriptions();
 
         game_control.turn = 1;
         this.buttons = this.GetComponent<Buttons>();
@@ -157,7 +159,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
         if (game_control.turn == 1) {
             int futureCoins = System.Int32.Parse(game_control.player1_money.text)
-                - System.Int32.Parse(stats_popup.num_elements.text) * System.Int32.Parse(stats_popup.cost.text);
+                - System.Int32.Parse(stats_popup.num_elements.text) * stats_popup.baseCost;
 
             if (futureCoins >= 0) {
                 if (game_control.player1_projectiles.ContainsKey(list_projectiles[stats_popup.name])) {
@@ -169,9 +171,8 @@ public class Btn_ProjectileMenu : MonoBehaviour {
                 updateBoughtProjectiles();
             }
         } else {
-
             int futureCoins = System.Int32.Parse(game_control.player2_money.text)
-                - System.Int32.Parse(stats_popup.num_elements.text) * System.Int32.Parse(stats_popup.cost.text);
+                - System.Int32.Parse(stats_popup.num_elements.text) * stats_popup.baseCost;
 
             if (futureCoins >= 0) {
                 if (game_control.player2_projectiles.ContainsKey(list_projectiles[stats_popup.name])) {
@@ -227,6 +228,15 @@ public class Btn_ProjectileMenu : MonoBehaviour {
             player2_elements[indice].enabled = true;
             player2_elements[indice].text = game_control.player2_projectiles[list_projectiles[stats_popup.name]].ToString();
         }
+    }
+
+    public void init_descriptions()
+    {
+        list_descriptions["tomaquet"] = "Tomato: Great vegetable to make the enemy go redish. Take some of them to make damage in short distances";
+        list_descriptions["alberginia"] = "Eggplant: Take some of them to the farthest enemies, but do not expect to make lots of damage";
+        list_descriptions["pastanaga"] = "Carrot: The infinite vegetable. This is your last hope to win the battle if you run out of more powerful vegetables";
+        list_descriptions["pebrot"] = "Pepper: Great for dealing damage in a large area. Use it carefully or you will be affected by its powers";
+        list_descriptions["ceba"] = "Onion: Take that to deal a large amount of damage, but you will need a great force to throw it away from you to not get injured yourself";
     }
 
     public void NextOnClick() {
@@ -304,6 +314,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         imagenes[dic[name]].descripcion.enabled = true;
         stats_popup.hortaliza = imagenes[dic[name]].hortaliza;
         stats_popup.cost.text = projectileScript.cost.text;
+        stats_popup.baseCost = System.Int32.Parse(projectileScript.cost.text);
         stats_popup.damage.text = projectile.Damage.ToString();
         sl_damage.value = projectile.Damage;
         stats_popup.weight.text = projectile.Weight.ToString();
@@ -315,6 +326,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         stats_popup.damage_radius.text = projectile.DamageRadius.ToString();
         sl_damage_radius.value = projectile.DamageRadius;
         stats_popup.num_elements.text = "1";
+        stats_popup.description.text = list_descriptions[name];
 
         popup.enabled = true;
     }
@@ -332,6 +344,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         num += 1;
         if (num < 30) {
             stats_popup.num_elements.text = num.ToString();
+            stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
         }
     }
 
@@ -340,6 +353,7 @@ public class Btn_ProjectileMenu : MonoBehaviour {
         num -= 1;
         if (num >= 1) {
             stats_popup.num_elements.text = num.ToString();
+            stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
         }
     }
 

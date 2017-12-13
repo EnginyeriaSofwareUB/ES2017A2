@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour {
-
+    [SerializeField]
+    protected int posicion;
+    [SerializeField]
+    protected Image number;
     protected int health;
     [SerializeField]
     protected int maxhealth;
@@ -41,7 +44,34 @@ public abstract class Character : MonoBehaviour {
     private Movement movement;
     private Player player;
 
+    [SerializeField] private string color = "NOCOLOR";
+
     private bool isPlaying = false;
+
+    public Image Number
+    {
+        get
+        {
+            return number;
+        }
+
+        set
+        {
+            number = value;
+        }
+    }
+    public int Posicion
+    {
+        get
+        {
+            return posicion;
+        }
+
+        set
+        {
+            posicion = value;
+        }
+    }
 
     public int Health {
         get {
@@ -103,6 +133,11 @@ public abstract class Character : MonoBehaviour {
         }
     }
 
+    public string getColor()
+    {
+        return this.color;
+    }
+
     protected virtual void Awake() {
         this.damageRecievedSound = Instantiate(this.damageRecievedSound);
         this.preparetoshootSound = Instantiate(this.preparetoshootSound);
@@ -116,6 +151,7 @@ public abstract class Character : MonoBehaviour {
         this.initForce = this.force;
         this.disableCharacter();
         this.healthBar = transform.Find("CharacterCanvas").Find("HealthBG").Find("Health").GetComponent<Image>();
+        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
     }
 
 
@@ -186,12 +222,9 @@ public abstract class Character : MonoBehaviour {
     /// Funcion encargada de rotar la flecha segun vaya el cursor y disparar siempre y cuando tenga el character tenga la flecha
     /// </summary>
     private void MakeShoot() {
-        // Rotacion de la flecha       
         float angle = Pointer.AngleBetweenVectors(this.arrow.transform.position, Pointer.Position());
-        this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
         if (this.arrow.activeInHierarchy) {
-            this.MoveCharacter(angle);
+            this.MoveArrow(angle);
             if (Input.GetButtonDown("Fire1")) {
                 this.forceBar.SendMessage("Load");
                 this.startShot = true;
@@ -199,8 +232,6 @@ public abstract class Character : MonoBehaviour {
                 if (i == 4) {
                     preparetoshootSound.Play();
                 }
-
-
             }
             if (Input.GetButton("Fire1")) {
                 float forceFactor = this.forceBar.GetComponent<ForceBar>().GetForce();
@@ -220,14 +251,19 @@ public abstract class Character : MonoBehaviour {
     /// <param name="damage"></param>
     public void Damage(int damage) {
         this.health = this.health - damage;
-        this.healthBar.fillAmount = (float) this.health / this.maxhealth;
-        if (this.health == 0) {
-            this.movement.SetAnimation("Shut-right");
+        this.healthBar.fillAmount = (float)this.health / this.maxhealth;
+        if (this.health <= 0) {
+            this.movement.SetAnimation("morir");
             this.movement.Enabled = false;
             this.arrow.SetActive(false);
             this.startShot = false;
-            Destroy(this.gameObject, 2);
+            this.isPlaying = false;
+            Destroy(this.gameObject, 1);
         }
+        else {
+            this.movement.SetAnimation("rebre_mal");
+        }
+
         damageRecievedSound.Play();
         //Debug.Log(this.healthBar.fillAmount);
     }
@@ -237,7 +273,7 @@ public abstract class Character : MonoBehaviour {
     /// </summary>
     /// <param name="ammo"></param>
     public void ApplyAmmo(int ammo) {
-        //void pending other tasks
+        this.player.addAmmoToSelectedProjectile(ammo);
     }
 
     /// <summary>
@@ -255,16 +291,51 @@ public abstract class Character : MonoBehaviour {
     /// Funcion encargada de mover el personaje en la direccion que apunta la flecha (puntero del mouse)
     /// </summary>
     /// <param name="angle"></param>
-    private void MoveCharacter(float angle) {
-        if (!Input.GetButton("Horizontal")) {
-            if ((angle < 90) && (angle > -90)) {
-                this.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-            } else {
-                this.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+    private void MoveArrow(float angle) {
+        if (this.transform.rotation.y == 0.7071068f) {
+            MoveArrowRight(angle);
+        }
+        else if (this.transform.rotation.y == -0.7071068f) {
+            MoveArrowLeft(angle);
+        }
+        else {
+            if (this.transform.rotation.y == 0.7066739f) {
+                MoveArrowRight(angle);
+            }
+            else if (this.transform.rotation.y == -0.7066739f) {
+                MoveArrowLeft(angle);
             }
         }
-        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
     }
+
+    /// <summary>
+    /// Funcion encargada de limitar el movimiento de la flecha cuando el jugador mira a la derecha
+    /// </summary>
+    /// <param name="angle"></param>
+    private void MoveArrowRight(float angle) {
+        angle = Mathf.Clamp(angle, -80, 80);
+        this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+
+    }
+
+    /// <summary>
+    /// Funcion encargada de limitar el movimiento de la flecha cuando el jugador mira a la izquierda
+    /// </summary>
+    /// <param name="angle"></param>
+    private void MoveArrowLeft(float angle) {
+        if (angle > 110) {
+            angle = Mathf.Clamp(angle, 100, 180);
+            this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
+        else if (angle < -90) {
+            angle = Mathf.Clamp(angle, -180, -105);
+            this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
+        this.healthBar.canvas.transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
+
+    }
+
 
     /// <summary>
     /// Funcion encargada de gestionar el disparo del proyectil con la animacion determinada
@@ -278,8 +349,9 @@ public abstract class Character : MonoBehaviour {
         this.fireProjectile(angle);
         shootSound.Play();
         this.forceBar.SendMessage("Stop");
-        this.disableCharacter();
-
+        if (this.isAlive()) {
+            this.disableCharacter();
+        }
     }
 
     /// <summary>
@@ -288,8 +360,14 @@ public abstract class Character : MonoBehaviour {
     private void CheckHandShot() {
         if (this.transform.rotation.y == 0.7071068f) {
             this.movement.SetAnimation("disparar_dreta");
-        } else {
+        }
+        else {
             this.movement.SetAnimation("disparar");
         }
+    }
+
+    public Player getPlayer()
+    {
+        return this.player;
     }
 }

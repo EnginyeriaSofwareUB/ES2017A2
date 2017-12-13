@@ -102,12 +102,15 @@ public class Player : MonoBehaviour {
     }
 
     public void closeInventory() {
-        this.selectedCharacter.enableCharacter();
-        this.inventory.closeInventory();
+        if (this.selectedCharacter != null && this.inventory != null) {
+            this.selectedCharacter.enableCharacter();
+            this.inventory.closeInventory();
+        }
     }
 
     public void setSelectedProjectile(MenuItem menuItem) {
         this.SelectedProjectile = menuItem;
+        this.closeInventory();
     }
 
     public GameObject useProjectile() {
@@ -115,5 +118,10 @@ public class Player : MonoBehaviour {
             this.inventory.selectDefaultProjectile();
         }
         return this.selectedProjectile.useProjectile();
+    }
+
+    public void addAmmoToSelectedProjectile(int ammo)
+    {
+        this.selectedProjectile.Ammo += ammo;
     }
 }

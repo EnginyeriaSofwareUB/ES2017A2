@@ -8,6 +8,7 @@ public class Round : MonoBehaviour {
     private List<Character> player1Characters;
     private List<Character> player2Characters;
     private Queue<Character> charactersQueue;
+    private List<Character> charactersOrder;
     private bool running = true;
     private int timeTurn;
 
@@ -41,6 +42,14 @@ public class Round : MonoBehaviour {
         }
     }
 
+    public Turn Turn
+    {
+        get
+        {
+            return this.turn;
+        }
+    }
+
     void Start() {
         this.initVariables();
         Debug.Log("Round Start");
@@ -57,9 +66,15 @@ public class Round : MonoBehaviour {
      * Metodo inicializador de variables
      */
     private void initVariables() {
-        this.player1Characters = this.GetComponent<Game>().Player1.GetComponent<Player>().getAliveCharacters();
-        this.player2Characters = this.GetComponent<Game>().Player2.GetComponent<Player>().getAliveCharacters();
+        Game game = this.gameObject.GetComponentInParent<Game>();
+        this.player1Characters = game.Player1.GetComponent<Player>().getAliveCharacters();
+        this.player2Characters = game.Player2.GetComponent<Player>().getAliveCharacters();
+
         this.CharactersQueue = this.getCharacterQueue();
+        foreach (Character character in this.charactersOrder)
+        {
+            character.Number.sprite = game.ArrayNumbersSprites[character.Posicion];
+        }
     }
 
     /**
@@ -96,6 +111,7 @@ public class Round : MonoBehaviour {
         list.AddRange(this.player1Characters);
         list.AddRange(this.player2Characters);
         this.shuffle(list);
+        this.charactersOrder = list;
         return this.addListToQueue(list);
     }
 
@@ -120,6 +136,10 @@ public class Round : MonoBehaviour {
             int randomIndex = UnityEngine.Random.Range(i, size);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
+        }
+        for (int i = 0; i < size; i++)
+        {
+            list[i].Posicion = i;
         }
     }
 
@@ -158,5 +178,10 @@ public class Round : MonoBehaviour {
             }
         }
         this.charactersQueue = newQueue;
+    }
+
+    public List<Character> getCharactersToPrint()
+    {
+        return this.charactersOrder;
     }
 }

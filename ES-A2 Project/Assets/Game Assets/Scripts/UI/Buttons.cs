@@ -16,7 +16,7 @@ public class Buttons : MonoBehaviour {
 
     public void PauseMenuRestartGame() {
         Time.timeScale = 1;
-        SceneManager.LoadScene("IndexMenu");
+        SceneManager.LoadScene("Test Scene");
     }
     public void PauseMenuExitGame() {
         Time.timeScale = 1;
@@ -24,7 +24,7 @@ public class Buttons : MonoBehaviour {
     }
 
     public void WinMenuRestartGame() {
-        SceneManager.LoadScene("IndexMenu");
+        SceneManager.LoadScene("Test Scene");
     }
     public void WinMenuExitGame() {
         SceneManager.LoadScene("IndexMenu");
@@ -56,5 +56,10 @@ public class Buttons : MonoBehaviour {
 
     public void goToWinScene() {
         SceneManager.LoadScene("winScene");
+    }
+
+    public void goToHelpMenu()
+    {
+        SceneManager.LoadScene("HelpMenu");
     }
 }

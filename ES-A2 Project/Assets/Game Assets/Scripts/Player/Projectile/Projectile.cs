@@ -97,7 +97,6 @@ public abstract class Projectile : MonoBehaviour {
         this.rb2.mass = this.weight;
         this.rb2.AddForce(transform.right * (this.speed+force), ForceMode2D.Impulse);
         this.timerProjectile = this.gameObject.AddComponent<TimerGame>();
-        this.DetonationTime = 6;
         this.timerProjectile.init(this.DetonationTime);
     }
 
