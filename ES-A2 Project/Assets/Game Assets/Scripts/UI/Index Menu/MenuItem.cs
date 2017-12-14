@@ -47,7 +47,8 @@ public class MenuItem : MonoBehaviour {
     }
 
     public GameObject useProjectile() {
-        this.ammo--;
+        if (this.ammo < 99)
+            this.ammo--;
         return this.projectilePrefab;
     }
 }

@@ -33,6 +33,13 @@ public class Turn : MonoBehaviour {
         this.startTurn();
     }
 
+    public Character Character
+    {
+        get
+        {
+            return this.character;
+        }
+    }
     /**
      * Metodo inicializador de variables
      */

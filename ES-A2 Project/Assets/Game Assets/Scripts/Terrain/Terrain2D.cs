@@ -8,6 +8,7 @@ public class Terrain2D : MonoBehaviour {
     public PolygonCollider2D polygonCollider2D;
     public float angleDiference;
     public List<String> destructionTags;
+    public bool working = false;
 
     void Awkae() {
         this.polygonCollider2D = this.GetComponent<PolygonCollider2D>();
@@ -51,46 +52,62 @@ public class Terrain2D : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (this.destructionTags.Contains(other.gameObject.tag)) {
-            CircleCollider2D circle2D = other.gameObject.GetComponent<CircleCollider2D>();
-            Vector2 center = other.transform.TransformPoint(circle2D.offset);
-            float radius = circle2D.radius * Mathf.Max(circle2D.transform.localScale.x, circle2D.transform.localScale.y);
-            PolygonCollider2D onePathCollider = this.gameObject.AddComponent<PolygonCollider2D>();
-            List<List<Vector2>> newPaths = new List<List<Vector2>>();
-            float minDistance = this.getMinDistance(center, radius);
+            this.StartCoroutine(this.waitForInsertion(other));
+        }
+    }
 
-            for (int i = 0; i < this.polygonCollider2D.pathCount; i++) {
-                int lastExplosionInsertion = -1;
-                Vector2[] oldPath = this.polygonCollider2D.GetPath(i);
-                List<Vector2> newPath = new List<Vector2>();
-                List<SeparationPoints> pointsNewPaths = new List<SeparationPoints>();
+    public IEnumerator waitForInsertion(Collider2D other) {
+        while (this.working) {
+            yield return null;
+        }
+        if (other.enabled) {
+            this.working = true;
+            this.createPoints(other);
+            this.working = false;
+        }
+    }
 
-                onePathCollider.SetPath(0, oldPath);
-                for (int j = 0; j < oldPath.Length; j++) {
-                    Vector2 firstPoint = oldPath[j];
-                    Vector2 nextPoint = oldPath[(j + 1) % oldPath.Length];
+    private void createPoints(Collider2D other) {
 
-                    this.addPointIfOutsideExplosion(circle2D, firstPoint, newPath);
-                    int firstImpactPointIndex = this.addExplosionSurfacePointsToPath(onePathCollider, circle2D, center, radius, firstPoint, nextPoint, newPath);
-                    this.addNewPathPoints(newPath, firstImpactPointIndex, lastExplosionInsertion, minDistance, pointsNewPaths);
-                    Vector2 lastImpactPoint = this.addExplosionLastPointToPath(circle2D, firstPoint, nextPoint, newPath);
-                    if (lastImpactPoint != Vector2.zero) {
-                        lastExplosionInsertion = newPath.Count - 1;
-                    }
+        CircleCollider2D circle2D = other.gameObject.GetComponent<CircleCollider2D>();
+        Vector2 center = other.transform.TransformPoint(circle2D.offset);
+        float radius = circle2D.radius * Mathf.Max(circle2D.transform.localScale.x, circle2D.transform.localScale.y);
+        PolygonCollider2D onePathCollider = this.gameObject.AddComponent<PolygonCollider2D>();
+        List<List<Vector2>> newPaths = new List<List<Vector2>>();
+        float minDistance = this.getMinDistance(center, radius);
+
+        for (int i = 0; i < this.polygonCollider2D.pathCount; i++) {
+            int lastExplosionInsertion = -1;
+            Vector2[] oldPath = this.polygonCollider2D.GetPath(i);
+            List<Vector2> newPath = new List<Vector2>();
+            List<SeparationPoints> pointsNewPaths = new List<SeparationPoints>();
+
+            onePathCollider.SetPath(0, oldPath);
+            for (int j = 0; j < oldPath.Length; j++) {
+                Vector2 firstPoint = oldPath[j];
+                Vector2 nextPoint = oldPath[(j + 1) % oldPath.Length];
+
+                this.addPointIfOutsideExplosion(circle2D, firstPoint, newPath);
+                int firstImpactPointIndex = this.addExplosionSurfacePointsToPath(onePathCollider, circle2D, center, radius, firstPoint, nextPoint, newPath);
+                this.addNewPathPoints(newPath, firstImpactPointIndex, lastExplosionInsertion, minDistance, pointsNewPaths);
+                Vector2 lastImpactPoint = this.addExplosionLastPointToPath(circle2D, firstPoint, nextPoint, newPath);
+                if (lastImpactPoint != Vector2.zero) {
+                    lastExplosionInsertion = newPath.Count - 1;
                 }
-                this.createPaths(pointsNewPaths, newPath, newPaths);
             }
-            Destroy(onePathCollider);
-            Destroy(other.gameObject);
+            this.createPaths(pointsNewPaths, newPath, newPaths);
+        }
+        Destroy(onePathCollider);
+        other.enabled = false;
 
-            this.polygonCollider2D.pathCount = newPaths.Count;
-            for (int i = 0; i < newPaths.Count; i++) {
-                this.polygonCollider2D.SetPath(i, newPaths[i].ToArray());
-            }
+        this.polygonCollider2D.pathCount = newPaths.Count;
+        for (int i = 0; i < newPaths.Count; i++) {
+            this.polygonCollider2D.SetPath(i, newPaths[i].ToArray());
         }
     }
 
     private void addNewPathPoints(List<Vector2> newPath, int firstImpactPointIndex, int lastExplosionInsertion, float minDistance, List<SeparationPoints> pointsNewPaths) {
-        if (newPath.Count >= 2 && firstImpactPointIndex != -1 && lastExplosionInsertion != -1 && Vector2.Distance(newPath[lastExplosionInsertion], newPath[newPath.Count - 1]) <= minDistance) {
+        if (newPath.Count >= 3 && firstImpactPointIndex != -1 && lastExplosionInsertion != -1 && Vector2.Distance(newPath[lastExplosionInsertion], newPath[newPath.Count - 1]) <= minDistance) {
             SeparationPoints points = new SeparationPoints(lastExplosionInsertion, newPath.Count - 1);
             pointsNewPaths.Add(points);
         }
@@ -103,7 +120,7 @@ public class Terrain2D : MonoBehaviour {
             List<Vector2> path = new List<Vector2>();
             main.AddRange(fullNewPath.GetRange(index, newPoints.FirstIndex - index));
             path.AddRange(fullNewPath.GetRange(newPoints.FirstIndex, newPoints.LastIndex - newPoints.FirstIndex));
-            if(path.Count > 2)
+            if (path.Count > 2)
                 newPaths.Add(path);
             index = newPoints.LastIndex + 1;
         }
@@ -128,11 +145,9 @@ public class Terrain2D : MonoBehaviour {
     }
 
     private int addExplosionSurfacePointsToPath(PolygonCollider2D terrain, CircleCollider2D circle2D, Vector2 center, float radius, Vector2 firstPoint, Vector2 nextPoint, List<Vector2> path) {
-        EdgeCollider2D twoPointEdge = this.create2PointEdgeCollider(firstPoint, nextPoint);
-        Vector2 firstImpactPoint = Vector2.zero;
+        Vector2 firstImpactPoint = this.getCollisionPoint(firstPoint, nextPoint);
         int firstImpactPointIndex = -1;
-        if (twoPointEdge.bounds.Intersects(circle2D.bounds) && !circle2D.OverlapPoint(this.transform.TransformPoint(firstPoint))) {
-            firstImpactPoint = this.getCollisionPoint(firstPoint, nextPoint);
+        if (firstImpactPoint != Vector2.zero && !circle2D.OverlapPoint(this.transform.TransformPoint(firstPoint))) {
             float angle = getAngle(firstImpactPoint, center, radius);
 
             if (firstImpactPoint != Vector2.zero) {
@@ -141,7 +156,6 @@ public class Terrain2D : MonoBehaviour {
                 this.addNextExplosionPointsToPath(terrain, path, ref angle, center, radius);
             }
         }
-        Destroy(twoPointEdge);
         return firstImpactPointIndex;
     }
 

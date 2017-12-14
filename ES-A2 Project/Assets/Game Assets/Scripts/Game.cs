@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 
 public class Game : MonoBehaviour {
+
+    [SerializeField] private List<Sprite> arrayNumbersSprites;
     [SerializeField] private Buttons buttons;
     [SerializeField] private AudioSource sound1;
     [SerializeField] private AudioSource sound2;
@@ -18,10 +20,11 @@ public class Game : MonoBehaviour {
     [SerializeField] private GameObject AmmoBox;
     [SerializeField] private GameObject HealthBox;
     [SerializeField] private Text countDownText;
+    [SerializeField] private Text changeRoundText;
     [SerializeField] private int timeBetweenRounds = 5;
     [SerializeField] private int timeTurn = 10;
 
-    private Round round;
+    public Round round;
     private TimerGame timerRounds;
     private bool isBetweenRounds;
     private EstadoJuego estadoJuego;
@@ -46,6 +49,19 @@ public class Game : MonoBehaviour {
         }
     }
 
+    public List<Sprite> ArrayNumbersSprites
+    {
+        get
+        {
+            return arrayNumbersSprites;
+        }
+
+        set
+        {
+            arrayNumbersSprites = value;
+        }
+    }
+
     void Awake() {
         estadoJuego = EstadoJuego.estadoJuego;
         this.initVariables();
@@ -61,26 +77,47 @@ public class Game : MonoBehaviour {
 
     void FixedUpdate() {
 
-        //random healthBox or AmmoBox
-        float i = Random.Range(0, 2000);
-        if (i > 1995) {
-            Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 10, 0);
-            float type = Random.Range(0, 2);//50%prob ammmo-health
-            if (type == 1) {
-                Instantiate(HealthBox, position, Quaternion.identity);
-            } else {
-                Instantiate(AmmoBox, position, Quaternion.identity);
-            }
-        }
-
-
-
         if (!this.round.Running && !this.isBetweenRounds) {
             this.endRound();
             this.betweenRounds();
+
+            //random healthBox or AmmoBox
+            float i = Random.Range(1, 3);
+            for (int k = 0; k < i; k++)
+            {
+                Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 10, 0);
+                float type = Random.Range(0, 1);//50%prob ammmo-health
+                if (k % 2 == 0)
+                {
+                    Instantiate(HealthBox, position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(AmmoBox, position, Quaternion.identity);
+                }
+            }
+
         }
+
+
+
         //Update the countdown
-        this.countDownText.text = "Count: " + round.getTimeLeft();
+        if (!this.isBetweenRounds)
+        {
+            this.changeRoundText.text = "";
+            if(this.round.getTimeLeft() > 9){
+                this.countDownText.text = "00:" + this.round.getTimeLeft();
+            }
+            else {
+                this.countDownText.text = "00:0" + this.round.getTimeLeft();
+
+            }
+        }
+        else
+        {
+            this.countDownText.text = "";
+            this.changeRoundText.text = "Next round in... " + ((int)this.timerRounds.getTimeLeft() + 1) + "  ";
+        }
 
         //Comprobar fin de juego
         if (this.player1.GetComponent<Player>().hasNoCharacters() || this.player2.GetComponent<Player>().hasNoCharacters()) {
@@ -90,26 +127,42 @@ public class Game : MonoBehaviour {
     }
 
     private void initVariables() {
-        Vector2 initPosition = new Vector2(-10, 0);
-        this.initVariables(ref initPosition, this.player1, this.estadoJuego.player1);
-        this.initVariables(ref initPosition, this.player2, this.estadoJuego.player2);
+        Vector2 initPosition = new Vector2(-24, 24);
+        List<float> arrayPos = new List<float>();
+        this.initVariables(ref initPosition, this.player1, this.estadoJuego.player1, arrayPos);
+        this.initVariables(ref initPosition, this.player2, this.estadoJuego.player2, arrayPos);
     }
 
-    private void initVariables(ref Vector2 initPosition, GameObject playerObject, PlayerUI playerUI) {
+    private void initVariables(ref Vector2 initPosition, GameObject playerObject, PlayerUI playerUI, List<float> arrayPos) {
         Player player = playerObject.GetComponent<Player>();
         List<GameObject> characters =  playerUI.Characters;
         List<ProjectileInfo> projectiles = playerUI.Projectiles;
-
+      
         player.Characters = new List<Character>();
         foreach (GameObject characterPrefab in characters) {
             GameObject character = Instantiate(characterPrefab, player.transform, true);
             character.transform.position = initPosition;
-            initPosition.x += 2;
+            initPosition.x = getPositionRandom(arrayPos);
+            arrayPos.Add(initPosition.x);
             player.Characters.Add(character.GetComponent<Character>());
             character.SetActive(true);
         }
-
         player.Inventory.initInventory(projectiles);
+    }
+
+    /**
+    * Metodo que devuelve la posicion inicial de cada personaje
+    */
+    private float getPositionRandom(List<float> positions)
+    {
+        float position = Random.Range(-24, 24);
+
+        while (positions.Contains(position))
+        {
+            position = Random.Range(-24, 24);
+        }
+        
+        return position;
     }
 
     /**
