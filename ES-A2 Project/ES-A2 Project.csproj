@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\caixaTalps.cs" />
+    <Compile Include="Assets\CharacterPOPUP.cs" />
     <Compile Include="Assets\endPoint.cs" />
     <Compile Include="Assets\EstadoJuego.cs" />
     <Compile Include="Assets\Fonts\Script\scriptTexttest.cs" />
@@ -264,6 +265,7 @@
     <Compile Include="Assets\Game Assets\Scripts\UI\VariablesMenu\VariablesScript.cs" />
     <Compile Include="Assets\Game Assets\Scripts\UI\winScene.cs" />
     <Compile Include="Assets\InventoryController.cs" />
+    <Compile Include="Assets\test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Documentation\JazzCreateAltKeys_BubbleFont.txt" />
