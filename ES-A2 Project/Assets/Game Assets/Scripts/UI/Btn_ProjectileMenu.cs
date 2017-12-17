@@ -342,9 +342,17 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
         int num = System.Int32.Parse(stats_popup.num_elements.text);
         num += 1;
-        if (num < 30) {
-            stats_popup.num_elements.text = num.ToString();
-            stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
+        if (game_control.turn == 1) {
+            if ((num < 30) && (stats_popup.baseCost * num <= System.Int32.Parse(game_control.player1_money.text))) {
+                stats_popup.num_elements.text = num.ToString();
+                stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
+            }
+        }
+        else if (game_control.turn == 2) {
+            if ((num < 30) && (stats_popup.baseCost * num <= System.Int32.Parse(game_control.player2_money.text))) {
+                stats_popup.num_elements.text = num.ToString();
+                stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
+            }
         }
     }
 
