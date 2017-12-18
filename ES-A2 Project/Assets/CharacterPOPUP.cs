@@ -8,7 +8,7 @@ public class CharacterPOPUP : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
 
     [SerializeField] private GameObject image;
-    float timeLeft = 3.0f;
+    float timeLeft = 4.0f;
 
     // Use this for initialization
     void Start () {
