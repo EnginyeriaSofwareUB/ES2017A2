@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 646b9a1d55b08a649bc5499429f25c2f
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Blambot Casual
+  fontNames:
+  - Blambot Casual
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1b571dc86deabf14b9be01de8a633952, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

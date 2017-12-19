@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fa6f776f348151d46839e5c51e099262
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mars Police
+  fontNames:
+  - Mars Police
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a4c3f3c7d24910f459a3c5149ce9db8a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

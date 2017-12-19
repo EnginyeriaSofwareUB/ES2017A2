@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ff62d69ff35b6c64eb1d20ce5caed642
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Humbucker Nasty
+  fontNames:
+  - Humbucker Nasty
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5584d8abb47722d4da574d1e8adfe865, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

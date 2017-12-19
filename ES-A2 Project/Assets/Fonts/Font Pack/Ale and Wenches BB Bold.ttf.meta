@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: af38c3dc314fdfa42a1b878966cb08b6
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Ale and Wenches BB
+  fontNames:
+  - Ale and Wenches BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a687416ddd0dec14099da2c753235683, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

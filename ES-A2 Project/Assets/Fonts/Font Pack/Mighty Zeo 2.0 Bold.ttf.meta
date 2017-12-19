@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ac42e0a8076865a4793c02aec620a2f3
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mighty Zeo 2.0
+  fontNames:
+  - Mighty Zeo 2.0
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 13b5e4c805148e3489d6eba10c52e65e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

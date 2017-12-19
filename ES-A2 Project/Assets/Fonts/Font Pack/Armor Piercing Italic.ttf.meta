@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ed02888fc8fd12e498e615c573bfb0c6
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Armor Piercing
+  fontNames:
+  - Armor Piercing
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9c2f3f6e43604d148b6280dff4c44190, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -73,6 +73,7 @@ public class Turn : MonoBehaviour {
     IEnumerator timer() {
         while (!this.timerGame.TimeOver && !this.ProjectileDestroyed)
             yield return null;
+        yield return new WaitForSeconds(1);
         this.endTurn();
     }
 

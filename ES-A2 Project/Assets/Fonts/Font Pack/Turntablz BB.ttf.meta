@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 97c1b85b3a6c2f84cad1b4b32709efb5
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Turntablz BB
+  fontNames:
+  - Turntablz BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6c0a82c30c00a4548bf0647d1dfd693a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 69f1ad4e91cf70242b7e0161ccd6cc0c
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Knuckle Sandwich Classic
+  fontNames:
+  - Knuckle Sandwich Classic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 32d4c0d096f7b5f44abe2475a59e8b9d, type: 3}
+  - {fileID: 12800000, guid: 6503d2d4f928a1a4988c3a6e3472ed65, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -13,7 +13,7 @@ public class CharacterMenu : MonoBehaviour {
 
     [SerializeField] private Text player1_money;
     [SerializeField] private Text player2_money;
-    [SerializeField] private user_active users_active;
+    [SerializeField] private PlayerIcons users_active;
 
     [SerializeField] private List<Button> charactersButtons;
     [SerializeField] private Button playButton;

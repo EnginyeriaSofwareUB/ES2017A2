@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 0fd869c1e2f37614b8fc6ba6cd125728
+timeCreated: 1513444478
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Oh Crud BB
+  fontNames:
+  - Oh Crud BB
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

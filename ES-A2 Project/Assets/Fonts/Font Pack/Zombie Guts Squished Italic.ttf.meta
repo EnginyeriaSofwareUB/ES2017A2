@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: edc0b94aad4a86a4ea4db857f6f22a9b
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Zombie Guts Squished
+  fontNames:
+  - Zombie Guts Squished
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 95a6b51d3ae92b54b9139905edd09a92, type: 3}
+  - {fileID: 12800000, guid: 9ee587eeba4852943b4e1bab51ca83a4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

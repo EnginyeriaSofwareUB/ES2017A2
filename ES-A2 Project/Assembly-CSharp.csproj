@@ -99,7 +99,6 @@
      <Compile Include="Assets\test.cs" />
      <None Include="Assets\Game Assets\Sprites\ReadMe.txt" />
      <None Include="Assets\Fonts\Documentation\JazzCreateBubble_VersionHistory_1.1.txt" />
-     <None Include="Assets\Game Assets\Scenes\ReadMe.txt" />
      <None Include="Assets\Game Assets\UI\Pantalla Principal\ReadMe.txt" />
      <None Include="Assets\Game Assets\Animations\ReadMe.txt" />
      <None Include="Assets\Game Assets\Prefabs\ReadMe.txt" />

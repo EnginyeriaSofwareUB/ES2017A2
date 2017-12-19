@@ -4,10 +4,11 @@ using System.Collections;
 
 public class ProjectileScript : MonoBehaviour {
 
-    //public new string name;
+    public string projectileName;
     public Image background;
     public Image projectileImage;
     public Button button;
     public GameObject projectile;
-    public Text cost;
+    public int cost;
+    public string description;
 }

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 9fa03ed580f7a0643a67d61c25513c0d
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: LowRider BB
+  fontNames:
+  - LowRider BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 93276a581a496c248ad531d846f43852, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

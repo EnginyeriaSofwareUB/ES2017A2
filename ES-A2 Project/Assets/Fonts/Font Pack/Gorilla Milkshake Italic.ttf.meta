@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ef41560761b24c14095466ef5324029a
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Gorilla Milkshake
+  fontNames:
+  - Gorilla Milkshake
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b7dbc3b7e0fd71f428e19f11628e1a9f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

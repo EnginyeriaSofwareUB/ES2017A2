@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: b0c92d3f211c37f47b02035ffd5f68be
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: EuroComic
+  fontNames:
+  - EuroComic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9c80062460bcc7348a8ae8f20078f82b, type: 3}
+  - {fileID: 12800000, guid: 1438fda5e9eb03748ab37f8e8ceb0178, type: 3}
+  - {fileID: 12800000, guid: 06ca452b1247cf848aeb5c7c58be1b1f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

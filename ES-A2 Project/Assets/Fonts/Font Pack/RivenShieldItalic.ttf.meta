@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 7d1b8bbe3c44d1c4aada33c4937246d0
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: RivenShield
+  fontNames:
+  - RivenShield
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5edc6632c6abbe34180964056c6b1232, type: 3}
+  - {fileID: 12800000, guid: 2fc8072665c9f74419d186b41ea27832, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

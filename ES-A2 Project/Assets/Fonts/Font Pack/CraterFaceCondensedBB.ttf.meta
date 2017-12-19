@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: bf38053879bb52d44b3eea695f050011
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CraterFace Condensed BB
+  fontNames:
+  - CraterFace Condensed BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5c320d5150e424a45b7513e8e27ff645, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

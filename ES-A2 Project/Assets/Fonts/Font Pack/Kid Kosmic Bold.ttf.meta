@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 7ae42180b60a7d44f97976f00a903679
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kid Kosmic
+  fontNames:
+  - Kid Kosmic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 40b1a932221807a459f3fabfc9d054cd, type: 3}
+  - {fileID: 12800000, guid: 1eea5e52c556dd3409b50c2130e491f3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

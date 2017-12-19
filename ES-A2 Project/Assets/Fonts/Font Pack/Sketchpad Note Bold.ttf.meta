@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8f5e4077b67c0954bb572439cfe47ab2
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sketchpad Note
+  fontNames:
+  - Sketchpad Note
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2c4a5b392dcdae7448f581544c616b9b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

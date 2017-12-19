@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: d0636a08f25fb204394cec0b2df5bc30
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Blambot Pro
+  fontNames:
+  - Blambot Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: cdbdbe68a5c9f34419da841a4a91ed0c, type: 3}
+  - {fileID: 12800000, guid: 86af56097b51ff64a976c89b37558a34, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

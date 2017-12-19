@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b81560615ee059d49a3d4eaa816b2830
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Holy Mackerel! Outline
+  fontNames:
+  - Holy Mackerel! Outline
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9a533b7bdc9a1144296b12c56158cb76, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

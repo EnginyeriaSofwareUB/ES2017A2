@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: b7f0b8162cae02b4787243952bf1416e
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Zap Raygun V2.0
+  fontNames:
+  - Zap Raygun V2.0
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: acd6d7d2af1362748b229e833fe18f41, type: 3}
+  - {fileID: 12800000, guid: 4b5bd66e29b468446a823a8d1ad71217, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 55606be2d10aa1f409a6d2482568f9da
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Chronicles of a Hero
+  fontNames:
+  - Chronicles of a Hero
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0e1721d68a0c76a408f208a95311fb01, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

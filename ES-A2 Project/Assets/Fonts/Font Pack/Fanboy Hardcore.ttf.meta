@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: ee2af8e308637a6498a5e1236dede7f7
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fanboy Hardcore
+  fontNames:
+  - Fanboy Hardcore
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3e179ad39fc8e24448d9bc3252272a45, type: 3}
+  - {fileID: 12800000, guid: eb1a7ec5bf6e2544ab4a6e25701594cf, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

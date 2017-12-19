@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ab929ae875dc330468aca65fe8a02271
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Android Nation
+  fontNames:
+  - Android Nation
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 736aa664bb956d845ab6829c23437bb7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: bba1e4b3bfe17ea48af90e4f9f266488
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Orange Fizz
+  fontNames:
+  - Orange Fizz
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2c1ef73de4de0464c944054a95fbda45, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
