@@ -2,6 +2,177 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db72f682-115e-4ae1-a630-fcaf3205699a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_center.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_center_withgrass.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_center_withgrass2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_corner_bottom_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_corner_bottom_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_corner_top_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_corner_top_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/0_ground_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/1_ground_corner_bottom_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/1_ground_corner_bottom_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/1_ground_corner_top_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/1_ground_corner_top_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/1_ground_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/1_ground_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/1_ground_texture.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/NewMap.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/a.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/attack_icon_ranged_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/attack_icon_ranged_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/attack_icon_tank.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrel_burning_shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrel_burning_shadow_animation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrel_shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrier_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrier_blue_broken.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrier_blue_broken_rotated.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrier_blue_rotated.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrier_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrier_red_broken.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrier_red_broken_rotated.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/barrier_red_rotated.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/body_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/body_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/combat_blue_attacks.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/combat_blue_iddle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/combat_red_attacks.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/combat_red_iddle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/combat_running_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/combat_running_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/explosion_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_corner_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_corner_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_corner_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_corner_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_long_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_long_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_long_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_long_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_north_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_north_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_south_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road/grass_road_south_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_road_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_corner_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_corner_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_corner_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_corner_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_long_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_long_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_long_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_long_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_north_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_north_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_south_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street/grass_street_south_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street_tile_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_street_tile_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grass_tile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grenade_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/grenade_ingame.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/heal_icon_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/heal_icon_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/icon_charge_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/icon_charge_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/icon_sword_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/icon_sword_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/image.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/key_map.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/movement_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/panel-background-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/panel-background-red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/pause_paused.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/protection_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/protection_blue_shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/protection_broken_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/protection_broken_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/protection_broken_red_shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/protection_broken_shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/protection_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/protection_red_shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/road_tile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/running_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/running_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/shield_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/shield_blue_effect.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/shield_blue_solid.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/shield_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/shield_red_effect.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/shield_red_solid.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_corner_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_corner_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_corner_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_corner_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_long_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_long_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_long_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_long_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_north_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_north_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_south_east.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road/street_road_south_west.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road_tile_north.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_road_tile_south.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/street_tile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/tank_blue_attack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/tank_idle_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/tank_idle_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/tank_red_attack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/tank_running_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/tank_running_red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_brick.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_grass1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_grass2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_redsand.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_road.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_sand.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_snow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_stone.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/texture_stone2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/tree.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dissenys/tree_broken.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Tutorial.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Tutorial_empty.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Tutorial_empty_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/background.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/backgroundPoweredBy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/background_1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/cabezon_azul.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/cabezon_rojo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fb/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fb/fancybox_loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fb/fancybox_loading@2x.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fb/fancybox_overlay.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fb/fancybox_sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fb/fancybox_sprite@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fb/play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fondoPoweredBy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fondoPoweredBy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/help.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/lightbox/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/lightbox/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/lightbox/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/lightbox/prev.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logoMini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logoScrum.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logoUnity.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/rsz_1help.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/rsz_help.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/unidades/healer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/unidades/melee.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/unidades/objects.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/unidades/powerUp_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/unidades/powerup.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/unidades/ranged.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/unidades/tank.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,12 +190,26 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="235">
-              <caret line="449" column="107" lean-forward="false" selection-start-line="449" selection-start-column="107" selection-end-line="449" selection-end-column="107" />
+              <caret line="590" column="18" lean-forward="false" selection-start-line="590" selection-start-column="18" selection-end-line="590" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#1;n#div#0;n#div#0;n#div#0;n#section#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="1039" column="11" lean-forward="false" selection-start-line="1039" selection-start-column="11" selection-end-line="1039" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -35,6 +220,16 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>download</find>
+      <find>.card .side</find>
+      <find>.card .side.back img</find>
+      <find>acerca</find>
+      <find>main-nav navbar-fixed-top</find>
+      <find>.png</find>
+      <find>background</find>
+      <find>logo</find>
+      <find>background.png</find>
+      <find>controls</find>
+      <find>MOLES</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -43,6 +238,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -74,7 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -87,15 +283,99 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ES2017A2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ES2017A2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ES2017A2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ES2017A2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js.eslint.eslintPackage" value="" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -108,32 +388,33 @@
       <option name="presentableId" value="Default" />
       <updated>1513624090675</updated>
       <workItem from="1513624091891" duration="43000" />
+      <workItem from="1513693801283" duration="4968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43000" />
+    <option name="totallyTimeSpent" value="5011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962631" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,9 +430,56 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="449" column="107" lean-forward="false" selection-start-line="449" selection-start-column="107" selection-end-line="449" selection-end-column="107" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#1;n#div#0;n#div#0;n#div#0;n#section#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/responsive.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/background_1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/background.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/background_orig.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="1039" column="11" lean-forward="false" selection-start-line="1039" selection-start-column="11" selection-end-line="1039" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="590" column="18" lean-forward="false" selection-start-line="590" selection-start-column="18" selection-end-line="590" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#1;n#div#0;n#div#0;n#div#0;n#section#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
