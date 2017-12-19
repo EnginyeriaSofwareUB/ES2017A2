@@ -11,8 +11,8 @@
 *******Typography******
 **************************/
 body {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 14px;
+  font-family: "Calibri", "Calibri Light";
+  font-size: 20px;
   line-height: 24px;
   color: rgb(0, 0, 0);
   background-color: #f8fffd;
@@ -599,23 +599,23 @@ section {
 /*************************
 *******Features CSS*******
 **************************/
-#features {
+#statistics {
   text-align: center;
   background-image: url(../images/features-bg.jpg);
 }
 
-#features i {
+#statistics i {
   font-size: 48px;
 }
 
-#features h3 {
+#statistics h3 {
   margin-top: 15px;
   font-size: 30px;
   margin-bottom: 7px;
   color: #40be14;
 }
 
-#features .slider-overlay {
+#statistics .slider-overlay {
   opacity: 0.8;
 }
 
