@@ -15,10 +15,7 @@ public class winScene : MonoBehaviour {
     [SerializeField] private GameObject player2LoseCont;
     [SerializeField] private GameObject player2winCont;
 
-    [SerializeField] private GameObject player1thumbup;
-    [SerializeField] private GameObject player1thumbdown;
-    [SerializeField] private GameObject player2thumbup;
-    [SerializeField] private GameObject player2thumbdown;
+   
 
     [SerializeField] private EstadoJuego estadoJuego;
 
@@ -44,16 +41,12 @@ public class winScene : MonoBehaviour {
         this.player1win.SetActive(false);
         this.player1winCont.SetActive(false);
 
-        this.player1thumbdown.SetActive(true);
-        this.player1thumbup.SetActive(false);
 
         this.player2Lose.SetActive(false);
         this.player2LoseCont.SetActive(false);
         this.player2win.SetActive(true);
         this.player2winCont.SetActive(true);
 
-        this.player2thumbdown.SetActive(false);
-        this.player2thumbup.SetActive(true);
     }
 
     private void winPlayer1losePlayer2() {
@@ -62,16 +55,12 @@ public class winScene : MonoBehaviour {
         this.player1win.SetActive(true);
         this.player1winCont.SetActive(true);
 
-        this.player1thumbdown.SetActive(false);
-        this.player1thumbup.SetActive(true);
 
         this.player2Lose.SetActive(true);
         this.player2LoseCont.SetActive(true);
         this.player2win.SetActive(false);
         this.player2winCont.SetActive(false);
 
-        this.player2thumbdown.SetActive(true);
-        this.player2thumbup.SetActive(false);
     }
 
     private void winPlayer1winPlayer2() {
@@ -80,15 +69,11 @@ public class winScene : MonoBehaviour {
         this.player1win.SetActive(true);
         this.player1winCont.SetActive(true);
 
-        this.player1thumbdown.SetActive(false);
-        this.player1thumbup.SetActive(true);
 
         this.player2Lose.SetActive(false);
         this.player2LoseCont.SetActive(false);
         this.player2win.SetActive(true);
         this.player2winCont.SetActive(true);
 
-        this.player2thumbdown.SetActive(false);
-        this.player2thumbup.SetActive(true);
     }
 }

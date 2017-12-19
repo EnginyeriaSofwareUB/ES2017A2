@@ -52,11 +52,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\caixaTalps.cs" />
+     <Compile Include="Assets\CharacterPOPUP.cs" />
      <Compile Include="Assets\endPoint.cs" />
      <Compile Include="Assets\EstadoJuego.cs" />
      <Compile Include="Assets\Fonts\Script\scriptTexttest.cs" />
      <Compile Include="Assets\Game Assets\Intangible\Cloud.cs" />
      <Compile Include="Assets\Game Assets\Intangible\Intangible.cs" />
+     <Compile Include="Assets\Game Assets\Scripts\BGSoundScript.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Pause\Pause.cs" />
      <Compile Include="Assets\Game Assets\Scripts\Player\Character\Character.cs" />
