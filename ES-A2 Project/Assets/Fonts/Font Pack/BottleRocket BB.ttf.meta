@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 89948f28eadb38c41acc744d70f2a9a5
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BottleRocket BB
+  fontNames:
+  - BottleRocket BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1832cb2c24893f3448c57f8056a08ef1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

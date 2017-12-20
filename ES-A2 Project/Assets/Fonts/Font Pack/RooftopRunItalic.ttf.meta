@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: e57ffd6e6fc7ae14eadb28d219fd1dba
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Rooftop Run
+  fontNames:
+  - Rooftop Run
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 01ffcec2559e18a41a8647812cf094d8, type: 3}
+  - {fileID: 12800000, guid: 18e5e677db9d9eb4fa6bc52e98e0d2a2, type: 3}
+  - {fileID: 12800000, guid: 185577f84608a8547854d39350a28cb9, type: 3}
+  - {fileID: 12800000, guid: 71c93e6b1d2730143a71b4499d0f1c1f, type: 3}
+  - {fileID: 12800000, guid: 912ab04e45b9c714eac31bccaf17daa1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

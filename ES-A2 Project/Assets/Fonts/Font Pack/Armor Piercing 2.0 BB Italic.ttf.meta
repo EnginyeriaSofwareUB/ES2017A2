@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c07a0a0e013a824488500d344d858570
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Armor Piercing 2.0 BB
+  fontNames:
+  - Armor Piercing 2.0 BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 55c02b7aa687ce944b10fa3e471f368f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

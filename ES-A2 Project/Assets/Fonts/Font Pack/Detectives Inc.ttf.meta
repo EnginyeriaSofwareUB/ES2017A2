@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: bb1255c429ef91f4aaca398d7839418d
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Detectives Inc
+  fontNames:
+  - Detectives Inc
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

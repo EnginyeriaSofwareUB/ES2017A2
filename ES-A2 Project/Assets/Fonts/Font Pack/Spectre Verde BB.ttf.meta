@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 6f20b142b4924c04eb37353c2a7a57a5
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Spectre Verde BB
+  fontNames:
+  - Spectre Verde BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 422e6c944846b39408232333fc95226e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

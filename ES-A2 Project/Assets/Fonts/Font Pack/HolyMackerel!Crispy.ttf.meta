@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c80548efd12489340ae710b43aafd988
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Holy Mackerel! Crispy
+  fontNames:
+  - Holy Mackerel! Crispy
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

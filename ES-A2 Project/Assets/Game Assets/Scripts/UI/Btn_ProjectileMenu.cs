@@ -4,25 +4,11 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+
 
 [System.Serializable]
-public class Item {
-    public string name;
-    public Sprite background;
-    public Sprite hortaliza;
-    public Button.ButtonClickedEvent thingToDo;
-    public GameObject projectile;
-}
-
-[System.Serializable]
-public class Img_and_desc {
-    public string name;
-    public Image hortaliza;
-    public Image descripcion;
-}
-
-[System.Serializable]
-public class Stats_popup {
+public class PopupElements {
     public string name;
     public Image hortaliza;
     public Text damage;
@@ -34,10 +20,11 @@ public class Stats_popup {
     public int baseCost;
     public Text description;
     public Text num_elements;
+    public Button buyButton;
 }
 
 [System.Serializable]
-public class user_active {
+public class PlayerIcons {
     public Image player1;
     public Image player1active;
     public Image player2;
@@ -46,41 +33,33 @@ public class user_active {
 }
 
 [System.Serializable]
-public class GameControl {
-    public Dictionary<ProjectileScript, int> player1_projectiles = new Dictionary<ProjectileScript, int>();
-    public Dictionary<ProjectileScript, int> player2_projectiles = new Dictionary<ProjectileScript, int>();
+public class GameValues {
+    public Dictionary<ProjectileScript, int> player1Projectiles = new Dictionary<ProjectileScript, int>();
+    public Dictionary<ProjectileScript, int> player2Projectiles = new Dictionary<ProjectileScript, int>();
     public int turn; //1 - Player1 2 - Player2
-    public Text player1_money;
-    public Text player2_money;
+    public Text player1Money;
+    public Text player2Money;
 }
 
 public class Btn_ProjectileMenu : MonoBehaviour {
 
     [SerializeField] private Canvas popup;
 
-    [SerializeField] private List<Img_and_desc> imagenes;
-
-    [SerializeField] private user_active users_active;
+    [SerializeField] private PlayerIcons playerIcons;
 
     //Center container
-    [SerializeField] private GameObject sampleImage;
     [SerializeField] private Transform contentParent;
-    [SerializeField] private List<Item> projectiles;
-    [SerializeField] private Stats_popup stats_popup;
+
+    [SerializeField] private GameObject projectileButtonsContainer;
+    [SerializeField] private PopupElements stats_popup;
 
     //Player 1 container
-    [SerializeField] private List<Image> player1_button_background;
-    [SerializeField] private List<Image> player1_button_projectile;
-    [SerializeField] private List<Text> player1_elements;
+    [SerializeField] private GameObject player1ProjectileGroup;
 
     //Player 2 container
-    [SerializeField] private List<Image> player2_button_background;
-    [SerializeField] private List<Image> player2_button_projectile;
-    [SerializeField] private List<Text> player2_elements;
+    [SerializeField] private GameObject player2ProjectileGroup;
 
-    //Values of all projectiles
-    private string[] projectilesName = { "pastanaga", "tomaquet", "ceba", "pebrot", "alberginia" };
-    string[] costes = { "20", "25", "30", "35", "40" };
+    [SerializeField] private GameObject projectilePlayer;
 
     [SerializeField] private Slider sl_damage;
     [SerializeField] private Slider sl_speed;
@@ -88,12 +67,14 @@ public class Btn_ProjectileMenu : MonoBehaviour {
     [SerializeField] private Slider sl_damage_radius;
     [SerializeField] private Slider sl_det_time;
 
-    public Dictionary<string, ProjectileScript> list_projectiles = new Dictionary<string, ProjectileScript>();
+    private List<Button> projectilesButtons;
+    private Dictionary<string, GameObject> player1ProjectileButtons = new Dictionary<string, GameObject>();
+    private Dictionary<string, GameObject> player2ProjectileButtons = new Dictionary<string, GameObject>();
 
-    public Dictionary<string, string> list_descriptions = new Dictionary<string, string>();
+    public Dictionary<string, ProjectileScript> projectileList = new Dictionary<string, ProjectileScript>();
 
     //Game control
-    [SerializeField] private GameControl game_control;
+    [SerializeField] private GameValues gameValues;
 
     private Buttons buttons;
 
@@ -104,46 +85,48 @@ public class Btn_ProjectileMenu : MonoBehaviour {
 
     void Awake() {
         estadoJuego = EstadoJuego.estadoJuego;
-        game_control.player1_money.text = estadoJuego.player1.Coins.ToString();
-        game_control.player2_money.text = estadoJuego.player2.Coins.ToString();
+        gameValues.player1Money.text = estadoJuego.player1.Coins.ToString();
+        gameValues.player2Money.text = estadoJuego.player2.Coins.ToString();
     }
 
     // Use this for initialization
     void Start() {
         popup.enabled = false;
         init_projectiles();
-        init_attributes();
-        clearUsersProjectiles();
-        init_descriptions();
 
-        game_control.turn = 1;
+        gameValues.turn = 1;
+        this.activatePlayer1();
         this.buttons = this.GetComponent<Buttons>();
     }
 
     // Update is called once per frame
     void Update() {
 
-        if (game_control.turn == 1) {
-            users_active.player1.enabled = false;
-            users_active.player1active.enabled = true;
-            users_active.player2.enabled = true;
-            users_active.player2active.enabled = false;
-            users_active.buttonText.image.sprite = btn_next;
-        } else {
-            users_active.player1.enabled = true;
-            users_active.player1active.enabled = false;
-            users_active.player2.enabled = false;
-            users_active.player2active.enabled = true;
-            users_active.buttonText.image.sprite = btn_play;
-        }
+    }
+
+    private void activatePlayer1() {
+        playerIcons.player1.enabled = false;
+        playerIcons.player1active.enabled = true;
+        playerIcons.player2.enabled = true;
+        playerIcons.player2active.enabled = false;
+        playerIcons.buttonText.image.sprite = btn_next;
+    }
+
+    private void activatePlayer2() {
+        playerIcons.player1.enabled = true;
+        playerIcons.player1active.enabled = false;
+        playerIcons.player2.enabled = false;
+        playerIcons.player2active.enabled = true;
+        playerIcons.buttonText.image.sprite = btn_play;
     }
 
     public void PlayOnClick() {
-        if (game_control.turn == 2) {
-            this.estadoJuego.setProjectileMenuValues(this.game_control.player1_projectiles, this.game_control.player2_projectiles);
+        if (gameValues.turn == 2) {
+            this.estadoJuego.setProjectileMenuValues(this.gameValues.player1Projectiles, this.gameValues.player2Projectiles);
             this.buttons.goToGameScene();
         }
-        game_control.turn = 2;
+        this.activatePlayer2();
+        gameValues.turn = 2;
     }
 
     public void BackOnClick() {
@@ -157,243 +140,145 @@ public class Btn_ProjectileMenu : MonoBehaviour {
     public void BuyOnClick() {
         popup.enabled = false;
 
-        if (game_control.turn == 1) {
-            int futureCoins = System.Int32.Parse(game_control.player1_money.text)
-                - System.Int32.Parse(stats_popup.num_elements.text) * stats_popup.baseCost;
-
-            if (futureCoins >= 0) {
-                if (game_control.player1_projectiles.ContainsKey(list_projectiles[stats_popup.name])) {
-                    game_control.player1_projectiles[list_projectiles[stats_popup.name]] += System.Int32.Parse(stats_popup.num_elements.text);
-                } else {
-                    game_control.player1_projectiles[list_projectiles[stats_popup.name]] = System.Int32.Parse(stats_popup.num_elements.text);
-                }
-                game_control.player1_money.text = futureCoins.ToString();
-                updateBoughtProjectiles();
-            }
+        if (gameValues.turn == 1) {
+            this.buyProjectiles(gameValues.player1Money, gameValues.player1Projectiles);
         } else {
-            int futureCoins = System.Int32.Parse(game_control.player2_money.text)
-                - System.Int32.Parse(stats_popup.num_elements.text) * stats_popup.baseCost;
-
-            if (futureCoins >= 0) {
-                if (game_control.player2_projectiles.ContainsKey(list_projectiles[stats_popup.name])) {
-                    game_control.player2_projectiles[list_projectiles[stats_popup.name]] += System.Int32.Parse(stats_popup.num_elements.text);
-                } else {
-                    game_control.player2_projectiles[list_projectiles[stats_popup.name]] = System.Int32.Parse(stats_popup.num_elements.text);
-                }
-                game_control.player2_money.text = futureCoins.ToString();
-                updateBoughtProjectiles();
-            }
+            this.buyProjectiles(gameValues.player2Money, gameValues.player2Projectiles);
         }
+        updateBoughtProjectiles();
     }
 
-    public int indexToAddPlayer1() {
-        int i = 1;
+    private void buyProjectiles(Text playerMoney, Dictionary<ProjectileScript, int> playerProjectiles) {
+        int futureCoins = int.Parse(playerMoney.text) - int.Parse(stats_popup.cost.text);
 
-        foreach (var projectile in game_control.player1_projectiles) {
-            ProjectileScript projectileScript = projectile.Key.GetComponent<ProjectileScript>();
-            if (projectileScript.projectileImage.sprite == stats_popup.hortaliza.sprite)
-                return i;
-            i++;
+        if (playerProjectiles.ContainsKey(projectileList[stats_popup.name])) {
+            playerProjectiles[projectileList[stats_popup.name]] = int.Parse(stats_popup.num_elements.text);
+        } else {
+            playerProjectiles[projectileList[stats_popup.name]] = int.Parse(stats_popup.num_elements.text);
         }
-        return game_control.player1_projectiles.Count - 1;
-    }
+        playerMoney.text = futureCoins.ToString();
 
-    public int indexToAddPlayer2() {
-        int i = 1;
-
-        foreach (var projectile in game_control.player2_projectiles) {
-            ProjectileScript projectileScript = projectile.Key.GetComponent<ProjectileScript>();
-            if (projectileScript.projectileImage.sprite == stats_popup.hortaliza.sprite)
-                return i;
-            i++;
-        }
-        return game_control.player2_projectiles.Count - 1;
     }
 
     public void updateBoughtProjectiles() {
-        if (game_control.turn == 1) {
-            int indice = indexToAddPlayer1();
-
-            player1_button_background[indice].enabled = true;
-            player1_button_projectile[indice].sprite = stats_popup.hortaliza.sprite;
-            player1_button_projectile[indice].enabled = true;
-            player1_elements[indice].enabled = true;
-            player1_elements[indice].text = game_control.player1_projectiles[list_projectiles[stats_popup.name]].ToString();
+        if (gameValues.turn == 1) {
+            this.updatePlayerProjectiles(this.player1ProjectileGroup, this.player1ProjectileButtons);
         } else {
-            int indice = indexToAddPlayer2();
-
-            player2_button_background[indice].enabled = true;
-            player2_button_projectile[indice].sprite = stats_popup.hortaliza.sprite;
-            player2_button_projectile[indice].enabled = true;
-            player2_elements[indice].enabled = true;
-            player2_elements[indice].text = game_control.player2_projectiles[list_projectiles[stats_popup.name]].ToString();
+            this.updatePlayerProjectiles(this.player2ProjectileGroup, this.player2ProjectileButtons);
         }
     }
 
-    public void init_descriptions()
-    {
-        list_descriptions["tomaquet"] = "Tomato: Great vegetable to make the enemy go redish. Take some of them to make damage in short distances";
-        list_descriptions["alberginia"] = "Eggplant: Take some of them to the farthest enemies, but do not expect to make lots of damage";
-        list_descriptions["pastanaga"] = "Carrot: The infinite vegetable. This is your last hope to win the battle if you run out of more powerful vegetables";
-        list_descriptions["pebrot"] = "Pepper: Great for dealing damage in a large area. Use it carefully or you will be affected by its powers";
-        list_descriptions["ceba"] = "Onion: Take that to deal a large amount of damage, but you will need a great force to throw it away from you to not get injured yourself";
+    public void updatePlayerProjectiles(GameObject projectileGroup, Dictionary<String, GameObject> playerButtons) {
+        string projectileName = this.stats_popup.name;
+        GameObject playerProjectileButton;
+        if (!playerButtons.ContainsKey(projectileName)) {
+            playerProjectileButton = Instantiate(this.projectilePlayer, projectileGroup.transform);
+            playerProjectileButton.transform.GetChild(0).GetComponent<Image>().sprite = this.stats_popup.hortaliza.sprite;
+
+            playerButtons.Add(projectileName, playerProjectileButton);
+        } else {
+            playerProjectileButton = playerButtons[projectileName];
+        }
+
+        if (int.Parse(this.stats_popup.num_elements.text) == 0) {
+            playerButtons.Remove(projectileName);
+            Destroy(playerProjectileButton);
+        }
+
+        playerProjectileButton.GetComponentInChildren<Text>().text = this.stats_popup.num_elements.text;
     }
 
     public void NextOnClick() {
         popup.enabled = false;
-        game_control.turn = 2;
+        gameValues.turn = 2;
     }
 
     public void init_projectiles() {
-        int i = 0;
-
-        foreach (var projectile in projectiles) {
-            GameObject newImage = Instantiate(sampleImage) as GameObject;
-            ProjectileScript projectileScript = newImage.GetComponent<ProjectileScript>();
-            projectileScript.background.sprite = projectile.background;
-            projectileScript.projectileImage.sprite = projectile.hortaliza;
-            projectileScript.name = projectile.name;
-            projectileScript.button.onClick = projectile.thingToDo;
-            projectileScript.projectile = projectile.projectile;
-
-            list_projectiles[projectile.name] = projectileScript;
-
-            //newImage.transform.SetParent(contentParent);
-
-            i += 1;
-        }
-    }
-
-    public void init_attributes() {
-        GameObject newGO = new GameObject("myTextGO");
-        newGO.transform.SetParent(this.transform);
-        Text myText1 = newGO.AddComponent<Text>();
-        myText1.text = costes[0];
-
-        GameObject newGO2 = new GameObject("myTextGO");
-        newGO2.transform.SetParent(this.transform);
-        Text myText2 = newGO2.AddComponent<Text>();
-        myText2.text = costes[1];
-
-        GameObject newGO3 = new GameObject("myTextGO");
-        newGO3.transform.SetParent(this.transform);
-        Text myText3 = newGO3.AddComponent<Text>();
-        myText3.text = costes[2];
-
-        GameObject newGO4 = new GameObject("myTextGO");
-        newGO4.transform.SetParent(this.transform);
-        Text myText4 = newGO4.AddComponent<Text>();
-        myText4.text = costes[3];
-
-        GameObject newGO5 = new GameObject("myTextGO");
-        newGO5.transform.SetParent(this.transform);
-        Text myText5 = newGO5.AddComponent<Text>();
-        myText5.text = costes[4];
-
-        Text[] costs = { myText1, myText2, myText3, myText4, myText5 };
-
-        int i = 0;
-
-        foreach (var projectile in projectilesName) {
-            list_projectiles[projectile].cost = costs[i];
-            i += 1;
+        foreach (Button projectileButton in this.projectileButtonsContainer.GetComponentsInChildren<Button>()) {
+            ProjectileScript projectileScript = projectileButton.GetComponent<ProjectileScript>();
+            projectileList.Add(projectileScript.projectileName, projectileScript);
         }
     }
 
     public void DoSomething(string name) {
-        Dictionary<string, int> dic = new Dictionary<string, int>();
-        ProjectileScript projectileScript = list_projectiles[name];
-        Projectile projectile = projectileScript.projectile.GetComponent<Projectile>();
-
-        for (int i = 0; i < 5; i++) {
-            dic[projectilesName[i]] = i;
+        if (this.gameValues.turn == 1) {
+            this.initPopupVariables(name, gameValues.player1Projectiles);
+        } else {
+            this.initPopupVariables(name, gameValues.player2Projectiles);
         }
-        clearVegetables();
-        stats_popup.name = name;
-        imagenes[dic[name]].hortaliza.enabled = true;
-        imagenes[dic[name]].descripcion.enabled = true;
-        stats_popup.hortaliza = imagenes[dic[name]].hortaliza;
-        stats_popup.cost.text = projectileScript.cost.text;
-        stats_popup.baseCost = System.Int32.Parse(projectileScript.cost.text);
-        stats_popup.damage.text = projectile.Damage.ToString();
-        sl_damage.value = projectile.Damage;
-        stats_popup.weight.text = projectile.Weight.ToString();
-        sl_weight.value = projectile.Weight;
-        stats_popup.detonation_time.text = projectile.DetonationTime.ToString();
-        sl_det_time.value = projectile.DetonationTime;
-        stats_popup.velocity.text = projectile.Speed.ToString();
-        sl_speed.value = projectile.Speed;
-        stats_popup.damage_radius.text = projectile.DamageRadius.ToString();
-        sl_damage_radius.value = projectile.DamageRadius;
-        stats_popup.num_elements.text = "1";
-        stats_popup.description.text = list_descriptions[name];
-
+        this.checkIfCanBuy();
         popup.enabled = true;
     }
 
-    public void clearVegetables() {
-        for (int i = 0; i < imagenes.Count; i++) {
-            imagenes[i].hortaliza.enabled = false;
-            imagenes[i].descripcion.enabled = false;
+    private void initPopupVariables(string name, Dictionary<ProjectileScript, int> playerProjectiles) {
+        ProjectileScript projectileScript = projectileList[name];
+        Projectile projectile = projectileScript.projectile.GetComponent<Projectile>();
+        stats_popup.cost.text = "0";
+        stats_popup.name = name;
+        stats_popup.hortaliza.GetComponent<Image>().sprite = projectileScript.projectileImage.sprite;
+        stats_popup.baseCost = projectileScript.cost;
+
+        this.setSlidersValues(projectile);
+
+        if (playerProjectiles.ContainsKey(projectileScript)) {
+            stats_popup.num_elements.text = playerProjectiles[projectileScript].ToString();
+        } else {
+            stats_popup.num_elements.text = "0";
         }
+
+        stats_popup.description.text = projectileScript.description;
+
+    }
+
+    private void setSlidersValues(Projectile projectile) {
+        stats_popup.damage.text = projectile.Damage.ToString();
+        sl_damage.value = projectile.Damage;
+
+        stats_popup.weight.text = projectile.Weight.ToString();
+        sl_weight.value = projectile.Weight;
+
+        stats_popup.detonation_time.text = projectile.DetonationTime.ToString();
+        sl_det_time.value = projectile.DetonationTime;
+
+        stats_popup.velocity.text = projectile.Speed.ToString();
+        sl_speed.value = projectile.Speed;
+
+        stats_popup.damage_radius.text = projectile.DamageRadius.ToString();
+        sl_damage_radius.value = projectile.DamageRadius;
     }
 
     public void btn_plus() {
+        int itemCount = int.Parse(stats_popup.num_elements.text) + 1;
 
-        int num = System.Int32.Parse(stats_popup.num_elements.text);
-        num += 1;
-        if (num < 30) {
-            stats_popup.num_elements.text = num.ToString();
-            stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
-        }
+        stats_popup.num_elements.text = itemCount.ToString();
+        stats_popup.cost.text = (int.Parse(stats_popup.cost.text) + stats_popup.baseCost).ToString();
+        this.checkIfCanBuy();
     }
 
     public void btn_minus() {
-        int num = System.Int32.Parse(stats_popup.num_elements.text);
-        num -= 1;
-        if (num >= 1) {
-            stats_popup.num_elements.text = num.ToString();
-            stats_popup.cost.text = (stats_popup.baseCost * num).ToString();
+        int itemCount = int.Parse(stats_popup.num_elements.text) - 1;
+        if (itemCount >= 0) {
+            stats_popup.num_elements.text = itemCount.ToString();
+            stats_popup.cost.text = (int.Parse(stats_popup.cost.text) - stats_popup.baseCost).ToString();
+            this.checkIfCanBuy();
         }
     }
 
-    public void clearUsersProjectiles() {
+    private void checkIfCanBuy() {
+        int cost = int.Parse(stats_popup.cost.text);
 
-        int i = 0;
-        foreach (var button in player1_button_background) {
-            if (i != 0)
-                button.enabled = false;
-            i++;
+        if (this.gameValues.turn == 1) {
+            this.checkIfPlayerCanBuy(int.Parse(this.gameValues.player1Money.text), cost);
+        } else {
+            this.checkIfPlayerCanBuy(int.Parse(this.gameValues.player2Money.text), cost);
         }
-        i = 0;
-        foreach (var element in player1_elements) {
-            if (i != 0)
-                element.enabled = false;
-            i++;
-        }
-        i = 0;
-        foreach (var button in player1_button_projectile) {
-            if (i != 0)
-                button.enabled = false;
-            i++;
-        }
-        i = 0;
-        foreach (var element in player2_elements) {
-            if (i != 0)
-                element.enabled = false;
-            i++;
-        }
-        i = 0;
-        foreach (var button in player2_button_projectile) {
-            if (i != 0)
-                button.enabled = false;
-            i++;
-        }
-        i = 0;
-        foreach (var element in player2_button_background) {
-            if (i != 0)
-                element.enabled = false;
-            i++;
+    }
+
+    private void checkIfPlayerCanBuy(int money, int cost) {
+        if (cost > money) {
+            this.stats_popup.buyButton.interactable = false;
+        } else {
+            this.stats_popup.buyButton.interactable = true;
         }
     }
 }

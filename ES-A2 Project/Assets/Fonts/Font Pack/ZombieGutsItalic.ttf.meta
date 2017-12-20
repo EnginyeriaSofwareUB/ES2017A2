@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: d4ca54a7ec85c5a468c7c52a29b832e3
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Zombie Guts
+  fontNames:
+  - Zombie Guts
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b8c53ba12184f09458f4250ce9634452, type: 3}
+  - {fileID: 12800000, guid: cdb854077e3b1174c9a1512cc7f31af7, type: 3}
+  - {fileID: 12800000, guid: 7ccfc4373b9587347a2164cae325e4de, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

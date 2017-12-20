@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: de04865254c1ca84dbaf9fb94a91f0bb
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Zombie Guts Yanked
+  fontNames:
+  - Zombie Guts Yanked
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 25134e715788bc949867a56c1d1dd68b, type: 3}
+  - {fileID: 12800000, guid: 69668925bab8a6144b38fc3963bfe4a1, type: 3}
+  - {fileID: 12800000, guid: be1a961b6bd4c6046aabc099086acd28, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

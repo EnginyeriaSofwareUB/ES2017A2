@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 06a3cb3801ba0b445a9e2efd9259d78a
+timeCreated: 1513444478
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Men of Science
+  fontNames:
+  - Men of Science
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 8fbc8efb22bc4194e9d99cd93d9fa855
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Jack Armstrong
+  fontNames:
+  - Jack Armstrong
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 12ece021a2ba6484696fe34e1fa41fa1, type: 3}
+  - {fileID: 12800000, guid: 78b3a4937a9f84f4ca0ed7a53cd0c4a4, type: 3}
+  - {fileID: 12800000, guid: 8e90c6c451bdd274fa4512754d3ce554, type: 3}
+  - {fileID: 12800000, guid: 8caa4bed6b072bf4d97552417aa74980, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

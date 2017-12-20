@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a767263733873c44b96c788fffe17e1b
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Wicked Queen BB
+  fontNames:
+  - Wicked Queen BB
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -68,13 +68,13 @@ public class Terrain2D : MonoBehaviour {
     }
 
     private void createPoints(Collider2D other) {
-
         CircleCollider2D circle2D = other.gameObject.GetComponent<CircleCollider2D>();
         Vector2 center = other.transform.TransformPoint(circle2D.offset);
         float radius = circle2D.radius * Mathf.Max(circle2D.transform.localScale.x, circle2D.transform.localScale.y);
         PolygonCollider2D onePathCollider = this.gameObject.AddComponent<PolygonCollider2D>();
         List<List<Vector2>> newPaths = new List<List<Vector2>>();
         float minDistance = this.getMinDistance(center, radius);
+        circle2D.bounds.Expand(0.1f);
 
         for (int i = 0; i < this.polygonCollider2D.pathCount; i++) {
             int lastExplosionInsertion = -1;
@@ -147,6 +147,7 @@ public class Terrain2D : MonoBehaviour {
     private int addExplosionSurfacePointsToPath(PolygonCollider2D terrain, CircleCollider2D circle2D, Vector2 center, float radius, Vector2 firstPoint, Vector2 nextPoint, List<Vector2> path) {
         Vector2 firstImpactPoint = this.getCollisionPoint(firstPoint, nextPoint);
         int firstImpactPointIndex = -1;
+
         if (firstImpactPoint != Vector2.zero && !circle2D.OverlapPoint(this.transform.TransformPoint(firstPoint))) {
             float angle = getAngle(firstImpactPoint, center, radius);
 

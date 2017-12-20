@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: c6ad680bf7007a545986cc3a4e2aa248
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Blambot Pro Lite
+  fontNames:
+  - Blambot Pro Lite
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 262a7610aabe9d2428fc55b222006f2b, type: 3}
+  - {fileID: 12800000, guid: 32951c970f4122649aaea22a7eafa80e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

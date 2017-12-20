@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 80490c3faa8565048b8b438b8981673f
+timeCreated: 1513444480
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: VanHelsing
+  fontNames:
+  - VanHelsing
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 520fbaea55285064c8c090c38546876f
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bucket O Blood
+  fontNames:
+  - Bucket O Blood
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2b4c974ee5eeb444ca2d77effc46ddf2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

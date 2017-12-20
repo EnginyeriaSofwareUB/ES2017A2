@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 546d1f76e5bd0644998ab921c71bcee1
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Voodoo Doll
+  fontNames:
+  - Voodoo Doll
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

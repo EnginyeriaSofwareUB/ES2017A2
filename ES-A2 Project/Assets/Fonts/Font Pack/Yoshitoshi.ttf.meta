@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 547e315b156c6f94ea1fb484131bca9d
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Yoshitoshi
+  fontNames:
+  - Yoshitoshi
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4e42d0072b837374896a9751ffdb73a8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

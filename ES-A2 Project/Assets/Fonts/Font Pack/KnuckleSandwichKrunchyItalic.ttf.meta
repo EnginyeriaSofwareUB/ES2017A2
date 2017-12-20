@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 6f216a81bd676524cb912bf57b075351
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Knuckle Sandwich Krunchy
+  fontNames:
+  - Knuckle Sandwich Krunchy
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1abdf18c73a4dc64eb166b02d7cce8c1, type: 3}
+  - {fileID: 12800000, guid: 171d217dfd688f944a2150d3655bcb58, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

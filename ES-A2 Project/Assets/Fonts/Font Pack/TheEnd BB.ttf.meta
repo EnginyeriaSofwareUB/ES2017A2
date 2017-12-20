@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 6b4b8d79e51689047962338af6d5e625
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: TheEnd BB
+  fontNames:
+  - TheEnd BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 471b4f6b9e85c704b8c8e40d8d01caf9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

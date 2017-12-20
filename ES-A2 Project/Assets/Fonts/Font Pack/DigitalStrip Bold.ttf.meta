@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: e580056350949b84989584bdddad9ebd
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DigitalStrip
+  fontNames:
+  - DigitalStrip
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6f35899383a281346bf378c5a24122b7, type: 3}
+  - {fileID: 12800000, guid: a55c3c2ab7bf8544582c08bd8cf353ef, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

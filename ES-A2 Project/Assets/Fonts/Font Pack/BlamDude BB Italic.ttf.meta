@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ce81941943ae2eb418a4dac63c912514
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BlamDude BB
+  fontNames:
+  - BlamDude BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 72d27c05d30e93344803bd4ee5608bf6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

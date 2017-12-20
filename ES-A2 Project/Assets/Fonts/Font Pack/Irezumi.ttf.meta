@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 60dd3872825a2de4f809d895e8f5c6d9
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Irezumi
+  fontNames:
+  - Irezumi
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2924fbcc559565a4b8d8971f7acdae57, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

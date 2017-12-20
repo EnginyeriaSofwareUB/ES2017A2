@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: fae9dc0fafa69794299cf6237be81af8
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Zud Juice
+  fontNames:
+  - Zud Juice
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4cdda1bc8753174499c6d3ac8113fa36, type: 3}
+  - {fileID: 12800000, guid: 8e91a64f078bb1441a3d41cc275fffd2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

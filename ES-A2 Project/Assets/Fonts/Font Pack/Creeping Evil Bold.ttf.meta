@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: f3b83acf917c3fb4fab75e127ed05dc4
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Creeping Evil
+  fontNames:
+  - Creeping Evil
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0da89cd002f817c4c952b3a48ebc9985, type: 3}
+  - {fileID: 12800000, guid: 2eed1a91b02beb64ea7dd32806732042, type: 3}
+  - {fileID: 12800000, guid: 123a5c66ed3be1e47a80093553d43435, type: 3}
+  - {fileID: 12800000, guid: 5ae75919d177e4844bda9fe913df4c9a, type: 3}
+  - {fileID: 12800000, guid: 9f77943b257690e47b71018a2f327bb2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

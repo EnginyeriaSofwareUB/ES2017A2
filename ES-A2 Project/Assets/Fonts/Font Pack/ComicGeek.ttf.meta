@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: def95867aaf6a9044a4effecdbc85d66
+timeCreated: 1513444482
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Comic Geek
+  fontNames:
+  - Comic Geek
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d972a45281d30d342ae93ebc7d3e2782, type: 3}
+  - {fileID: 12800000, guid: 2023367579e09514cb3de729a37bf29c, type: 3}
+  - {fileID: 12800000, guid: d66a595a3b4f8764b91453a3807aed28, type: 3}
+  - {fileID: 12800000, guid: 79888cda10d54e04797da5e5550a7b30, type: 3}
+  - {fileID: 12800000, guid: 14d930eb47aec8e4c8aa8275175dcb40, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,7 +10,7 @@ public abstract class Character : MonoBehaviour {
     protected Image number;
     protected int health;
     [SerializeField]
-    protected int maxhealth;
+    protected int maxHealth;
     [SerializeField]
     protected float xSpeed;
     [SerializeField]
@@ -48,27 +48,21 @@ public abstract class Character : MonoBehaviour {
 
     private bool isPlaying = false;
 
-    public Image Number
-    {
-        get
-        {
+    public Image Number {
+        get {
             return number;
         }
 
-        set
-        {
+        set {
             number = value;
         }
     }
-    public int Posicion
-    {
-        get
-        {
+    public int Posicion {
+        get {
             return posicion;
         }
 
-        set
-        {
+        set {
             posicion = value;
         }
     }
@@ -80,16 +74,17 @@ public abstract class Character : MonoBehaviour {
 
         set {
             health = value;
+            this.healthBar.fillAmount = (float) health / this.MaxHealth;
         }
     }
 
     public int MaxHealth {
         get {
-            return health;
+            return maxHealth;
         }
 
         set {
-            health = value;
+            maxHealth = value;
         }
     }
 
@@ -133,8 +128,7 @@ public abstract class Character : MonoBehaviour {
         }
     }
 
-    public string getColor()
-    {
+    public string getColor() {
         return this.color;
     }
 
@@ -200,7 +194,7 @@ public abstract class Character : MonoBehaviour {
      * Comprueba si el personaje sigue vivo
      */
     public bool isAlive() {
-        return this.health > 0;
+        return this.Health > 0;
     }
 
     /// <summary>
@@ -250,22 +244,19 @@ public abstract class Character : MonoBehaviour {
     /// </summary>
     /// <param name="damage"></param>
     public void Damage(int damage) {
-        this.health = this.health - damage;
-        this.healthBar.fillAmount = (float)this.health / this.maxhealth;
-        if (this.health <= 0) {
+        this.Health = this.Health - damage;
+        if (this.Health <= 0) {
             this.movement.SetAnimation("morir");
             this.movement.Enabled = false;
             this.arrow.SetActive(false);
             this.startShot = false;
             this.isPlaying = false;
             Destroy(this.gameObject, 1);
-        }
-        else {
+        } else {
             this.movement.SetAnimation("rebre_mal");
         }
 
         damageRecievedSound.Play();
-        //Debug.Log(this.healthBar.fillAmount);
     }
 
     /// <summary>
@@ -281,9 +272,9 @@ public abstract class Character : MonoBehaviour {
     /// </summary>
     /// <param name="ammo"></param>
     public void ApplyHealth(int health) {
-        this.health = this.health + health;
-        if (this.health > this.maxhealth) {
-            this.health = this.maxhealth;
+        this.Health = this.Health + health;
+        if (this.Health > this.MaxHealth) {
+            this.Health = this.MaxHealth;
         }
     }
 
@@ -294,16 +285,12 @@ public abstract class Character : MonoBehaviour {
     private void MoveArrow(float angle) {
         if (this.transform.rotation.y == 0.7071068f) {
             MoveArrowRight(angle);
-        }
-        else if (this.transform.rotation.y == -0.7071068f) {
+        } else if (this.transform.rotation.y == -0.7071068f) {
             MoveArrowLeft(angle);
-        }
-        else {
+        } else {
             if (this.transform.rotation.y == 0.7066739f) {
                 MoveArrowRight(angle);
-            }
-            else if (this.transform.rotation.y == -0.7066739f) {
-                MoveArrowLeft(angle);
+            } else if (this.transform.rotation.y == -0.7066739f) {
             }
         }
     }
@@ -327,8 +314,7 @@ public abstract class Character : MonoBehaviour {
         if (angle > 110) {
             angle = Mathf.Clamp(angle, 100, 180);
             this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        }
-        else if (angle < -90) {
+        } else if (angle < -90) {
             angle = Mathf.Clamp(angle, -180, -105);
             this.arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
@@ -360,14 +346,12 @@ public abstract class Character : MonoBehaviour {
     private void CheckHandShot() {
         if (this.transform.rotation.y == 0.7071068f) {
             this.movement.SetAnimation("disparar_dreta");
-        }
-        else {
+        } else {
             this.movement.SetAnimation("disparar");
         }
     }
 
-    public Player getPlayer()
-    {
+    public Player getPlayer() {
         return this.player;
     }
 }

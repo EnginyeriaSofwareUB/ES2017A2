@@ -6,8 +6,8 @@ public class Mole : Character {
 
 	protected override void Start () {
         base.Start();
-        this.health = 100;
-        this.maxhealth = 100;
+        this.Health = 100;
+        this.MaxHealth = 100;
     }
 
     protected override void Update () {

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b8a20b529ee9ebf41a41032477f9e141
+timeCreated: 1513444481
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Anime Ace
+  fontNames:
+  - Anime Ace
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7abe64086edb7ac4e82f49774180a217, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -49,15 +49,12 @@ public class Game : MonoBehaviour {
         }
     }
 
-    public List<Sprite> ArrayNumbersSprites
-    {
-        get
-        {
+    public List<Sprite> ArrayNumbersSprites {
+        get {
             return arrayNumbersSprites;
         }
 
-        set
-        {
+        set {
             arrayNumbersSprites = value;
         }
     }
@@ -83,16 +80,11 @@ public class Game : MonoBehaviour {
 
             //random healthBox or AmmoBox
             float i = Random.Range(1, 3);
-            for (int k = 0; k < i; k++)
-            {
+            for (int k = 0; k < i; k++) {
                 Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 10, 0);
-                float type = Random.Range(0, 1);//50%prob ammmo-health
-                if (k % 2 == 0)
-                {
+                if (k % 2 == 0) {
                     Instantiate(HealthBox, position, Quaternion.identity);
-                }
-                else
-                {
+                } else {
                     Instantiate(AmmoBox, position, Quaternion.identity);
                 }
             }
@@ -102,21 +94,17 @@ public class Game : MonoBehaviour {
 
 
         //Update the countdown
-        if (!this.isBetweenRounds)
-        {
+        if (!this.isBetweenRounds) {
             this.changeRoundText.text = "";
-            if(this.round.getTimeLeft() > 9){
+            if (this.round.getTimeLeft() > 9) {
                 this.countDownText.text = "00:" + this.round.getTimeLeft();
-            }
-            else {
+            } else {
                 this.countDownText.text = "00:0" + this.round.getTimeLeft();
 
             }
-        }
-        else
-        {
+        } else {
             this.countDownText.text = "";
-            this.changeRoundText.text = "Next round in... " + ((int)this.timerRounds.getTimeLeft() + 1) + "  ";
+            this.changeRoundText.text = "Next round in... " + ((int) this.timerRounds.getTimeLeft() + 1) + "  ";
         }
 
         //Comprobar fin de juego
@@ -135,9 +123,9 @@ public class Game : MonoBehaviour {
 
     private void initVariables(ref Vector2 initPosition, GameObject playerObject, PlayerUI playerUI, List<float> arrayPos) {
         Player player = playerObject.GetComponent<Player>();
-        List<GameObject> characters =  playerUI.Characters;
+        List<GameObject> characters = playerUI.Characters;
         List<ProjectileInfo> projectiles = playerUI.Projectiles;
-      
+
         player.Characters = new List<Character>();
         foreach (GameObject characterPrefab in characters) {
             GameObject character = Instantiate(characterPrefab, player.transform, true);
@@ -153,15 +141,13 @@ public class Game : MonoBehaviour {
     /**
     * Metodo que devuelve la posicion inicial de cada personaje
     */
-    private float getPositionRandom(List<float> positions)
-    {
+    private float getPositionRandom(List<float> positions) {
         float position = Random.Range(-24, 24);
 
-        while (positions.Contains(position))
-        {
+        while (positions.Contains(position)) {
             position = Random.Range(-24, 24);
         }
-        
+
         return position;
     }
 

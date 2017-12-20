@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 0d08f600d3b331a4f8fd8e338b3a4ab8
+timeCreated: 1513444478
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Manga Temple
+  fontNames:
+  - Manga Temple
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

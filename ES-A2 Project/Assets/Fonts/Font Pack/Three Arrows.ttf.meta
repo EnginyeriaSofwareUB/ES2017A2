@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 39c18a60949a55b47980a97785ce01d0
+timeCreated: 1513444479
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Three Arrows
+  fontNames:
+  - Three Arrows
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2a71fad032752f84bbe9badeb8c1c0a2, type: 3}
+  - {fileID: 12800000, guid: 25c402231965d1041a8fae786c8a47ce, type: 3}
+  - {fileID: 12800000, guid: 17be129934e91464a99414d28182d5f3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

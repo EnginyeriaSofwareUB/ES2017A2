@@ -13,7 +13,7 @@ public class CharacterMenu : MonoBehaviour {
 
     [SerializeField] private Text player1_money;
     [SerializeField] private Text player2_money;
-    [SerializeField] private user_active users_active;
+    [SerializeField] private PlayerIcons users_active;
 
     [SerializeField] private List<Button> charactersButtons;
     [SerializeField] private Button playButton;
@@ -28,6 +28,18 @@ public class CharacterMenu : MonoBehaviour {
     [SerializeField] private GameObject panel2;
     [SerializeField] private GameObject panel3;
 
+    [SerializeField] private GameObject p1p1;
+    [SerializeField] private GameObject p1p2;
+    [SerializeField] private GameObject p1p3;
+
+    [SerializeField] private GameObject p2p1;
+    [SerializeField] private GameObject p2p2;
+    [SerializeField] private GameObject p2p3;
+
+    List<GameObject> popups = new List<GameObject>();
+
+
+
 
     void Awake() {
         estadoJuego = EstadoJuego.estadoJuego;
@@ -41,6 +53,14 @@ public class CharacterMenu : MonoBehaviour {
         drawMenu();
         isPlayer1Selecting = true;
         playButton.enabled = false;
+
+        popups.Add(p1p1);
+        popups.Add(p1p2);
+        popups.Add(p1p3);
+        popups.Add(p2p1);
+        popups.Add(p2p2);
+        popups.Add(p2p3);
+
     }
 
     private void Update() {
@@ -90,6 +110,12 @@ public class CharacterMenu : MonoBehaviour {
 
         }
         isPlayer1Selecting = !isPlayer1Selecting;
+
+        //Desactivem popups
+        foreach (GameObject p in popups)
+        {
+            p.SetActive(false);
+        }
     }
 
     private void addCharacter(List<GameObject> playerCharacters, List<GameObject> playerSlots, CharacterUI characterUI) {
